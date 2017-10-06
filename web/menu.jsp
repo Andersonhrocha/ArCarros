@@ -99,7 +99,7 @@
 
                                 <%-- Menu Produtos--%>
                                 <li class=" dropdown">
-                                    <a href="inicio.php?btn=config" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/pic_3.png" width="40" alt=""/>Produtos <span class="caret"></span></a>
+                                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/pic_3.png" width="40" alt=""/>Produtos <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
                                             <a href="#">Cadastro de Produtos</a>
@@ -133,7 +133,7 @@
                                             <a href="#" >Cadastro de Serviços</a>
                                         </li>
                                         <li class=" dropdown">
-                                            <a href="#" >Ordens de Serviço</a>
+                                            <a href="#">Ordens de Serviço</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -141,7 +141,7 @@
 
                             <%-- Menu Sair--%>
                             <ul class="nav navbar-nav pull-right">
-                                <li class=""><a href="index.jsp"><img src="imagens/unsubscribe.png" width="40" alt=""/>Sair</a></li>
+                                <li class=""><a href="index.jsp">Sair</a></li>
                             </ul>
 
                         </div>
