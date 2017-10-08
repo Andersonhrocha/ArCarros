@@ -12,7 +12,7 @@ import java.sql.DriverManager;
  *
  * @author Anderson
  */
-public class ModeloConexao {
+public class Conexao {
     
     // Armazenando informações Referente ao banco de dados
     private final String base = "db_arcarros";
