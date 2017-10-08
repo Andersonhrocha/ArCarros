@@ -91,7 +91,7 @@
                                 <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Clientes <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
-                                            <a href="${pageContext.request.contextPath}\ServletCliente?evento=" >Cadastro/Consulta</a>
+                                            <a href="#" >Cadastro/Consulta</a>
                                         </li>                                 
                                     </ul>
                                 </li>

@@ -5,12 +5,9 @@
  */
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-import model.ModelCliente;
+import java.sql.*;
+import java.util.*;
+import model.modelCliente;
 
 /**
  *
@@ -22,7 +19,7 @@ public class DAOCliente extends ModeloConexao {
     private String sql = "";
 
     //Método para incluir na tabela cliente
-    public boolean incluir(ModelCliente pro) {
+    public boolean incluir(modelCliente pro) {
         sql = "INSERT INTO cliente (cpf_cliente,nome,endereco,telefone,email) VALUES (?,?,?,?,?)";
 
         try {
@@ -47,7 +44,7 @@ public class DAOCliente extends ModeloConexao {
     }//FIM DA CLASSE incluir
 
     //Método para alterar na tabela cliente
-    public boolean alterar(ModelCliente pro) {
+    public boolean alterar(modelCliente pro) {
         sql = "UPDATE cliente SET nome=?, endereco=?,telefone=?, email=? WHERE cpf_cliente=? ";
 
         try {
@@ -72,7 +69,7 @@ public class DAOCliente extends ModeloConexao {
     }//FIM DA CLASSE alterar
 
     //Método para excluir na tabela cliente
-    public boolean excluir(ModelCliente pro) {
+    public boolean excluir(modelCliente pro) {
         sql = "DELETE FROM cliente WHERE cpf_cliente=? ";
 
         try {
@@ -93,10 +90,10 @@ public class DAOCliente extends ModeloConexao {
     }//FIM DA CLASSE excluir
 
     //Método para listar todos os cliente da tabela
-    public List<ModelCliente> listarContatos() {
+    public List<modelCliente> listarContatos() {
         sql = "SELECT * FROM cliente";
 
-        List<ModelCliente> retornoArray = new ArrayList<ModelCliente>();
+        List<modelCliente> retornoArray = new ArrayList<modelCliente>();
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
@@ -104,7 +101,7 @@ public class DAOCliente extends ModeloConexao {
 
             while (rs.next()) {
 
-                ModelCliente registro = new ModelCliente();
+                modelCliente registro = new modelCliente();
                 registro.setCpf_cliente(rs.getString("txtCodigo"));
                 registro.setNome(rs.getString("txtNome"));
                 registro.setEndereco(rs.getString("txtEndereco"));
