@@ -28,7 +28,7 @@ public class ModuloConexao {
             //Responsável por as configurações do BD MySql.
             Class.forName("com.mysql.jdbc.Driver");
             conexao = DriverManager.getConnection(this.url, this.usuarios, this.password);
-            System.out.println("Conexão de banco de dados: Status Ok!");
+           // System.out.println("Conexão de banco de dados: Status Ok!");
             return conexao;
 
         } catch (Exception e) {
