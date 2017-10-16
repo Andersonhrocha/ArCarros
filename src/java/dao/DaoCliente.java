@@ -57,7 +57,7 @@ public class DaoCliente extends DaoAbstrato {
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelCliente pro) { //opcao 2.
 
-       sql = "UPDATE cliente SET nome=?, endereco=?, telefone=?, email=? WHERE cpf_cliente = ? ";
+        sql = "UPDATE cliente SET nome=?, endereco=?, telefone=?, email=? WHERE cpf_cliente=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
@@ -86,7 +86,7 @@ public class DaoCliente extends DaoAbstrato {
     //MÉTODO PARA EXCLUSÃO
     public void excluir(ModelCliente pro) {// opcao 3.
 
-        sql = "DELETE FROM cliente WHERE cpf_cliente = ? ";
+        sql = "DELETE FROM cliente WHERE cpf_cliente=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);

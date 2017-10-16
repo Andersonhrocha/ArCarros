@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Menu Principal</title>
-        <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap-Menu/css/bootstrap.min.css" rel="stylesheet">
         <style type="text/css">
             body{
                 background: #8999A8;
@@ -65,8 +65,8 @@
                 background: #fff;
             }
         </style>
-        <script src="bootstrap-3.3.7-dist/js/jquery-1.11.1.min.js"></script>
-        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script src="bootstrap-Menu/js/jquery-1.11.1.min.js"></script>
+        <script src="bootstrap-Menu/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="navbar-wrapper">
@@ -91,7 +91,7 @@
                                 <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Clientes <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
-                                            <a href="#" >Cadastro/Consulta</a>
+                                            <a href="ServletCliente?acao=listar" >Cadastro de Clientes</a>
                                         </li>                                 
                                     </ul>
                                 </li>

@@ -52,23 +52,11 @@ public class ServletCliente extends HttpServlet {
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
-                String txtDocumento = request.getParameter("txtDocumento");
-                System.out.println(txtDocumento);
-                String txtDocumento1 = request.getParameter("txtNome");
-                System.out.println(txtDocumento1);
-                String txtDocumento2 = request.getParameter("txtEndereco");
-                System.out.println(txtDocumento2);
-                String txtDocumento3 = request.getParameter("txtTelefone");
-                System.out.println(txtDocumento3);
-                String txtDocumento4 = request.getParameter("txtEmail");
-                System.out.println(txtDocumento4);
-
                 //EDITANDO NO BANCO DE DADOS
                 dao.editar(pro);
                 redirecionamento = LISTAR_CLIENTE;
 
-                System.out.println("ENTROU AQUI");
-
+                
             } else if (acao.equalsIgnoreCase("excluir")) {
 
                 //PARAMETRO QUE OBTEM O ID PARA EXCLUSÃO
@@ -90,7 +78,7 @@ public class ServletCliente extends HttpServlet {
                 redirecionamento = EDITAR_CLIENTE;
 
             } else if (acao.equalsIgnoreCase("listar")) {
-                response.sendRedirect("listarCliente.jsp");
+                redirecionamento = LISTAR_CLIENTE;
             }
 
             //REALIZA O REDIRECIONAMENTO PARA AS PÁGINAS CORRESPONDENTES
