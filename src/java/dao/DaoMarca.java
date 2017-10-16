@@ -1,7 +1,3 @@
-/**
- *
- * @author Anderson
- */
 package dao;
 
 import java.sql.Connection;
@@ -12,31 +8,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.ModelCliente;
+import model.ModelMarca;
 
-public class DaoCliente extends ModuloConexao {
+/**
+ *
+ * @author Anderson
+ */
+public class DaoMarca extends ModuloConexao {
 
     //VARIÁVEIS
     public Connection conexao;
     private String sql = "";
 
     //CONSTRUTOR PRINCIPAL DA CLASSE
-    public DaoCliente() {
+    public DaoMarca() {
         conexao = this.abrirConexao();
     }
 
     //MÉTODO PARA INCLUSÃO
-    public void incluir(ModelCliente pro) { //opcao 1.
+    public void incluir(ModelMarca pro) { //opcao 1.
 
-        sql = "INSERT INTO cliente (cpf_cliente, nome, endereco, telefone, email) VALUES (?,?,?,?,?)";
+        sql = "INSERT INTO marca (id_marca, nome) VALUES (?,?)";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getCpf_cliente());
+            pst.setInt(1, pro.getId_marca());
             pst.setString(2, pro.getNome());
-            pst.setString(3, pro.getEndereco());
-            pst.setString(4, pro.getTelefone());
-            pst.setString(5, pro.getEmail());
 
             int status = pst.executeUpdate();
             if (status > 0) {
@@ -53,17 +50,14 @@ public class DaoCliente extends ModuloConexao {
     }//FIM DA CLASSE incluir
 
     //MÉTODO PARA EDIÇÃO
-    public void editar(ModelCliente pro) { //opcao 2.
+    public void editar(ModelMarca pro) { //opcao 2.
 
-        sql = "UPDATE cliente SET nome=?, endereco=?, telefone=?, email=? WHERE cpf_cliente=? ";
+        sql = "UPDATE marca SET nome=? WHERE id_marca=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setString(1, pro.getNome());
-            pst.setString(2, pro.getEndereco());
-            pst.setString(3, pro.getTelefone());
-            pst.setString(4, pro.getEmail());
-            pst.setString(5, pro.getCpf_cliente());
+            pst.setInt(2, pro.getId_marca());
 
             int status = pst.executeUpdate();
             if (status > 0) {
@@ -81,13 +75,13 @@ public class DaoCliente extends ModuloConexao {
     }//FIM DA CLASSE editar
 
     //MÉTODO PARA EXCLUSÃO
-    public void excluir(ModelCliente pro) {// opcao 3.
+    public void excluir(ModelMarca pro) {// opcao 3.
 
-        sql = "DELETE FROM cliente WHERE cpf_cliente=? ";
+        sql = "DELETE FROM marca WHERE id_marca=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getCpf_cliente());
+            pst.setInt(1, pro.getId_marca());
 
             int status = pst.executeUpdate();
             if (status > 0) {
@@ -104,27 +98,24 @@ public class DaoCliente extends ModuloConexao {
     }//FIM DA CLASSE excluir
 
     //MÉTODO PARA BUSCAR POR ID
-    public ModelCliente buscar(ModelCliente pro) { //opcao 4.
+    public ModelMarca buscar(ModelMarca pro) { //opcao 4.
 
-        sql = "SELECT * FROM cliente WHERE cpf_cliente = ?";
+        sql = "SELECT * FROM marca WHERE id_marca = ?";
 
-        ModelCliente retorno = null;
+        ModelMarca retorno = null;
 
         try {
 
             PreparedStatement pst = conexao.prepareStatement(sql);
 
-            pst.setString(1, pro.getCpf_cliente());
+            pst.setInt(1, pro.getId_marca());
             ResultSet rs = pst.executeQuery();
 
             if (rs.next()) {
 
-                retorno = new ModelCliente();
-                retorno.setCpf_cliente(rs.getString("cpf_cliente"));
+                retorno = new ModelMarca();
+                retorno.setId_marca(Integer.parseInt(rs.getString("id_marca")));
                 retorno.setNome(rs.getString("nome"));
-                retorno.setEndereco(rs.getString("endereco"));
-                retorno.setTelefone(rs.getString("telefone"));
-                retorno.setEmail(rs.getString("email"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
@@ -134,11 +125,11 @@ public class DaoCliente extends ModuloConexao {
     }//FIM DA CLASSE buscar
 
     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
-    public List<ModelCliente> listarTodos() { //opcao 5.
+    public List<ModelMarca> listarTodos() { //opcao 5.
 
-        sql = "SELECT * FROM cliente";
+        sql = "SELECT * FROM marca";
 
-        List<ModelCliente> lista = new ArrayList<ModelCliente>();
+        List<ModelMarca> lista = new ArrayList<ModelMarca>();
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
@@ -146,13 +137,9 @@ public class DaoCliente extends ModuloConexao {
 
             while (rs.next()) {
 
-                ModelCliente item = new ModelCliente();
-                item.setCpf_cliente(rs.getString("cpf_cliente"));
+                ModelMarca item = new ModelMarca();
+                item.setId_marca(Integer.parseInt(rs.getString("id_marca")));
                 item.setNome(rs.getString("nome"));
-                item.setEndereco(rs.getString("endereco"));
-                item.setTelefone(rs.getString("telefone"));
-                item.setEmail(rs.getString("email"));
-
                 lista.add(item);
             }
 
@@ -163,5 +150,4 @@ public class DaoCliente extends ModuloConexao {
         return lista;
 
     } //FIM DA CLASSE listarTodos
-
 }

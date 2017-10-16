@@ -118,7 +118,7 @@
                                             <a href="#" >Cadastro de Carros</a>
                                         </li>
                                         <li class=" dropdown">
-                                            <a href="#">Cadastro de Marcas</a>
+                                            <a href="ServletMarca?acao=listar">Cadastro de Marcas</a>
                                         </li>
                                         <li class=" dropdown">
                                             <a href="#">Cadastro de Modelos</a>
