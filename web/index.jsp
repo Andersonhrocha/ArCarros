@@ -12,7 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
+        <% response.sendRedirect("menu.jsp"); %>
+      <!--  
         <h1>Teste de Menu Principal</h1>
-        <a href="menu.jsp">Menu Principal</a>
+        <a href="menu.jsp">Menu Principal</a> -->
     </body>
 </html>

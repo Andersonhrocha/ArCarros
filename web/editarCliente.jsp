@@ -68,10 +68,9 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
-                    </div>
+                <div class="row">                   
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                        <a href="ServletCliente?acao=listar" class="btn btn-primary">Cancelar</a>   
                 </div>
 
             </form>

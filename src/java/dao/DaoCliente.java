@@ -14,18 +14,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.ModelCliente;
 
-public class DaoCliente extends DaoAbstrato {
+public class DaoCliente extends ModuloConexao {
 
-    ModuloConexao obterConexao = new ModuloConexao();
+    //VARIÁVEIS
     public Connection conexao;
     private String sql = "";
 
-    //Construtor principal da classe
+    //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoCliente() {
-        conexao = this.obterConexao.abrirConexao();
+        conexao = this.abrirConexao();
     }
 
-    @Override
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelCliente pro) { //opcao 1.
 
@@ -53,7 +52,6 @@ public class DaoCliente extends DaoAbstrato {
         }
     }//FIM DA CLASSE incluir
 
-    @Override
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelCliente pro) { //opcao 2.
 
@@ -82,7 +80,6 @@ public class DaoCliente extends DaoAbstrato {
 
     }//FIM DA CLASSE editar
 
-    @Override
     //MÉTODO PARA EXCLUSÃO
     public void excluir(ModelCliente pro) {// opcao 3.
 
@@ -106,7 +103,6 @@ public class DaoCliente extends DaoAbstrato {
         }
     }//FIM DA CLASSE excluir
 
-    @Override
     //MÉTODO PARA BUSCAR POR ID
     public ModelCliente buscar(ModelCliente pro) { //opcao 4.
 
@@ -137,7 +133,6 @@ public class DaoCliente extends DaoAbstrato {
         return retorno;
     }
 
-    @Override
     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
     public List<ModelCliente> listarTodos() { //opcao 5.
 

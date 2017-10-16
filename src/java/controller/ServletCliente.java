@@ -2,10 +2,8 @@ package controller;
 
 import dao.DaoCliente;
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.ModelCliente;
@@ -15,18 +13,21 @@ import model.ModelCliente;
  * @author Anderson
  */
 @WebServlet(name = "ServletCliente", urlPatterns = {"/ServletCliente"})
-public class ServletCliente extends HttpServlet {
+public class ServletCliente extends ServletAbstrato {
 
+    //CONSTANTES DAS PÁGINAS .JSP
     private static final String ADICIONAR_CLIENTE = "adicionarCliente.jsp";
     private static final String EDITAR_CLIENTE = "editarCliente.jsp";
     private static final String LISTAR_CLIENTE = "listarCliente.jsp";
     private final DaoCliente dao;
 
+    //CONSTRUTOR PRINCIPAL
     public ServletCliente() {
         dao = new DaoCliente();
     }
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    @Override
+    public void executar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         try {
@@ -39,8 +40,7 @@ public class ServletCliente extends HttpServlet {
             pro.setTelefone(request.getParameter("txtTelefone"));
             pro.setEmail(request.getParameter("txtEmail"));
 
-            //Variáveis
-            String redirecionamento = "";
+            //RECEBE PARAMETRO VIA GET DO NAVEGADOR
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
@@ -48,13 +48,17 @@ public class ServletCliente extends HttpServlet {
 
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
-                redirecionamento = ADICIONAR_CLIENTE;
+                
+               //REDIRECIONAMENTO
+                redirecionarPagina(request, response, ADICIONAR_CLIENTE);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
                 //EDITANDO NO BANCO DE DADOS
                 dao.editar(pro);
-                redirecionamento = LISTAR_CLIENTE;
+               
+                //REDIRECIONAMENTO
+                this.redirecionarPagina(request, response, LISTAR_CLIENTE);
 
                 
             } else if (acao.equalsIgnoreCase("excluir")) {
@@ -64,7 +68,9 @@ public class ServletCliente extends HttpServlet {
 
                 //EXCLUIDO DO BANCO DE DADOS
                 dao.excluir(pro);
-                redirecionamento = LISTAR_CLIENTE;
+                
+                //REDIRECIONAMENTO
+                this.redirecionarPagina(request, response, LISTAR_CLIENTE);
 
             } else if (acao.equalsIgnoreCase("buscar")) {
 
@@ -75,15 +81,14 @@ public class ServletCliente extends HttpServlet {
                 pro = dao.buscar(pro);
                 request.setAttribute("cliente", pro);
 
-                redirecionamento = EDITAR_CLIENTE;
+                //REDIRECIONAMENTO
+                this.redirecionarPagina(request, response, this.EDITAR_CLIENTE);
 
             } else if (acao.equalsIgnoreCase("listar")) {
-                redirecionamento = LISTAR_CLIENTE;
-            }
 
-            //REALIZA O REDIRECIONAMENTO PARA AS PÁGINAS CORRESPONDENTES
-            RequestDispatcher mostrar = request.getRequestDispatcher(redirecionamento);
-            mostrar.forward(request, response);
+                //REDIRECIONAMENTO
+                this.redirecionarPagina(request, response, this.LISTAR_CLIENTE);
+            }
 
         } catch (IOException | ServletException ex) {
             System.out.println("Erro na interação: " + ex.getMessage());
@@ -103,7 +108,7 @@ public class ServletCliente extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        executar(request, response);
     }
 
     /**
@@ -117,7 +122,7 @@ public class ServletCliente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        executar(request, response);
     }
 
     /**
