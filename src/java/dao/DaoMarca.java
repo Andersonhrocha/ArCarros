@@ -45,7 +45,7 @@ public class DaoMarca extends ModuloConexao {
 
         } catch (SQLException ex) {
             Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Falha ao inserir o cliente", ex);
+            throw new RuntimeException("Falha ao inserir uma marca.", ex);
         }
     }//FIM DA CLASSE incluir
 
@@ -69,7 +69,7 @@ public class DaoMarca extends ModuloConexao {
 
         } catch (SQLException ex) {
             Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Falha ao atualizar o registro do cliente", ex);
+            throw new RuntimeException("Falha ao atualizar o registro do uma marca.", ex);
         }
 
     }//FIM DA CLASSE editar
@@ -87,13 +87,13 @@ public class DaoMarca extends ModuloConexao {
             if (status > 0) {
                 System.out.println("Registro excluido com sucesso.");
             } else {
-                System.out.println("Registro não existente para excluisão.");
+                System.out.println("Registro não existente para exclusão.");
             }
             pst.close();
 
         } catch (SQLException ex) {
             Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Falha ao excluir um cliente.", ex);
+            throw new RuntimeException("Falha ao excluir uma marca.", ex);
         }
     }//FIM DA CLASSE excluir
 
@@ -119,7 +119,7 @@ public class DaoMarca extends ModuloConexao {
             }
         } catch (SQLException ex) {
             Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Uma falha ocorreu ao buscar um cliente.", ex);
+            throw new RuntimeException("Uma falha ocorreu ao buscar uma marca.", ex);
         }
         return retorno;
     }//FIM DA CLASSE buscar
@@ -145,7 +145,7 @@ public class DaoMarca extends ModuloConexao {
 
         } catch (SQLException ex) {
             Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos clientes.", ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todas marcas", ex);
         }
         return lista;
 

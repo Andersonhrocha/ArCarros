@@ -1,9 +1,9 @@
+package dao;
+
 /**
  *
  * @author Anderson
  */
-package dao;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -93,7 +93,7 @@ public class DaoCliente extends ModuloConexao {
             if (status > 0) {
                 System.out.println("Registro excluido com sucesso.");
             } else {
-                System.out.println("Registro não existente para excluisão.");
+                System.out.println("Registro não existente para exclusão.");
             }
             pst.close();
 
