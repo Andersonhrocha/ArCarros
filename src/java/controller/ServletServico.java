@@ -31,7 +31,7 @@ public class ServletServico extends ServletAbstrato {
             throws ServletException, IOException {
         
         //VARIÁVEL TIPO DOUBLE
-        String valor = request.getParameter("txtValor");
+        Double valor =  Double.valueOf(request.getParameter("txtValor").replaceAll(",", "."));
 
         try {
 
@@ -39,7 +39,7 @@ public class ServletServico extends ServletAbstrato {
             ModelServico pro = new ModelServico();    
             pro.setNome(request.getParameter("txtNome"));
             pro.setDescricao(request.getParameter("txtDescricao"));            
-          //  pro.setValor(new Double(valor));
+      //      pro.setValor(new Double(valor));
 
 
             //RECEBE PARAMETRO VIA GET DO NAVEGADOR
@@ -55,6 +55,9 @@ public class ServletServico extends ServletAbstrato {
                 redirecionarPagina(request, response, ADICIONAR_SERVICO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
+                
+                //PARAMETRO QUE OBTEM O ID PARA ALTERAÇÃO
+                pro.setId_servico(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EDITANDO NO BANCO DE DADOS
                 dao.editar(pro);
@@ -98,7 +101,7 @@ public class ServletServico extends ServletAbstrato {
 
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

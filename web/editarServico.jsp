@@ -63,7 +63,7 @@
 
 
                 <div class="row">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="submit" class="btn btn-success">Salvar</button>
                         <a href="ServletServico?acao=listar" class="btn btn-danger">Cancelar</a>   
                 </div>
 
