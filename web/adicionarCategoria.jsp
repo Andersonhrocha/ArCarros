@@ -16,7 +16,7 @@
         <div class="container">
              
             <!-- INÍCIO DO FORMULÁRIO -->
-            <form role="form" class="form-horizontal" action="ServletCliente" method="POST">
+            <form role="form" class="form-horizontal" action="ServletCategoria" method="POST">
                 <input type="hidden" name="acao" value="inserir" />
                 
                 <h2> Cadastro de Categorias </h2>

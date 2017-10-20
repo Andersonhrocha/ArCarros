@@ -1,12 +1,12 @@
 package controller;
 
-import dao.DaoServico;
+import dao.DaoCategoria;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.ModelServico;
+import model.ModelCategoria;
 
 /**
  *
@@ -19,11 +19,11 @@ public class ServletCategoria extends ServletAbstrato {
     private static final String ADICIONAR_CATEGORIA = "adicionarCategoria.jsp";
     private static final String EDITAR_CATEGORIA = "editarCategoria.jsp";
     private static final String LISTAR_CATEGORIA = "listarCategoria.jsp";
-    private final DaoServico dao;
+    private final DaoCategoria dao;
 
     //CONSTRUTOR PRINCIPAL
     public ServletCategoria() {
-        dao = new DaoServico();
+        dao = new DaoCategoria();
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ServletCategoria extends ServletAbstrato {
         try {
 
             //RECEBENDO OS VALORES DO FORMULÁRIO
-            ModelServico pro = new ModelServico();
+            ModelCategoria pro = new ModelCategoria();
             pro.setNome(request.getParameter("txtNome"));
             pro.setDescricao(request.getParameter("txtDescricao"));
 
@@ -52,7 +52,7 @@ public class ServletCategoria extends ServletAbstrato {
             } else if (acao.equalsIgnoreCase("editar")) {
                 
                  //PARAMETRO QUE OBTEM O ID PARA EDITAR
-                pro.setId_servico(Integer.parseInt(request.getParameter("txtDocumento")));
+                pro.setId_categoria(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EDITANDO NO BANCO DE DADOS
                 dao.editar(pro);
@@ -64,7 +64,7 @@ public class ServletCategoria extends ServletAbstrato {
             } else if (acao.equalsIgnoreCase("excluir")) {
 
                 //PARAMETRO QUE OBTEM O ID PARA EXCLUSÃO
-                pro.setId_servico(Integer.parseInt(request.getParameter("txtDocumento")));
+                pro.setId_categoria(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EXCLUIDO DO BANCO DE DADOS
                 dao.excluir(pro);
@@ -75,7 +75,7 @@ public class ServletCategoria extends ServletAbstrato {
             } else if (acao.equalsIgnoreCase("buscar")) {
 
                 //PARAMETRO QUE OBTEM O ID PARA EXCLUSÃO
-                pro.setId_servico(Integer.parseInt(request.getParameter("txtDocumento")));
+                pro.setId_categoria(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //BUSCA PARA EDITAR
                 pro = dao.buscar(pro);

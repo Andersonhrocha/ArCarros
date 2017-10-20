@@ -27,7 +27,7 @@
                         <th style="text-align: center"><u>Código</u></th>
                         <th style="text-align: center"><u>Nome</u></th>
                         <th style="text-align: center"><u>Descrição</u></th>
-                        <th ><u><a class="btn btn-warning" href="adicionarMarca.jsp" role="button">Novo Registro</a></u></th>
+                        <th ><u><a class="btn btn-warning" href="adicionarCategoria.jsp" role="button">Novo Registro</a></u></th>
 
                     </tr>
                 </thead>

@@ -22,7 +22,7 @@
         <div class="container">
 
             <!-- INÍCIO DO FORMULÁRIO -->
-            <form role="form" class="form-horizontal" action="ServletUsuario" method="POST">
+            <form role="form" class="form-horizontal" action="ServletCategoria" method="POST">
                 <input type="hidden" name="acao" value="editar" />
 
                 <h2> Editar Categorias </h2>
