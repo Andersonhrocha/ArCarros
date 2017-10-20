@@ -1,0 +1,162 @@
+package dao;
+
+/**
+ *
+ * @author Anderson
+ */
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.ModelModelo;
+
+public class DaoModelo extends ModuloConexao {
+
+    //VARIÁVEIS
+    public Connection conexao;
+    private String sql = "";
+
+    //CONSTRUTOR PRINCIPAL DA CLASSE
+    public DaoModelo() {
+        conexao = this.abrirConexao();
+    }
+
+    //MÉTODO PARA INCLUSÃO
+    public void incluir(ModelModelo pro) { //opcao 1.
+
+        sql = "INSERT INTO modelo (nome, id_marca, motorizacao) VALUES (?,?,?)";
+
+        try {
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            pst.setString(1, pro.getNome());
+            pst.setInt(2, pro.getRelacao_id_marca().getId_marca());
+            pst.setString(3, pro.getMotorizacao());
+
+            int status = pst.executeUpdate();
+            if (status > 0) {
+                System.out.println("Registro inserido com sucesso.");
+            } else {
+                System.out.println("Registro não foi inserido.");
+            }
+            pst.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Falha ao inserir o modelo", ex);
+        }
+    }//FIM DA CLASSE incluir
+
+    //MÉTODO PARA EDIÇÃO
+    public void editar(ModelModelo pro) { //opcao 2.
+
+        sql = "UPDATE modelo SET nome=?, id_marca=?, motorizacao=? WHERE id_modelo=? ";
+
+        try {
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            pst.setString(1, pro.getNome());
+            pst.setInt(2, pro.getRelacao_id_marca().getId_marca());
+            pst.setString(3, pro.getMotorizacao());
+            pst.setInt(4, pro.getId_modelo());
+
+            int status = pst.executeUpdate();
+            if (status > 0) {
+                System.out.println("Registro alterado com sucesso.");
+            } else {
+                System.out.println("Registro não existe para ser alterado.");
+            }
+            pst.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Falha ao atualizar o registro do modelo.", ex);
+        }
+
+    }//FIM DA CLASSE editar
+
+    //MÉTODO PARA EXCLUSÃO
+    public void excluir(ModelModelo pro) {// opcao 3.
+
+        sql = "DELETE FROM modelo WHERE id_modelo=? ";
+
+        try {
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            pst.setInt(1, pro.getId_modelo());
+
+            int status = pst.executeUpdate();
+            if (status > 0) {
+                System.out.println("Registro excluido com sucesso.");
+            } else {
+                System.out.println("Registro não existente para exclusão.");
+            }
+            pst.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Falha ao excluir um modelo.", ex);
+        }
+    }//FIM DA CLASSE excluir
+
+    //MÉTODO PARA BUSCAR POR ID
+    public ModelModelo buscar(ModelModelo pro) { //opcao 4.
+
+        sql = "SELECT * FROM modelo WHERE id_modelo = ?";
+
+        ModelModelo retorno = null;
+
+        try {
+
+            PreparedStatement pst = conexao.prepareStatement(sql);
+
+            pst.setInt(1, pro.getId_modelo());
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+
+                retorno = new ModelModelo();
+                retorno.setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
+                retorno.setNome(rs.getString("nome"));
+                retorno.getRelacao_id_marca().setId_marca(Integer.parseInt(rs.getString("id_marca")));
+                retorno.setMotorizacao(rs.getString("motorizacao"));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Uma falha ocorreu ao buscar um modelo.", ex);
+        }
+        return retorno;
+    }//FIM DA CLASSE buscar
+
+    //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
+    public List<ModelModelo> listarTodos() { //opcao 5.
+
+        sql = "SELECT modelo.id_modelo, modelo.nome, modelo.id_marca, modelo.motorizacao FROM modelo INNER JOIN marca ON modelo.id_modelo = marca.id_marca";
+
+        List<ModelModelo> lista = new ArrayList<ModelModelo>();
+
+        try {
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+
+                ModelModelo item = new ModelModelo();
+                item.setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
+                item.setNome(rs.getString("nome"));
+                item.getRelacao_id_marca().setId_marca(Integer.parseInt(rs.getString("id_marca")));
+                item.setMotorizacao(rs.getString("motorizacao"));
+
+                lista.add(item);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos modelos.", ex);
+        }
+        return lista;
+
+    } //FIM DA CLASSE listarTodos
+}
