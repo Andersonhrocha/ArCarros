@@ -112,10 +112,10 @@
 
 
                                 <%-- Menu Carros--%>
-                                <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Carros <span class="caret"></span></a>
+                                <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Veículos<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
-                                            <a href="#" >Cadastro de Carros</a>
+                                            <a href="#" >Cadastro de Veículos</a>
                                         </li>
                                         <li class=" dropdown">
                                             <a href="ServletMarca?acao=listar">Cadastro de Marcas</a>

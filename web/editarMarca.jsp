@@ -6,7 +6,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Editar Marca do Carro</title>
+        <title>Alterar Marca do Carro</title>
         <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="bootstrap-3.3.7-dist/css/estilo.css" rel="stylesheet">
         <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
@@ -25,7 +25,7 @@
             <form role="form" class="form-horizontal" action="ServletMarca" method="POST">
                 <input type="hidden" name="acao" value="editar" />
 
-                <h2> Editar Marca do Carro </h2>
+                <h2> Alterar Fabricante de Automóvel</h2>
                 <hr>
                 <div style="text-align:center; font-size: 11px;" > * Campo Obrigatório </div>
 

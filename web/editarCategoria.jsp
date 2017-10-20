@@ -25,7 +25,7 @@
             <form role="form" class="form-horizontal" action="ServletCategoria" method="POST">
                 <input type="hidden" name="acao" value="editar" />
 
-                <h2> Editar Categorias </h2>
+                <h2> Editar Categoria de Produto </h2>
                 <hr>
                 <div style="text-align:center; font-size: 11px;" > * Campo Obrigatório </div>
 
