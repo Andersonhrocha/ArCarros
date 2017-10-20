@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Marcas de Carro</title>
+        <title>Consulta Usuários</title>
         <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="bootstrap-3.3.7-dist/css/estilo.css" rel="stylesheet">
         <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h2 class="centralizar"> Lista de Usuários </h2>
+            <h2 class="centralizar"> Consulta de Usuários do Sistema </h2>
             <th style="text-align: center"><u>
                                  <a class="btn btn-success" href="menu.jsp" role="button">HOME</a></u></th>
             <hr>

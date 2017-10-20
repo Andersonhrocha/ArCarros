@@ -105,7 +105,7 @@
                                             <a href="#">Cadastro de Produtos</a>
                                         </li>
                                         <li class=" dropdown">
-                                            <a href="#">Cadastro de Categorias</a>
+                                            <a href="ServletCategoria?acao=listar">Cadastro de Categorias</a>
                                         </li>
                                     </ul>
                                 </li>

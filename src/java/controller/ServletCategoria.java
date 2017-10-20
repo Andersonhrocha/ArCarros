@@ -16,9 +16,9 @@ import model.ModelServico;
 public class ServletCategoria extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_CLIENTE = "adicionarCliente.jsp";
-    private static final String EDITAR_CLIENTE = "editarCliente.jsp";
-    private static final String LISTAR_CLIENTE = "listarCliente.jsp";
+    private static final String ADICIONAR_CATEGORIA = "adicionarCategoria.jsp";
+    private static final String EDITAR_CATEGORIA = "editarCategoria.jsp";
+    private static final String LISTAR_CATEGORIA = "listarCategoria.jsp";
     private final DaoServico dao;
 
     //CONSTRUTOR PRINCIPAL
@@ -47,7 +47,7 @@ public class ServletCategoria extends ServletAbstrato {
                 dao.incluir(pro);
                 
                //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_CLIENTE);
+                redirecionarPagina(request, response, ADICIONAR_CATEGORIA);
 
             } else if (acao.equalsIgnoreCase("editar")) {
                 
@@ -58,7 +58,7 @@ public class ServletCategoria extends ServletAbstrato {
                 dao.editar(pro);
                
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, LISTAR_CLIENTE);
+                this.redirecionarPagina(request, response, LISTAR_CATEGORIA);
 
                 
             } else if (acao.equalsIgnoreCase("excluir")) {
@@ -70,7 +70,7 @@ public class ServletCategoria extends ServletAbstrato {
                 dao.excluir(pro);
                 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, LISTAR_CLIENTE);
+                this.redirecionarPagina(request, response, LISTAR_CATEGORIA);
 
             } else if (acao.equalsIgnoreCase("buscar")) {
 
@@ -82,12 +82,12 @@ public class ServletCategoria extends ServletAbstrato {
                 request.setAttribute("cliente", pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.EDITAR_CLIENTE);
+                this.redirecionarPagina(request, response, this.EDITAR_CATEGORIA);
 
             } else if (acao.equalsIgnoreCase("listar")) {
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.LISTAR_CLIENTE);
+                this.redirecionarPagina(request, response, this.LISTAR_CATEGORIA);
             }
 
         } catch (IOException | ServletException ex) {
