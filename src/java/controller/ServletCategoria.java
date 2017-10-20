@@ -12,58 +12,53 @@ import model.ModelServico;
  *
  * @author Anderson
  */
-@WebServlet(name = "ServletServico", urlPatterns = {"/ServletServico"})
-public class ServletServico extends ServletAbstrato {
-      
-     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_SERVICO = "adicionarServico.jsp";
-    private static final String EDITAR_SERVICO = "editarServico.jsp";
-    private static final String LISTAR_SERVICO = "listarServico.jsp";
+@WebServlet(name = "ServletCategoria", urlPatterns = {"/ServletCategoria"})
+public class ServletCategoria extends ServletAbstrato {
+
+    //CONSTANTES DAS PÁGINAS .JSP
+    private static final String ADICIONAR_CLIENTE = "adicionarCliente.jsp";
+    private static final String EDITAR_CLIENTE = "editarCliente.jsp";
+    private static final String LISTAR_CLIENTE = "listarCliente.jsp";
     private final DaoServico dao;
 
     //CONSTRUTOR PRINCIPAL
-    public ServletServico() {
+    public ServletCategoria() {
         dao = new DaoServico();
     }
-    
+
     @Override
     public void executar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        //VARIÁVEL TIPO DOUBLE
-       // Double valor =  Double.valueOf(request.getParameter("txtValor").replaceAll(",", "."));
 
         try {
 
             //RECEBENDO OS VALORES DO FORMULÁRIO
-            ModelServico pro = new ModelServico();    
+            ModelServico pro = new ModelServico();
             pro.setNome(request.getParameter("txtNome"));
-            pro.setDescricao(request.getParameter("txtDescricao"));            
-      //      pro.setValor(new Double(valor));
-
+            pro.setDescricao(request.getParameter("txtDescricao"));
 
             //RECEBE PARAMETRO VIA GET DO NAVEGADOR
             String acao = request.getParameter("acao");
 
-             //INICIO DOS MÉTODOS DO BANCO DE DADOS
+            //INICIO DOS MÉTODOS DO BANCO DE DADOS
             if (acao.equalsIgnoreCase("inserir")) {
 
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
                 
                //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_SERVICO);
+                redirecionarPagina(request, response, ADICIONAR_CLIENTE);
 
             } else if (acao.equalsIgnoreCase("editar")) {
                 
-                //PARAMETRO QUE OBTEM O ID PARA ALTERAÇÃO
+                 //PARAMETRO QUE OBTEM O ID PARA EDITAR
                 pro.setId_servico(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EDITANDO NO BANCO DE DADOS
                 dao.editar(pro);
                
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, LISTAR_SERVICO);
+                this.redirecionarPagina(request, response, LISTAR_CLIENTE);
 
                 
             } else if (acao.equalsIgnoreCase("excluir")) {
@@ -75,24 +70,24 @@ public class ServletServico extends ServletAbstrato {
                 dao.excluir(pro);
                 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, LISTAR_SERVICO);
+                this.redirecionarPagina(request, response, LISTAR_CLIENTE);
 
             } else if (acao.equalsIgnoreCase("buscar")) {
 
                 //PARAMETRO QUE OBTEM O ID PARA EXCLUSÃO
-                 pro.setId_servico(Integer.parseInt(request.getParameter("txtDocumento")));
+                pro.setId_servico(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //BUSCA PARA EDITAR
                 pro = dao.buscar(pro);
                 request.setAttribute("cliente", pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.EDITAR_SERVICO);
+                this.redirecionarPagina(request, response, this.EDITAR_CLIENTE);
 
             } else if (acao.equalsIgnoreCase("listar")) {
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.LISTAR_SERVICO);
+                this.redirecionarPagina(request, response, this.LISTAR_CLIENTE);
             }
 
         } catch (IOException | ServletException ex) {
@@ -101,7 +96,7 @@ public class ServletServico extends ServletAbstrato {
 
     }
 
-     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
