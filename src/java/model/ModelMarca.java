@@ -9,6 +9,12 @@ public class ModelMarca {
     private int id_marca;
     private String nome;
 
+    //CONSTRUTOR PRINCIPAL DA CLASSE INICIANDO A VARIÁVEL SEM VALOR    
+    public ModelMarca() {
+
+        nome = "";
+    }
+
     public int getId_marca() {
         return id_marca;
     }
@@ -23,9 +29,6 @@ public class ModelMarca {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public ModelMarca() {
     }
 
     public ModelMarca(int id_marca, String nome) {
