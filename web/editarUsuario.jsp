@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <label class="col-xs-3 control-label"> Código: *</label>
                     <div class="col-xs-4">
-                        <input type="text" name="txtDocumento" placeholder="Codigo" class="form-control" 
+                        <input type="text" name="txtDocumento" placeholder="Digite o código" class="form-control" 
                                value="<%=registro.getId_usuario()%>" size="20" readonly="readonly"/>                        
                     </div>
                 </div>
@@ -65,7 +65,7 @@
 
                 <div class="row">                   
                         <button type="submit" class="btn btn-success">Salvar</button>
-                        <a href="ServletUsuario?acao=listar" class="btn btn-primary">Cancelar</a>   
+                        <a href="ServletUsuario?acao=listar" class="btn btn-danger">Cancelar</a>   
                 </div>
 
             </form>

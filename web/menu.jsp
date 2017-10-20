@@ -130,7 +130,7 @@
                                 <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Serviços <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
-                                            <a href="#" >Cadastro de Serviços</a>
+                                            <a href="ServletServico?acao=listar" >Cadastro de Serviços</a>
                                         </li>
                                         <li class=" dropdown">
                                             <a href="#">Ordens de Serviço</a>

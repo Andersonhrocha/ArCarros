@@ -26,7 +26,7 @@
                 <div class="form-group">
                     <label class="col-xs-3 control-label"> Nome: *</label>
                     <div class="col-xs-4">
-                        <input type="text" name="txtNome" placeholder="Nome" class="form-control" 
+                        <input type="text" name="txtNome" placeholder="Digite um nome" class="form-control" 
                                size="50" required="" autofocus=""/>                        
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <label class="col-xs-3 control-label"> Login: *</label>
                     <div class="col-xs-4">
-                        <input type="text" name="txtLogin" placeholder="Login" class="form-control" 
+                        <input type="text" name="txtLogin" placeholder="Digite um login" class="form-control" 
                                size="45" required=""/>                        
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <label class="col-xs-3 control-label"> Senha: *</label>
                     <div class="col-xs-4">
-                        <input type="password" name="txtSenha" placeholder="Senha" class="form-control" 
+                        <input type="password" name="txtSenha" placeholder="Digite uma senha" class="form-control" 
                                size="32" required="" />                        
                     </div>
                 </div>

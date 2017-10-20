@@ -14,35 +14,38 @@ import model.ModelServico;
  */
 @WebServlet(name = "ServletServico", urlPatterns = {"/ServletServico"})
 public class ServletServico extends ServletAbstrato {
-    
+      
      //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_SERVICO = "adicionarCliente.jsp";
-    private static final String EDITAR_SERVICO = "editarCliente.jsp";
-    private static final String LISTAR_SERVICO = "listarCliente.jsp";
+    private static final String ADICIONAR_SERVICO = "adicionarServico.jsp";
+    private static final String EDITAR_SERVICO = "editarServico.jsp";
+    private static final String LISTAR_SERVICO = "listarServico.jsp";
     private final DaoServico dao;
 
     //CONSTRUTOR PRINCIPAL
     public ServletServico() {
         dao = new DaoServico();
     }
-
+    
     @Override
     public void executar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        //VARIÁVEL TIPO DOUBLE
+        String valor = request.getParameter("txtValor");
 
         try {
 
             //RECEBENDO OS VALORES DO FORMULÁRIO
             ModelServico pro = new ModelServico();    
             pro.setNome(request.getParameter("txtNome"));
-            pro.setDescricao(request.getParameter("txtDescricao"));
-            pro.setValor(Double.parseDouble(request.getParameter("txtValor")));
+            pro.setDescricao(request.getParameter("txtDescricao"));            
+          //  pro.setValor(new Double(valor));
 
 
             //RECEBE PARAMETRO VIA GET DO NAVEGADOR
             String acao = request.getParameter("acao");
 
-            //INICIO DOS MÉTODOS DO BANCO DE DADOS
+             //INICIO DOS MÉTODOS DO BANCO DE DADOS
             if (acao.equalsIgnoreCase("inserir")) {
 
                 //INCLUIR NO BANCO DE DADOS

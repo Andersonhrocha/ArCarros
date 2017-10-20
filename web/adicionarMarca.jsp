@@ -19,14 +19,14 @@
             <form role="form" class="form-horizontal" action="ServletMarca" method="POST">
                 <input type="hidden" name="acao" value="inserir" />
                 
-                <h2> Cadastro de Cliente </h2>
+                <h2> Cadastro de Marca </h2>
                 <hr>
                  <div style="text-align:center; font-size: 11px;" > * Campo Obrigatório </div>
                 
                 <div class="form-group">
                     <label class="col-xs-3 control-label"> Nome: *</label>
                     <div class="col-xs-4">
-                        <input type="text" name="txtNome" placeholder="Nome" class="form-control" 
+                        <input type="text" name="txtNome" placeholder="Digite uma marca" class="form-control" 
                                size="50" required="" autofocus=""/>                        
                     </div>
                 </div>
