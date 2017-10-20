@@ -45,7 +45,7 @@ public class DaoServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir o serviço", ex);
         }
     }//FIM DA CLASSE incluir
@@ -71,7 +71,7 @@ public class DaoServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro do serviço", ex);
         }
 
@@ -95,7 +95,7 @@ public class DaoServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um serviço.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -124,7 +124,7 @@ public class DaoServico extends ModuloConexao {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um serviço.", ex);
         }
         return retorno;
@@ -153,7 +153,7 @@ public class DaoServico extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todos venda.", ex);
         }
         return lista;

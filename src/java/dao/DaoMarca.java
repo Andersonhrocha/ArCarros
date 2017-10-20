@@ -44,7 +44,7 @@ public class DaoMarca extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoMarca.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir uma marca.", ex);
         }
     }//FIM DA CLASSE incluir
@@ -68,7 +68,7 @@ public class DaoMarca extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoMarca.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro do uma marca.", ex);
         }
 
@@ -92,7 +92,7 @@ public class DaoMarca extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoMarca.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir uma marca.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -118,7 +118,7 @@ public class DaoMarca extends ModuloConexao {
                 retorno.setNome(rs.getString("nome"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoMarca.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar uma marca.", ex);
         }
         return retorno;
@@ -144,7 +144,7 @@ public class DaoMarca extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoMarca.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todas marcas", ex);
         }
         return lista;

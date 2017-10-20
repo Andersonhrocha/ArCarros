@@ -44,7 +44,7 @@ public class DaoCategoria extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCategoria.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir uma categoria", ex);
         }
     }//FIM DA CLASSE incluir
@@ -69,7 +69,7 @@ public class DaoCategoria extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCategoria.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro da categoria.", ex);
         }
 
@@ -93,7 +93,7 @@ public class DaoCategoria extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCategoria.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir uma categoria.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -121,7 +121,7 @@ public class DaoCategoria extends ModuloConexao {
              
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCategoria.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar uma categoria.", ex);
         }
         return retorno;
@@ -149,7 +149,7 @@ public class DaoCategoria extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCategoria.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todos categorias.", ex);
         }
         return lista;
