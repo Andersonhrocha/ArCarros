@@ -1,6 +1,5 @@
 package controller;
 
-
 import dao.DaoModelo;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.ModelModelo;
-
 
 /**
  *
@@ -35,9 +33,9 @@ public class ServletlModelo extends ServletAbstrato {
         try {
 
             //RECEBENDO OS VALORES DO FORMULÁRIO
-            ModelModelo pro = new ModelModelo();  
+            ModelModelo pro = new ModelModelo();
             pro.setNome(request.getParameter("txtNome"));
-            pro.getRelacao_id_marca().setId_marca(Integer.parseInt("txtMarca"));
+            //   pro.getRelacao_id_marca().setId_marca(Integer.parseInt("txtFabricante"));
             pro.setMotorizacao(request.getParameter("txtMotorizacao"));
 
             //RECEBE PARAMETRO VIA GET DO NAVEGADOR
@@ -48,22 +46,21 @@ public class ServletlModelo extends ServletAbstrato {
 
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
-                
-               //REDIRECIONAMENTO
+
+                //REDIRECIONAMENTO
                 redirecionarPagina(request, response, ADICIONAR_MODELO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
-                
+
                 //PARAMETRO QUE OBTEM O ID PARA EDITAR
                 pro.setId_modelo(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EDITANDO NO BANCO DE DADOS
                 dao.editar(pro);
-               
+
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_MODELO);
 
-                
             } else if (acao.equalsIgnoreCase("excluir")) {
 
                 //PARAMETRO QUE OBTEM O ID PARA EXCLUSÃO
@@ -71,14 +68,14 @@ public class ServletlModelo extends ServletAbstrato {
 
                 //EXCLUIDO DO BANCO DE DADOS
                 dao.excluir(pro);
-                
+
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_MODELO);
 
             } else if (acao.equalsIgnoreCase("buscar")) {
 
                 //PARAMETRO QUE OBTEM O ID PARA EXCLUSÃO
-                 pro.setId_modelo(Integer.parseInt(request.getParameter("txtDocumento")));
+                pro.setId_modelo(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //BUSCA PARA EDITAR
                 pro = dao.buscar(pro);

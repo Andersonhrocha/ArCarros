@@ -118,10 +118,10 @@
                                             <a href="#" >Cadastro de Veículos</a>
                                         </li>
                                         <li class=" dropdown">
-                                            <a href="ServletMarca?acao=listar">Cadastro de Marcas</a>
+                                            <a href="ServletMarca?acao=listar">Cadastro de Fabricantes</a>
                                         </li>
                                         <li class=" dropdown">
-                                            <a href="#">Cadastro de Modelos</a>
+                                            <a href="ServletlModelo?acao=listar">Cadastro de Modelos</a>
                                         </li>
                                     </ul>
                                 </li>

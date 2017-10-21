@@ -29,7 +29,7 @@
                     <label class="col-xs-3 control-label"> Nome: *</label>
                     <div class="col-xs-4">
                         <input type="text" name="txtNome" placeholder="Digite um categoria" class="form-control" 
-                               size="100" required=""/>                        
+                               size="100" required="" autofocus=""/>                        
                     </div>
                 </div>
 
