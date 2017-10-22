@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <label class="col-xs-3 control-label"> Descrição: *</label>
                     <div class="col-xs-4">
-                        <input type="text" name="txtEndereco" placeholder="Descrição" class="form-control" 
+                        <input type="text" name="txtDescricao" placeholder="Descrição" class="form-control" 
                                value="<%=registro.getDescricao()%>" size="200" required=""/>                        
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label class="col-xs-3 control-label"> Valor: *</label>
                     <div class="col-xs-4">
-                        <input type="text" name="txtTelefone" placeholder="Telefone" class="form-control" 
+                        <input type="text" name="txtValor" placeholder="Telefone" class="form-control" 
                                value="<%=registro.getValor()%>" size="12" required=""/>                        
                     </div>
                 </div>

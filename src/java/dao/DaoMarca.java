@@ -28,12 +28,11 @@ public class DaoMarca extends ModuloConexao {
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelMarca pro) { //opcao 1.
 
-        sql = "INSERT INTO marca (id_marca, nome_marca) VALUES (?,?)";
+        sql = "INSERT INTO marca (nome_marca) VALUES (?)";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setInt(1, pro.getId_marca());
-            pst.setString(2, pro.getNome_marca());
+            pst.setString(1, pro.getNome_marca());
 
             int status = pst.executeUpdate();
             if (status > 0) {

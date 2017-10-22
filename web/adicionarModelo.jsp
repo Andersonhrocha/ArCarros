@@ -35,25 +35,12 @@
                     </div>
                 </div>
 
-
-                <%
-                    DaoModelo dao = new DaoModelo();
-                    List<ModelModelo> listar;
-
-                    listar = dao.listarTodos();
-                    for (ModelModelo registro : listar) {
-                %>
-
-
-
                 <div class="form-group">
-                    <label class="col-xs-3 control-label"> Fabrincate: *</label>
+                    <label class="col-xs-3 control-label"> Fabrincante: *</label>
                     <div class="col-xs-4">      
                         <select name="txtFabricante" class="form-control">  
 
-                            <%for (int i = 0; i < 10; i++) {%>
-                            <option><%=registro.getRelacao_id_marca().getId_marca()%></option>
-                            <%}%>
+
 
                         </select>  
                     </div>

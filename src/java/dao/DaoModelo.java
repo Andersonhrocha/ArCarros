@@ -25,7 +25,7 @@ public class DaoModelo extends ModuloConexao {
         conexao = this.abrirConexao();
     }
 
-    //MÉTODO PARA INCLUSÃO
+   //MÉTODO PARA INCLUSÃO
     public void incluir(ModelModelo pro) { //opcao 1.
 
         sql = "INSERT INTO modelo (nome_modelo, id_marca, motorizacao) VALUES (?,?,?)";
@@ -50,7 +50,7 @@ public class DaoModelo extends ModuloConexao {
         }
     }//FIM DA CLASSE incluir
 
-    //MÉTODO PARA EDIÇÃO
+     //MÉTODO PARA EDIÇÃO
     public void editar(ModelModelo pro) { //opcao 2.
 
         sql = "UPDATE modelo SET nome_modelo=?, id_marca=?, motorizacao=? WHERE id_modelo=? ";
@@ -103,7 +103,7 @@ public class DaoModelo extends ModuloConexao {
     //MÉTODO PARA BUSCAR POR ID
     public ModelModelo buscar(ModelModelo pro) { //opcao 4.
 
-        sql = "SELECT * FROM modelo WHERE id_modelo = ?";
+        sql = "SELECT modelo.id_modelo, modelo.nome_modelo, marca.nome_marca, modelo.motorizacao FROM modelo INNER JOIN marca ON modelo.id_modelo = marca.id_marca WHERE id_modelo = ?";
 
         ModelModelo retorno = null;
 
