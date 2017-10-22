@@ -28,11 +28,11 @@ public class DaoCategoria extends ModuloConexao {
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelCategoria pro) { //opcao 1.
 
-        sql = "INSERT INTO categoria (nome, descricao) VALUES (?,?)";
+        sql = "INSERT INTO categoria (nome_categoria, descricao) VALUES (?,?)";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getNome());
+            pst.setString(1, pro.getNome_categoria());
             pst.setString(2, pro.getDescricao());
 
             int status = pst.executeUpdate();
@@ -52,11 +52,11 @@ public class DaoCategoria extends ModuloConexao {
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelCategoria pro) { //opcao 2.
 
-        sql = "UPDATE categoria SET nome=?, descricao=? WHERE id_categoria=? ";
+        sql = "UPDATE categoria SET nome_categoria=?, descricao=? WHERE id_categoria=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getNome());
+            pst.setString(1, pro.getNome_categoria());
             pst.setString(2, pro.getDescricao());
             pst.setInt(3, pro.getId_categoria());
 
@@ -116,7 +116,7 @@ public class DaoCategoria extends ModuloConexao {
 
                 retorno = new ModelCategoria();
                 retorno.setId_categoria(rs.getInt("id_categoria"));
-                retorno.setNome(rs.getString("nome"));
+                retorno.setNome_categoria(rs.getString("nome_categoria"));
                 retorno.setDescricao(rs.getString("descricao"));
              
             }
@@ -142,7 +142,7 @@ public class DaoCategoria extends ModuloConexao {
 
                 ModelCategoria item = new ModelCategoria();
                item.setId_categoria(rs.getInt("id_categoria"));
-                item.setNome(rs.getString("nome"));
+                item.setNome_categoria(rs.getString("nome_categoria"));
                 item.setDescricao(rs.getString("descricao"));
 
                 lista.add(item);

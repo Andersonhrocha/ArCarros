@@ -7,7 +7,7 @@ package model;
 public class ModelServico {
 
     private int id_servico;
-    private String nome;
+    private String nome_servico;
     private String descricao;
     private Double valor;
 
@@ -23,12 +23,12 @@ public class ModelServico {
         this.id_servico = id_servico;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNome_servico() {
+        return nome_servico;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome_servico(String nome_servico) {
+        this.nome_servico = nome_servico;
     }
 
     public String getDescricao() {
@@ -47,11 +47,13 @@ public class ModelServico {
         this.valor = valor;
     }
 
-    public ModelServico(int id_servico, String nome, String descricao, Double valor) {
+    public ModelServico(int id_servico, String nome_servico, String descricao, Double valor) {
         this.id_servico = id_servico;
-        this.nome = nome;
+        this.nome_servico = nome_servico;
         this.descricao = descricao;
         this.valor = valor;
     }
+
+  
 
 }

@@ -46,7 +46,7 @@
                 <tbody>
                     <tr>                                    
                         <td style="text-align: center"> <%=registro.getCpf_cliente()%> </td>
-                        <td style="text-align: center"> <%=registro.getNome()%> </td>
+                        <td style="text-align: center"> <%=registro.getNome_cliente()%> </td>
                         <td style="text-align: center"> <%=registro.getEndereco()%> </td>
                         <td style="text-align: center"> <%=registro.getTelefone()%> </td>
                         <td style="text-align: center"> <%=registro.getEmail()%> </td>                      

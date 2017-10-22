@@ -43,7 +43,7 @@
                 <tbody>
                     <tr> 
                         <td style="text-align: center"> <%=registro.getId_categoria()%> </td>
-                        <td style="text-align: center"> <%=registro.getNome()%> </td>
+                        <td style="text-align: center"> <%=registro.getNome_categoria()%> </td>
                         <td style="text-align: center"> <%=registro.getDescricao()%> </td>
 
 

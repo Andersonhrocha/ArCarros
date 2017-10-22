@@ -35,7 +35,7 @@ public class ServletCliente extends ServletAbstrato {
             //RECEBENDO OS VALORES DO FORMULÁRIO
             ModelCliente pro = new ModelCliente();
             pro.setCpf_cliente(request.getParameter("txtDocumento"));
-            pro.setNome(request.getParameter("txtNome"));
+            pro.setNome_cliente(request.getParameter("txtNome"));
             pro.setEndereco(request.getParameter("txtEndereco"));
             pro.setTelefone(request.getParameter("txtTelefone"));
             pro.setEmail(request.getParameter("txtEmail"));

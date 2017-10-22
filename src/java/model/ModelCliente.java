@@ -1,15 +1,25 @@
 package model;
+
 /**
  *
  * @author Anderson
  */
 public class ModelCliente {
-    
+
     private String cpf_cliente;
-    private String nome;
+    private String nome_cliente;
     private String endereco;
     private String telefone;
     private String email;
+
+    //CONSTRUTOR PRINCIPAL INICIANDO AS VARIÁVEIS COM VALOR VAZIO
+    public ModelCliente() {
+        cpf_cliente = "";
+        nome_cliente = "";
+        endereco = "";
+        telefone = "";
+        email = "";
+    }
 
     public String getCpf_cliente() {
         return cpf_cliente;
@@ -19,12 +29,12 @@ public class ModelCliente {
         this.cpf_cliente = cpf_cliente;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNome_cliente() {
+        return nome_cliente;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome_cliente(String nome_cliente) {
+        this.nome_cliente = nome_cliente;
     }
 
     public String getEndereco() {
@@ -51,14 +61,12 @@ public class ModelCliente {
         this.email = email;
     }
 
-    public ModelCliente() {
-    }
-
-    public ModelCliente(String cpf_cliente, String nome, String endereco, String telefone, String email) {
+    public ModelCliente(String cpf_cliente, String nome_cliente, String endereco, String telefone, String email) {
         this.cpf_cliente = cpf_cliente;
-        this.nome = nome;
+        this.nome_cliente = nome_cliente;
         this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
-    }   
+    }
+
 }

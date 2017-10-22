@@ -28,12 +28,12 @@ public class DaoCliente extends ModuloConexao {
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelCliente pro) { //opcao 1.
 
-        sql = "INSERT INTO cliente (cpf_cliente, nome, endereco, telefone, email) VALUES (?,?,?,?,?)";
+        sql = "INSERT INTO cliente (cpf_cliente, nome_cliente, endereco, telefone, email) VALUES (?,?,?,?,?)";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setString(1, pro.getCpf_cliente());
-            pst.setString(2, pro.getNome());
+            pst.setString(2, pro.getNome_cliente());
             pst.setString(3, pro.getEndereco());
             pst.setString(4, pro.getTelefone());
             pst.setString(5, pro.getEmail());
@@ -55,11 +55,11 @@ public class DaoCliente extends ModuloConexao {
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelCliente pro) { //opcao 2.
 
-        sql = "UPDATE cliente SET nome=?, endereco=?, telefone=?, email=? WHERE cpf_cliente=? ";
+        sql = "UPDATE cliente SET nome_cliente=?, endereco=?, telefone=?, email=? WHERE cpf_cliente=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getNome());
+            pst.setString(1, pro.getNome_cliente());
             pst.setString(2, pro.getEndereco());
             pst.setString(3, pro.getTelefone());
             pst.setString(4, pro.getEmail());
@@ -121,7 +121,7 @@ public class DaoCliente extends ModuloConexao {
 
                 retorno = new ModelCliente();
                 retorno.setCpf_cliente(rs.getString("cpf_cliente"));
-                retorno.setNome(rs.getString("nome"));
+                retorno.setNome_cliente(rs.getString("nome_cliente"));
                 retorno.setEndereco(rs.getString("endereco"));
                 retorno.setTelefone(rs.getString("telefone"));
                 retorno.setEmail(rs.getString("email"));
@@ -148,7 +148,7 @@ public class DaoCliente extends ModuloConexao {
 
                 ModelCliente item = new ModelCliente();
                 item.setCpf_cliente(rs.getString("cpf_cliente"));
-                item.setNome(rs.getString("nome"));
+                item.setNome_cliente(rs.getString("nome_cliente"));
                 item.setEndereco(rs.getString("endereco"));
                 item.setTelefone(rs.getString("telefone"));
                 item.setEmail(rs.getString("email"));

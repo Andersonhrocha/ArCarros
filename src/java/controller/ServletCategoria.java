@@ -34,7 +34,7 @@ public class ServletCategoria extends ServletAbstrato {
 
             //RECEBENDO OS VALORES DO FORMULÁRIO
             ModelCategoria pro = new ModelCategoria();
-            pro.setNome(request.getParameter("txtNome"));
+            pro.setNome_categoria(request.getParameter("txtNome"));
             pro.setDescricao(request.getParameter("txtDescricao"));
 
             //RECEBE PARAMETRO VIA GET DO NAVEGADOR

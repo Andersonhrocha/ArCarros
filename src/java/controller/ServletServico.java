@@ -37,7 +37,7 @@ public class ServletServico extends ServletAbstrato {
 
             //RECEBENDO OS VALORES DO FORMULÁRIO
             ModelServico pro = new ModelServico();    
-            pro.setNome(request.getParameter("txtNome"));
+            pro.setNome_servico(request.getParameter("txtNome"));
             pro.setDescricao(request.getParameter("txtDescricao"));            
       //      pro.setValor(new Double(valor));
 

@@ -41,7 +41,7 @@
                     <label class="col-xs-3 control-label"> Nome: *</label>
                     <div class="col-xs-4">
                         <input type="text" name="txtNome" placeholder="Digite o código" class="form-control" autofocus="" 
-                               value="<%=registro.getNome()%>" size="45" required=""/>                        
+                               value="<%=registro.getNome_categoria()%>" size="45" required=""/>                        
                     </div>
                 </div> 
                     

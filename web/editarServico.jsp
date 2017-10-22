@@ -41,7 +41,7 @@
                     <label class="col-xs-3 control-label"> Nome: *</label>
                     <div class="col-xs-4">
                         <input type="text" name="txtNome" placeholder="Nome" class="form-control" autofocus="" 
-                               value="<%=registro.getNome()%>" size="100" required=""/>                        
+                               value="<%=registro.getNome_servico()%>" size="100" required=""/>                        
                     </div>
                 </div>
 

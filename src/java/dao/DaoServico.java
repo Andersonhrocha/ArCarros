@@ -28,11 +28,11 @@ public class DaoServico extends ModuloConexao {
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelServico pro) { //opcao 1.
 
-        sql = "INSERT INTO servico (nome, descricao, valor) VALUES (?,?,?)";
+        sql = "INSERT INTO servico (nome_servico, descricao, valor) VALUES (?,?,?)";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getNome());
+            pst.setString(1, pro.getNome_servico());
             pst.setString(2, pro.getDescricao());
             pst.setDouble(3, pro.getValor());
 
@@ -53,11 +53,11 @@ public class DaoServico extends ModuloConexao {
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelServico pro) { //opcao 2.
 
-        sql = "UPDATE servico SET nome=?, descricao=?, valor=? WHERE id_servico=? ";
+        sql = "UPDATE servico SET nome_servico=?, descricao=?, valor=? WHERE id_servico=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getNome());
+            pst.setString(1, pro.getNome_servico());
             pst.setString(2, pro.getDescricao());
             pst.setDouble(3, pro.getValor());
             pst.setInt(4, pro.getId_servico());
@@ -118,7 +118,7 @@ public class DaoServico extends ModuloConexao {
 
                 retorno = new ModelServico();
                 retorno.setId_servico(Integer.parseInt(rs.getString("id_servico")));
-                retorno.setNome(rs.getString("nome"));
+                retorno.setNome_servico(rs.getString("nome_servico"));
                 retorno.setDescricao(rs.getString("descricao"));
                 retorno.setValor(Double.valueOf(rs.getString("valor")));
 
@@ -145,7 +145,7 @@ public class DaoServico extends ModuloConexao {
 
                 ModelServico item = new ModelServico();
                 item.setId_servico(Integer.parseInt(rs.getString("id_servico")));
-                item.setNome(rs.getString("nome"));
+                item.setNome_servico(rs.getString("nome_servico"));
                 item.setDescricao(rs.getString("descricao"));
                 item.setValor(Double.valueOf(rs.getString("valor")));
 
