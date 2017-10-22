@@ -1,3 +1,5 @@
+<%@page import="dao.DaoModelo"%>
+<%@page import="java.util.List"%>
 <%@page import="model.ModelModelo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,11 +17,6 @@
 
     <body class="centralizar">
 
-           <%
-            ModelModelo registro = (ModelModelo) request.getAttribute("cliente");
-        %>
-        
-        
         <div class="container">
 
             <!-- INÍCIO DO FORMULÁRIO -->
@@ -38,28 +35,36 @@
                     </div>
                 </div>
 
+
+                <%
+                    DaoModelo dao = new DaoModelo();
+                    List<ModelModelo> listar;
+
+                    listar = dao.listarTodos();
+                    for (ModelModelo registro : listar) {
+                %>
+
+
+
                 <div class="form-group">
-                    <label class="col-xs-3 control-label"> Motorização: *</label>
-                    <div class="col-xs-4">
-                        <input type="text" name="txtMotorizacao" placeholder="Ex: 1.0, 1.4, 1.6 1.8 2.0" class="form-control" 
-                               size="50" required="" />                        
+                    <label class="col-xs-3 control-label"> Fabrincate: *</label>
+                    <div class="col-xs-4">      
+                        <select name="txtFabricante" class="form-control">  
+
+                            <%for (int i = 0; i < 10; i++) {%>
+                            <option><%=registro.getRelacao_id_marca().getId_marca()%></option>
+                            <%}%>
+
+                        </select>  
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                    <label class="col-xs-3 control-label"> Fabrincate: *</label>
-                    <div class="col-xs-4">                  
-
-
-
-                        <select class="form-control">  
-                            <c:forEach var="aluno" items="${listaIDAluno}" >  
-                                <option value="${aluno.get}">${aluno.id}</option>  
-                            </c:forEach>       
-                        </select>  
-
-                            
+                    <label class="col-xs-3 control-label"> Motorização: *</label>
+                    <div class="col-xs-4">
+                        <input type="text" name="txtMotorizacao" placeholder="Ex: 1.0, 1.4, 1.6 1.8 2.0" class="form-control" 
+                               size="50" required="" />                        
                     </div>
                 </div>
 

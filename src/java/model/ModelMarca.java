@@ -7,12 +7,12 @@ package model;
 public class ModelMarca {
 
     private int id_marca;
-    private String nome;
+    private String nome_marca;
 
     //CONSTRUTOR PRINCIPAL DA CLASSE INICIANDO A VARIÁVEL SEM VALOR    
     public ModelMarca() {
 
-        nome = "";
+        nome_marca = "";
     }
 
     public int getId_marca() {
@@ -23,17 +23,20 @@ public class ModelMarca {
         this.id_marca = id_marca;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNome_marca() {
+        return nome_marca;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome_marca(String nome_marca) {
+        this.nome_marca = nome_marca;
     }
 
-    public ModelMarca(int id_marca, String nome) {
+    
+    public ModelMarca(int id_marca, String nome_marca) {
         this.id_marca = id_marca;
-        this.nome = nome;
+        this.nome_marca = nome_marca;
     }
+
+    
 
 }

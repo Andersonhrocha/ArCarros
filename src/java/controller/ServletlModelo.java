@@ -34,8 +34,7 @@ public class ServletlModelo extends ServletAbstrato {
 
             //RECEBENDO OS VALORES DO FORMULÁRIO
             ModelModelo pro = new ModelModelo();
-            pro.setNome(request.getParameter("txtNome"));
-            //   pro.getRelacao_id_marca().setId_marca(Integer.parseInt("txtFabricante"));
+            pro.setNome_modelo(request.getParameter("txtNome"));
             pro.setMotorizacao(request.getParameter("txtMotorizacao"));
 
             //RECEBE PARAMETRO VIA GET DO NAVEGADOR
@@ -44,6 +43,10 @@ public class ServletlModelo extends ServletAbstrato {
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
             if (acao.equalsIgnoreCase("inserir")) {
 
+                //PARAMETRO QUE OBTEM O COMBOXSELECTED DO FORMULÁRIO PARA ADICIONAR NO BANCO DE DADOS
+                pro.getRelacao_id_marca().setId_marca(Integer.parseInt(request.getParameter("txtFabricante")));
+
+             //   request.setAttribute("linhasSession", pro);
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 

@@ -33,7 +33,7 @@ public class ServletMarca extends ServletAbstrato {
 
             //RECEBENDO OS VALORES DO FORMULÁRIO
             ModelMarca pro = new ModelMarca();
-            pro.setNome(request.getParameter("txtNome"));
+            pro.setNome_marca(request.getParameter("txtNome"));
 
             //RECEBE PARAMETRO VIA GET DO NAVEGADOR
             String acao = request.getParameter("acao");

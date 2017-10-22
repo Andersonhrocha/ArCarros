@@ -45,9 +45,9 @@
                 <tbody>
                     <tr> 
                         <td style="text-align: center"> <%=registro.getId_modelo()%> </td>
-                        <td style="text-align: center"> <%=registro.getNome()%> </td>
+                        <td style="text-align: center"> <%=registro.getNome_modelo()%> </td>
                         <td style="text-align: center"> <%=registro.getMotorizacao()%> </td>
-                        <td style="text-align: center"> <%=registro.getRelacao_id_marca().getId_marca()%> </td>
+                        <td style="text-align: center"> <%=registro.getRelacao_id_marca().getNome_marca()%> </td>
                        
                         <!-- BOTÃO EDITAR -->
                         <td> <a href="ServletlModelo?acao=buscar&txtDocumento=<%=registro.getId_modelo()%>" class="btn btn-info">ALTERAR</a>

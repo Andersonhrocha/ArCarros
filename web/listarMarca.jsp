@@ -42,7 +42,7 @@
                 <tbody>
                     <tr>                                    
                         <td style="text-align: center"> <%=registro.getId_marca()%> </td>
-                        <td style="text-align: center"> <%=registro.getNome()%> </td>
+                        <td style="text-align: center"> <%=registro.getNome_marca()%> </td>
                                      
 
                         <!-- BOTÃO EDITAR -->

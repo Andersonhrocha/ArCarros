@@ -7,14 +7,14 @@ package model;
 public class ModelModelo {
 
     private int id_modelo;
-    private String nome;
+    private String nome_modelo;
     private ModelMarca relacao_id_marca; //AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELMARCA
     private String motorizacao;
 
     //CONSTRUTOR PRINCIPAL INICIANDO AS VARIÁVEIS E CRIANDO OBJETO DA ENTIDADES MODELMARCA    
     public ModelModelo() {
 
-        nome = "";
+        nome_modelo = "";
         motorizacao = "";
         relacao_id_marca = new ModelMarca();
 
@@ -28,12 +28,12 @@ public class ModelModelo {
         this.id_modelo = id_modelo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNome_modelo() {
+        return nome_modelo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome_modelo(String nome_modelo) {
+        this.nome_modelo = nome_modelo;
     }
 
     public ModelMarca getRelacao_id_marca() {
@@ -52,11 +52,13 @@ public class ModelModelo {
         this.motorizacao = motorizacao;
     }
 
-    public ModelModelo(int id_modelo, String nome, ModelMarca relacao_id_marca, String motorizacao) {
+    public ModelModelo(int id_modelo, String nome_modelo, ModelMarca relacao_id_marca, String motorizacao) {
         this.id_modelo = id_modelo;
-        this.nome = nome;
+        this.nome_modelo = nome_modelo;
         this.relacao_id_marca = relacao_id_marca;
         this.motorizacao = motorizacao;
     }
+
+    
 
 }

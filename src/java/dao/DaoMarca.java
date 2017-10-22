@@ -28,12 +28,12 @@ public class DaoMarca extends ModuloConexao {
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelMarca pro) { //opcao 1.
 
-        sql = "INSERT INTO marca (id_marca, nome) VALUES (?,?)";
+        sql = "INSERT INTO marca (id_marca, nome_marca) VALUES (?,?)";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setInt(1, pro.getId_marca());
-            pst.setString(2, pro.getNome());
+            pst.setString(2, pro.getNome_marca());
 
             int status = pst.executeUpdate();
             if (status > 0) {
@@ -52,11 +52,11 @@ public class DaoMarca extends ModuloConexao {
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelMarca pro) { //opcao 2.
 
-        sql = "UPDATE marca SET nome=? WHERE id_marca=? ";
+        sql = "UPDATE marca SET nome_marca=? WHERE id_marca=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getNome());
+            pst.setString(1, pro.getNome_marca());
             pst.setInt(2, pro.getId_marca());
 
             int status = pst.executeUpdate();
@@ -115,7 +115,7 @@ public class DaoMarca extends ModuloConexao {
 
                 retorno = new ModelMarca();
                 retorno.setId_marca(Integer.parseInt(rs.getString("id_marca")));
-                retorno.setNome(rs.getString("nome"));
+                retorno.setNome_marca(rs.getString("nome_marca"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(DaoMarca.class.getName()).log(Level.SEVERE, null, ex);
@@ -139,7 +139,7 @@ public class DaoMarca extends ModuloConexao {
 
                 ModelMarca item = new ModelMarca();
                 item.setId_marca(Integer.parseInt(rs.getString("id_marca")));
-                item.setNome(rs.getString("nome"));
+                item.setNome_marca(rs.getString("nome_marca"));
                 lista.add(item);
             }
 

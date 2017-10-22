@@ -28,11 +28,11 @@ public class DaoModelo extends ModuloConexao {
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelModelo pro) { //opcao 1.
 
-        sql = "INSERT INTO modelo (nome, id_marca, motorizacao) VALUES (?,?,?)";
+        sql = "INSERT INTO modelo (nome_modelo, id_marca, motorizacao) VALUES (?,?,?)";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getNome());
+            pst.setString(1, pro.getNome_modelo());
             pst.setInt(2, pro.getRelacao_id_marca().getId_marca());
             pst.setString(3, pro.getMotorizacao());
 
@@ -45,7 +45,7 @@ public class DaoModelo extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir o modelo", ex);
         }
     }//FIM DA CLASSE incluir
@@ -53,11 +53,11 @@ public class DaoModelo extends ModuloConexao {
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelModelo pro) { //opcao 2.
 
-        sql = "UPDATE modelo SET nome=?, id_marca=?, motorizacao=? WHERE id_modelo=? ";
+        sql = "UPDATE modelo SET nome_modelo=?, id_marca=?, motorizacao=? WHERE id_modelo=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getNome());
+            pst.setString(1, pro.getNome_modelo());
             pst.setInt(2, pro.getRelacao_id_marca().getId_marca());
             pst.setString(3, pro.getMotorizacao());
             pst.setInt(4, pro.getId_modelo());
@@ -71,7 +71,7 @@ public class DaoModelo extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro do modelo.", ex);
         }
 
@@ -95,7 +95,7 @@ public class DaoModelo extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um modelo.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -118,13 +118,13 @@ public class DaoModelo extends ModuloConexao {
 
                 retorno = new ModelModelo();
                 retorno.setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
-                retorno.setNome(rs.getString("nome"));
-                retorno.getRelacao_id_marca().setId_marca(Integer.parseInt(rs.getString("id_marca")));
+                retorno.setNome_modelo(rs.getString("nome_modelo"));
+                retorno.getRelacao_id_marca().setNome_marca(rs.getString("nome_marca"));
                 retorno.setMotorizacao(rs.getString("motorizacao"));
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um modelo.", ex);
         }
         return retorno;
@@ -133,7 +133,7 @@ public class DaoModelo extends ModuloConexao {
     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
     public List<ModelModelo> listarTodos() { //opcao 5.
 
-        sql = "SELECT modelo.id_modelo, modelo.nome, modelo.id_marca, modelo.motorizacao FROM modelo INNER JOIN marca ON modelo.id_modelo = marca.id_marca";
+        sql = "SELECT modelo.id_modelo, modelo.nome_modelo, marca.nome_marca, modelo.motorizacao FROM modelo INNER JOIN marca ON modelo.id_modelo = marca.id_marca";
 
         List<ModelModelo> lista = new ArrayList<ModelModelo>();
 
@@ -145,15 +145,15 @@ public class DaoModelo extends ModuloConexao {
 
                 ModelModelo item = new ModelModelo();
                 item.setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
-                item.setNome(rs.getString("nome"));
-                item.getRelacao_id_marca().setId_marca(Integer.parseInt(rs.getString("id_marca")));
+                item.setNome_modelo(rs.getString("nome_modelo"));
+                item.getRelacao_id_marca().setNome_marca(rs.getString("nome_marca"));
                 item.setMotorizacao(rs.getString("motorizacao"));
 
                 lista.add(item);
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todos modelos.", ex);
         }
         return lista;
