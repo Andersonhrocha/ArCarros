@@ -39,7 +39,7 @@ public class ServletUsuario extends ServletAbstrato {
             pro.setSenha(request.getParameter("txtSenha"));
 
 
-            //RECEBE PARAMETRO VIA GET DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS

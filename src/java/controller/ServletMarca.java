@@ -35,7 +35,7 @@ public class ServletMarca extends ServletAbstrato {
             ModelMarca pro = new ModelMarca();
             pro.setNome_marca(request.getParameter("txtNome"));
 
-            //RECEBE PARAMETRO VIA GET DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS

@@ -103,7 +103,7 @@ public class DaoModelo extends ModuloConexao {
     //MÉTODO PARA BUSCAR POR ID
     public ModelModelo buscar(ModelModelo pro) { //opcao 4.
 
-        sql = " select * from modelo m inner join marca c on c.id_marca = m.id_marca";
+        sql = " SELECT * FROM modelo WHERE id_modelo = ?";
 
         ModelModelo retorno = null;
 
@@ -119,7 +119,7 @@ public class DaoModelo extends ModuloConexao {
                 retorno = new ModelModelo();
                 retorno.setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
                 retorno.setNome_modelo(rs.getString("nome_modelo"));
-                retorno.getRelacao_id_marca().setNome_marca(rs.getString("nome_marca"));
+                retorno.getRelacao_id_marca().setId_marca(Integer.parseInt(rs.getString("id_marca")));
                 retorno.setMotorizacao(rs.getString("motorizacao"));
 
             }

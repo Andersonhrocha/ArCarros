@@ -37,7 +37,7 @@ public class ServletServico extends ServletAbstrato {
             pro.setNome_servico(request.getParameter("txtNome"));
             pro.setDescricao(request.getParameter("txtDescricao"));
 
-            //RECEBE PARAMETRO VIA GET DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS

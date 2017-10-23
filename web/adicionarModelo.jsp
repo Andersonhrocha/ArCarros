@@ -1,6 +1,6 @@
-<%@page import="dao.DaoModelo"%>
+<%@page import="dao.DaoMarca"%>
 <%@page import="java.util.List"%>
-<%@page import="model.ModelModelo"%>
+<%@page import="model.ModelMarca"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -38,19 +38,25 @@
                 <div class="form-group">
                     <label class="col-xs-3 control-label"> Fabrincante: *</label>
                     <div class="col-xs-4">      
-                        <select name="txtFabricante" class="form-control">  
+
+                        <select name="txtFabricante" class="form-control"> 
+                            <option>Selecione</option>
 
                             <%
-                                DaoModelo dao = new DaoModelo();
-                                List<ModelModelo> listar;
+                                //MÉTODO EXISTETE NA CLASSE DAOMARCA
+                                DaoMarca dao = new DaoMarca();
+                                List<ModelMarca> listar;
 
-                                listar = dao.listarTodos();
-                                for (ModelModelo registro : listar) {
+                                listar = dao.listarFabricantes();
+                                for (ModelMarca registro : listar) {
+                            %>
 
-                                    out.println("<option value " + registro.getNome_modelo() + ">" + registro.getNome_modelo() + " - " + registro.getRelacao_id_marca().getNome_marca() + "<option>");
+                            <option value="<%=registro.getId_marca()%>"><%=registro.getNome_marca()%> </option>
+
+                            <%
                                 }
                             %> 
-                        </select>  
+                        </select>
                     </div>
                 </div>
 
@@ -59,7 +65,7 @@
                     <label class="col-xs-3 control-label"> Motorização: *</label>
                     <div class="col-xs-4">
                         <input type="text" name="txtMotorizacao" placeholder="Ex: 1.0, 1.4, 1.6 1.8 2.0" class="form-control" 
-                               size="50" required="" />                        
+                               size="4" required="" />                        
                     </div>
                 </div>
 

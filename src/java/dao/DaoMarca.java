@@ -149,4 +149,33 @@ public class DaoMarca extends ModuloConexao {
         return lista;
 
     } //FIM DA CLASSE listarTodos
+
+    //MÉTODO PARA LISTAGEM DE TODOS OS FABRICANTES
+    public List<ModelMarca> listarFabricantes() { //opcao 6.
+
+        sql = " select * from marca ";
+     
+        List<ModelMarca> lista = new ArrayList<ModelMarca>();
+
+        try {
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+
+                ModelMarca item = new ModelMarca();
+                item.setId_marca(Integer.parseInt(rs.getString("id_marca")));
+                item.setNome_marca(rs.getString("nome_marca"));
+
+                lista.add(item);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos modelos.", ex);
+        }
+        return lista;
+
+    } //FIM DA CLASSE listarFabricantes
+
 }

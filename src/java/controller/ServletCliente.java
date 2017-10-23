@@ -40,7 +40,7 @@ public class ServletCliente extends ServletAbstrato {
             pro.setTelefone(request.getParameter("txtTelefone"));
             pro.setEmail(request.getParameter("txtEmail"));
 
-            //RECEBE PARAMETRO VIA GET DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
