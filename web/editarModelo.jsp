@@ -8,7 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Alterar Serviço</title>
+        <title>Alterar Modelo</title>
         <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="bootstrap-3.3.7-dist/css/estilo.css" rel="stylesheet">
         <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
@@ -17,6 +17,7 @@
     <body class="centralizar">
 
         <%
+            //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETMODELO
             ModelModelo registro = (ModelModelo) request.getAttribute("cliente");
         %>
 
@@ -24,10 +25,10 @@
         <div class="container">
 
             <!-- INÍCIO DO FORMULÁRIO -->
-            <form role="form" class="form-horizontal" action="ServletlModelo" method="POST">
+            <form role="form" class="form-horizontal" action="ServletModelo" method="POST">
                 <input type="hidden" name="acao" value="editar" />
 
-                <h2> Alterar dados do serviço </h2>
+                <h2> Alterar dados do Modelo </h2>
                 <hr>
                 <div style="text-align:center; font-size: 11px;" > * Campo Obrigatório </div>
 
@@ -57,7 +58,7 @@
                             <option>Selecione</option>
 
                              <%
-                                //MÉTODO EXISTETE NA CLASSE DAOMARCA
+                                //MÉTODO EXISTENTE NA CLASSE DAOMARCA
                                 DaoMarca dao = new DaoMarca();
                                 List<ModelMarca> listar;
 
@@ -87,7 +88,7 @@
 
                 <div class="row">
                     <button type="submit" class="btn btn-success">Salvar</button>
-                    <a href="ServletlModelo?acao=listar" class="btn btn-danger">Cancelar</a>   
+                    <a href="ServletModelo?acao=listar" class="btn btn-danger">Cancelar</a>   
                 </div>
 
             </form>

@@ -35,6 +35,7 @@
                 </thead>
 
                 <%
+                    //CRIA INSTÂNCIA DA CLASSE DAO E CRIA A LISTA PARA OBTER TODOS OS REGISTROS
                     DaoServico dao = new DaoServico();
                     List<ModelServico> listar;
 

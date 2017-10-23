@@ -133,7 +133,7 @@ public class DaoModelo extends ModuloConexao {
     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
     public List<ModelModelo> listarTodos() { //opcao 5.
 
-        sql = " select * from modelo m inner join marca c on c.id_marca = m.id_marca";
+            sql = " SELECT * FROM modelo m INNER JOIN marca c ON c.id_marca = m.id_marca";
         List<ModelModelo> lista = new ArrayList<ModelModelo>();
 
         try {
@@ -158,4 +158,37 @@ public class DaoModelo extends ModuloConexao {
         return lista;
 
     } //FIM DA CLASSE listarTodos
+    
+        
+      //MÉTODO PARA LISTAGEM DE TODOS OS MODELOS
+    public List<ModelModelo> listarModelos() { //opcao 6.
+
+        sql = " SELECT * FROM modelo ";
+     
+        List<ModelModelo> lista = new ArrayList<ModelModelo>();
+
+        try {
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+
+                ModelModelo item = new ModelModelo();
+                item.setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
+                item.setNome_modelo(rs.getString("nome_modelo"));
+
+                lista.add(item);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos modelos.", ex);
+        }
+        return lista;
+
+    } //FIM DA CLASSE listarFabricantes
+    
+    
+    
+    
 }

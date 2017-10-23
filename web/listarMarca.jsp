@@ -32,6 +32,7 @@
                 </thead>
 
                 <%
+                    //CRIA INSTÂNCIA DA CLASSE DAO E CRIA A LISTA PARA OBTER TODOS OS REGISTROS
                     DaoMarca dao = new DaoMarca();
                     List<ModelMarca> listar;
 

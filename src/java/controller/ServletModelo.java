@@ -12,8 +12,8 @@ import model.ModelModelo;
  *
  * @author Anderson
  */
-@WebServlet(name = "ServletlModelo", urlPatterns = {"/ServletlModelo"})
-public class ServletlModelo extends ServletAbstrato {
+@WebServlet(name = "ServletModelo", urlPatterns = {"/ServletModelo"})
+public class ServletModelo extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
     private static final String ADICIONAR_MODELO = "adicionarModelo.jsp";
@@ -22,7 +22,7 @@ public class ServletlModelo extends ServletAbstrato {
     private final DaoModelo dao;
 
     //CONSTRUTOR PRINCIPAL
-    public ServletlModelo() {
+    public ServletModelo() {
         dao = new DaoModelo();
     }
 

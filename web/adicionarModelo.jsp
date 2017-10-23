@@ -20,7 +20,7 @@
         <div class="container">
 
             <!-- INÍCIO DO FORMULÁRIO -->
-            <form role="form" class="form-horizontal" action="ServletlModelo" method="POST">
+            <form role="form" class="form-horizontal" action="ServletModelo" method="POST">
                 <input type="hidden" name="acao" value="inserir" />
 
                 <h2> Cadastro de Modelos de Veículos </h2>
@@ -39,7 +39,7 @@
                     <label class="col-xs-3 control-label"> Fabrincante: *</label>
                     <div class="col-xs-4">      
 
-                        <select name="txtFabricante" class="form-control"> 
+                        <select name="txtFabricante" class="form-control" required=""> 
                             <option>Selecione</option>
 
                             <%
@@ -73,7 +73,7 @@
 
                 <div class="row" >                    
                     <button type="submit" class="btn btn-success">Salvar</button>
-                    <a href="ServletlModelo?acao=listar" class="btn btn-primary">Consultar</a>                   
+                    <a href="ServletModelo?acao=listar" class="btn btn-primary">Consultar</a>                   
                 </div>
 
             </form>

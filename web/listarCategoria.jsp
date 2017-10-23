@@ -33,6 +33,7 @@
                 </thead>
 
                 <%
+                    //CRIA INSTÂNCIA DA CLASSE DAO E CRIA A LISTA PARA OBTER TODOS OS REGISTROS
                     DaoCategoria dao = new DaoCategoria();
                     List<ModelCategoria> listar;
 

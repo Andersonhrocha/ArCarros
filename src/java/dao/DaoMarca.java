@@ -153,7 +153,7 @@ public class DaoMarca extends ModuloConexao {
     //MÉTODO PARA LISTAGEM DE TODOS OS FABRICANTES
     public List<ModelMarca> listarFabricantes() { //opcao 6.
 
-        sql = " select * from marca ";
+        sql = " SELECT * FROM marca ";
      
         List<ModelMarca> lista = new ArrayList<ModelMarca>();
 
@@ -172,7 +172,7 @@ public class DaoMarca extends ModuloConexao {
 
         } catch (SQLException ex) {
             Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos modelos.", ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todas as marcas.", ex);
         }
         return lista;
 

@@ -14,6 +14,7 @@
     <body class="centralizar">
 
         <%
+            //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETCLIENTE
             ModelCliente registro = (ModelCliente) request.getAttribute("cliente");
         %>
 

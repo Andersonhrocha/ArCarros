@@ -36,6 +36,7 @@
                 </thead>
 
                 <%
+                    //CRIA INSTÂNCIA DA CLASSE DAO E CRIA A LISTA PARA OBTER TODOS OS REGISTROS
                     DaoCliente dao = new DaoCliente();
                     List<ModelCliente> listar;
 

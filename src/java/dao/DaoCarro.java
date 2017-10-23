@@ -136,9 +136,9 @@ public class DaoCarro extends ModuloConexao {
     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
     public List<ModelCarro> listarTodos() { //opcao 5.
 
-         // SELECT UNINDO AS TABELAS CARRO E MODELO
-        sql = "SELECT carro.id_carro, carro.ano, carro.cor, carro.cpf_cliente, modelo.id_modelo, modelo.nome, modelo.motorizacao FROM carro INNER JOIN modelo ON carro.id_modelo = modelo.id_modelo";
-        
+        // SELECT UNINDO AS TABELAS CARRO E MODELO
+        sql = "SELECT carro.id_carro, carro.ano, carro.cor, carro.cpf_cliente, modelo.id_modelo, modelo.nome_modelo, modelo.motorizacao FROM carro INNER JOIN modelo ON carro.id_modelo = modelo.id_modelo";
+
         List<ModelCarro> lista = new ArrayList<ModelCarro>();
 
         try {
@@ -152,9 +152,7 @@ public class DaoCarro extends ModuloConexao {
                 item.setAno(rs.getString("ano"));
                 item.setCor(rs.getString("cor"));
                 item.getRelacao_id_cliente().setCpf_cliente(rs.getString("cpf_cliente"));
-                item.getRelacao_id_modelo().setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
                 item.getRelacao_id_modelo().setNome_modelo(rs.getString("nome_modelo"));
-                item.getRelacao_id_modelo().setMotorizacao(rs.getString("motorizacao"));
 
                 lista.add(item);
             }
