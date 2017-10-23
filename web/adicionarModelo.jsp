@@ -40,8 +40,16 @@
                     <div class="col-xs-4">      
                         <select name="txtFabricante" class="form-control">  
 
+                            <%
+                                DaoModelo dao = new DaoModelo();
+                                List<ModelModelo> listar;
 
+                                listar = dao.listarTodos();
+                                for (ModelModelo registro : listar) {
 
+                                    out.println("<option value " + registro.getNome_modelo() + ">" + registro.getNome_modelo() + " - " + registro.getRelacao_id_marca().getNome_marca() + "<option>");
+                                }
+                            %> 
                         </select>  
                     </div>
                 </div>
