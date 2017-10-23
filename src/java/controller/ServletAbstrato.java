@@ -13,13 +13,18 @@ import javax.servlet.http.HttpServletResponse;
  */
 public abstract class ServletAbstrato extends HttpServlet {
 
+    //MÉTODO PARA EXECUTAR AS REQUISIÇÕES DOS GETS E POSTS
     public abstract void executar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException;
 
+    //MÉTODO PARA REDIRECIONAR AS PÁGINAS NAS REQUISIÇÕES
     public void redirecionarPagina(HttpServletRequest request, HttpServletResponse response, String paginas)
             throws ServletException, IOException {
+        
+        //REDIRECIONAMENTO DAS PÁGINAS
         RequestDispatcher mostrar = request.getRequestDispatcher(paginas);
         mostrar.forward(request, response);
+        
     }
 
 }
