@@ -25,7 +25,7 @@ public class DaoModelo extends ModuloConexao {
         conexao = this.abrirConexao();
     }
 
-   //MÉTODO PARA INCLUSÃO
+    //MÉTODO PARA INCLUSÃO
     public void incluir(ModelModelo pro) { //opcao 1.
 
         sql = "INSERT INTO modelo (nome_modelo, id_marca, motorizacao) VALUES (?,?,?)";
@@ -50,7 +50,7 @@ public class DaoModelo extends ModuloConexao {
         }
     }//FIM DA CLASSE incluir
 
-     //MÉTODO PARA EDIÇÃO
+    //MÉTODO PARA EDIÇÃO
     public void editar(ModelModelo pro) { //opcao 2.
 
         sql = "UPDATE modelo SET nome_modelo=?, id_marca=?, motorizacao=? WHERE id_modelo=? ";
@@ -103,7 +103,7 @@ public class DaoModelo extends ModuloConexao {
     //MÉTODO PARA BUSCAR POR ID
     public ModelModelo buscar(ModelModelo pro) { //opcao 4.
 
-        sql = "SELECT modelo.id_modelo, modelo.nome_modelo, marca.nome_marca, modelo.motorizacao FROM modelo INNER JOIN marca ON modelo.id_modelo = marca.id_marca WHERE id_modelo = ?";
+        sql = " select * from modelo m inner join marca c on c.id_marca = m.id_marca";
 
         ModelModelo retorno = null;
 
@@ -133,8 +133,7 @@ public class DaoModelo extends ModuloConexao {
     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
     public List<ModelModelo> listarTodos() { //opcao 5.
 
-        sql = "SELECT modelo.id_modelo, modelo.nome_modelo, marca.nome_marca, modelo.motorizacao FROM modelo INNER JOIN marca ON modelo.id_modelo = marca.id_marca";
-
+        sql = " select * from modelo m inner join marca c on c.id_marca = m.id_marca";
         List<ModelModelo> lista = new ArrayList<ModelModelo>();
 
         try {
