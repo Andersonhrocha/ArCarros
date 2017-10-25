@@ -74,7 +74,7 @@ public class DaoCategoria extends ModuloConexao {
         }
 
     }//FIM DA CLASSE editar
-    
+
     //MÉTODO PARA EXCLUSÃO
     public void excluir(ModelCategoria pro) {// opcao 3.
 
@@ -97,8 +97,8 @@ public class DaoCategoria extends ModuloConexao {
             throw new RuntimeException("Falha ao excluir uma categoria.", ex);
         }
     }//FIM DA CLASSE excluir
-    
-     //MÉTODO PARA BUSCAR POR ID
+
+    //MÉTODO PARA BUSCAR POR ID
     public ModelCategoria buscar(ModelCategoria pro) { //opcao 4.
 
         sql = "SELECT * FROM categoria WHERE id_categoria = ?";
@@ -118,7 +118,7 @@ public class DaoCategoria extends ModuloConexao {
                 retorno.setId_categoria(rs.getInt("id_categoria"));
                 retorno.setNome_categoria(rs.getString("nome_categoria"));
                 retorno.setDescricao(rs.getString("descricao"));
-             
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(DaoCategoria.class.getName()).log(Level.SEVERE, null, ex);
@@ -126,8 +126,8 @@ public class DaoCategoria extends ModuloConexao {
         }
         return retorno;
     }//FIM DA CLASSE buscar
-    
-     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
+
+    //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
     public List<ModelCategoria> listarTodos() { //opcao 5.
 
         sql = "SELECT * FROM categoria";
@@ -141,7 +141,7 @@ public class DaoCategoria extends ModuloConexao {
             while (rs.next()) {
 
                 ModelCategoria item = new ModelCategoria();
-               item.setId_categoria(rs.getInt("id_categoria"));
+                item.setId_categoria(rs.getInt("id_categoria"));
                 item.setNome_categoria(rs.getString("nome_categoria"));
                 item.setDescricao(rs.getString("descricao"));
 
@@ -155,5 +155,33 @@ public class DaoCategoria extends ModuloConexao {
         return lista;
 
     } //FIM DA CLASSE listarTodos
+
+    //MÉTODO PARA LISTAGEM DE TODAS AS CATEGORIAS
+    public List<ModelCategoria> listarCategoria() { //opcao 6.
+
+        sql = " SELECT * FROM categoria ";
+
+        List<ModelCategoria> lista = new ArrayList<ModelCategoria>();
+
+        try {
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+
+                ModelCategoria item = new ModelCategoria();
+                item.setId_categoria(Integer.parseInt(rs.getString("id_categoria")));
+                item.setNome_categoria(rs.getString("nome_categoria"));
+
+                lista.add(item);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todas as categorias.", ex);
+        }
+        return lista;
+
+    } //FIM DA CLASSE listarCategoria
 
 }

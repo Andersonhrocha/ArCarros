@@ -160,4 +160,32 @@ public class DaoServico extends ModuloConexao {
 
     } //FIM DA CLASSE listarTodos
 
+    //MÉTODO PARA LISTAGEM DE TODOS OS SERVIÇOS
+    public List<ModelServico> listarServico() { //opcao 6.
+
+        sql = " SELECT * FROM servico ";
+
+        List<ModelServico> lista = new ArrayList<ModelServico>();
+
+        try {
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+
+                ModelServico item = new ModelServico();
+                item.setId_servico(Integer.parseInt(rs.getString("id_servico")));
+                item.setNome_servico(rs.getString("nome_servico"));
+
+                lista.add(item);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todas as marcas.", ex);
+        }
+        return lista;
+
+    } //FIM DA CLASSE listarFabricantes
+
 }

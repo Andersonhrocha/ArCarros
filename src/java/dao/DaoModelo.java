@@ -133,7 +133,7 @@ public class DaoModelo extends ModuloConexao {
     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
     public List<ModelModelo> listarTodos() { //opcao 5.
 
-            sql = " SELECT * FROM modelo m INNER JOIN marca c ON c.id_marca = m.id_marca";
+        sql = " SELECT * FROM modelo m INNER JOIN marca c ON c.id_marca = m.id_marca";
         List<ModelModelo> lista = new ArrayList<ModelModelo>();
 
         try {
@@ -158,13 +158,12 @@ public class DaoModelo extends ModuloConexao {
         return lista;
 
     } //FIM DA CLASSE listarTodos
-    
-        
-      //MÉTODO PARA LISTAGEM DE TODOS OS MODELOS
+
+    //MÉTODO PARA LISTAGEM DE TODOS OS MODELOS
     public List<ModelModelo> listarModelos() { //opcao 6.
 
         sql = " SELECT * FROM modelo ";
-     
+
         List<ModelModelo> lista = new ArrayList<ModelModelo>();
 
         try {
@@ -186,9 +185,6 @@ public class DaoModelo extends ModuloConexao {
         }
         return lista;
 
-    } //FIM DA CLASSE listarFabricantes
-    
-    
-    
-    
+    } //FIM DA CLASSE listarModelos
+
 }

@@ -164,5 +164,32 @@ public class DaoCarro extends ModuloConexao {
         return lista;
 
     } //FIM DA CLASSE listarTodos
+    
+        //MÉTODO PARA LISTAGEM DE TODOS OS VEÍCULOS
+    public List<ModelCarro> listarVeiculos() { //opcao 6.
+
+        sql = " SELECT * FROM carro ";
+     
+        List<ModelCarro> lista = new ArrayList<ModelCarro>();
+
+        try {
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+
+                ModelCarro item = new ModelCarro();
+                item.setId_carro((rs.getString("id_carro")));
+
+                lista.add(item);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todas as marcas.", ex);
+        }
+        return lista;
+
+    } //FIM DA CLASSE listarVeiculos
 
 }
