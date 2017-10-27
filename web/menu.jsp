@@ -102,7 +102,7 @@
                                     <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/pic_3.png" width="40" alt=""/>Produtos <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
-                                            <a href="#">Cadastro de Produtos</a>
+                                            <a href="ServletProduto?acao=listar">Cadastro de Produtos</a>
                                         </li>
                                         <li class=" dropdown">
                                             <a href="ServletCategoria?acao=listar">Cadastro de Categorias</a>
