@@ -138,6 +138,16 @@
                                     </ul>
                                 </li>
                                 
+                                <%-- Menu Faturamento--%>
+                                <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Faturamento <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class=" dropdown">
+                                            <a href="ServletVenda?acao=listar" >Cadastro de Venda</a>
+                                             <a href="ServletVendaProduto?acao=listar" >Venda de Produto</a>
+                                        </li>                                     
+                                    </ul>
+                                </li>
+                                
                                  <%-- Menu Usuário--%>
                                 <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Usuários <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
