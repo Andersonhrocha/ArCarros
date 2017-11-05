@@ -135,7 +135,7 @@ public class DaoVendaProduto extends ModuloConexao {
     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
     public List<ModelVendaProduto> listarTodos() { //opcao 5.
 
-        sql = "SELECT vp.id_venda_produto, v.cpf_cliente, v.id_venda, p.id_produto, p.nome_produto, vp.quantidade, vp.tipo_pagamento FROM venda v INNER JOIN venda_produto vp ON v.id_venda = vp.id_venda INNER JOIN produto p ON p.id_produto = vp.id_produto";
+        sql = "SELECT vp.id_venda_produto, v.cpf_cliente, v.id_venda, p.id_produto, p.nome_produto, vp.quantidade, p.valor_produto, vp.tipo_pagamento FROM venda v INNER JOIN venda_produto vp ON v.id_venda = vp.id_venda INNER JOIN produto p ON p.id_produto = vp.id_produto";
 
         List<ModelVendaProduto> lista = new ArrayList<ModelVendaProduto>();
 
@@ -152,6 +152,7 @@ public class DaoVendaProduto extends ModuloConexao {
                 item.getRelacao_id_produto().setId_produto(rs.getString("id_produto"));
                 item.getRelacao_id_produto().setNome_produto(rs.getString("nome_produto"));
                 item.setQuantidade(Integer.parseInt(rs.getString("quantidade")));
+                item.getRelacao_id_produto().setValor_produto(rs.getDouble("valor_produto"));
                 item.setTipoPagamento(rs.getString("tipo_pagamento"));
 
                 lista.add(item);
@@ -165,7 +166,7 @@ public class DaoVendaProduto extends ModuloConexao {
 
     } //FIM DA CLASSE listarTodos
 
-     //MÉTODO PARA SOMAR PRODUTOS
+    //MÉTODO PARA SOMAR PRODUTOS
     public void SomaProdutos() {
 
         sql = "SELECT * FROM  venda v INNER JOIN venda_produto vp ON v.id_venda = vp.id_venda \n"
@@ -175,17 +176,16 @@ public class DaoVendaProduto extends ModuloConexao {
             PreparedStatement pst = conexao.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             double total = 0;
-            
+
             while (rs.next()) {
                 total = total + rs.getFloat("valor") * rs.getInt(Integer.parseInt("quantidade"));
             }
-            
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(DaoVendaProduto.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar somar todos os produtos da venda.", ex);
         }
-        
+
     }//FIM DA CLASSE SomaProdutos
 
 }

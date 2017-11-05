@@ -41,10 +41,11 @@
                                     <th style="text-align: center"><u>Código Produto</u></th>
                                     <th style="text-align: center"><u>Produto</u></th>
                                     <th style="text-align: center"><u>Quantidade</u></th>
+                                    <th style="text-align: center"><u>Valor Produto</u></th>
                                     <th style="text-align: center"><u>Forma Pagamento</u></th>
-                                    
-                                    
-                                                           
+
+
+
                                     <th style="text-align: center"><u>
                                             <a class="btn btn-warning" href="adicionarVendaProduto.jsp" >
                                                 Novo Registro</a></u></th>
@@ -68,8 +69,9 @@
                                     <td style="text-align: center"> <%=registro.getRelacao_id_produto().getId_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getRelacao_id_produto().getNome_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getQuantidade()%> </td>
+                                    <td style="text-align: center"> <%=registro.getRelacao_id_produto().getValor_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getTipoPagamento()%> </td>
-                                 
+
 
                                     <!-- BOTÃO EDITAR -->
                                     <td style="text-align: center">                                        
