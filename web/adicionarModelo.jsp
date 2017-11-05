@@ -71,12 +71,11 @@
                                                     }
                                                 %> 
                                                 </select> 
-                                                
-                                                <!-- BOTÃO PARA ADICIONAR NOVO FABRICANTE -->
-                                                <th style="text-align: center"><u>
-                                                        <a class="btn btn-primary" href="adicionarMarca.jsp" >
-                                                            Novo Fabricante</a></u></th>
-                                                            
+
+                                                <!-- BOTÃO PARA ADICIONAR NOVO FABRICANTE -->                                   
+                                                <a class="btn btn-primary" href="adicionarMarca.jsp" >
+                                                    <span class="glyphicon glyphicon-plus"></span> </a>  
+
                                             </div> 
                                         </div>
                                     </div>

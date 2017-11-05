@@ -1,12 +1,12 @@
 <%@page import="model.ModelCategoria"%>
 <%@page import="dao.DaoCategoria"%>
 <%@page import="java.util.List"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Cadastro de Produtos Para VeÃ­culos</title>
+        <title>Cadastro de Produtos Para Veículos</title>
 
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
@@ -29,19 +29,19 @@
                                     <h3>Novo Produto</h3>
                                 </div>
 
-                                <div style="text-align:right; font-size: 11px;" > * Campo ObrigatÃ³rio </div>
+                                <div style="text-align:right; font-size: 11px;" > * Campo Obrigatório </div>
 
-                                <!-- INÃCIO DO FORMULÃRIO -->
+                                <!-- INÍCIO DO FORMULÁRIO -->
                                 <form role="form" class="form-horizontal" action="ServletProduto" method="POST">
                                     <input type="hidden" name="acao" value="inserir" />
 
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">CÃ³digo: *</label>  
+                                        <label class="col-md-4 control-label">Código: *</label>  
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-sort-by-alphabet"></i></span>
-                                                <input type="text" name="txtDocumento" placeholder="Digite um cÃ³digo" 
+                                                <input type="text" name="txtDocumento" placeholder="Digite um código" 
                                                        class="form-control" size="13" required="" autofocus=""  />
                                             </div>
                                         </div>
@@ -61,11 +61,11 @@
 
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">DescriÃ§Ã£o: *</label>
+                                        <label class="col-md-4 control-label">Descrição: *</label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                                <textarea class="form-control" name="txtDescricaoProduto" placeholder="DescrÃ§Ã£o da categoria" maxlength="200" required=""></textarea>
+                                                <textarea class="form-control" name="txtDescricaoProduto" placeholder="Descrção da categoria" maxlength="200" required=""></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -91,7 +91,7 @@
                                                     <!--   <option>Selecione</option> -->
 
                                                     <%
-                                                        //MÃ‰TODO EXISTETE NA CLASSE DAOCATEGORIA
+                                                        //MÉTODO EXISTETE NA CLASSE DAOCATEGORIA
                                                         DaoCategoria dao = new DaoCategoria();
                                                         List<ModelCategoria> listar;
 
@@ -105,13 +105,18 @@
                                                         }
                                                     %> 
                                                 </select>  
+                                                
+                                                <!-- BOTÃO PARA ADICIONAR NOVA CATEGORIA -->                                   
+                                                <a class="btn btn-primary" href="adicionarCategoria.jsp" >
+                                                    <span class="glyphicon glyphicon-plus"></span> </a>  
+                                                    
                                             </div>
                                         </div>
                                     </div>
 
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">PreÃ§o: *</label>  
+                                        <label class="col-md-4 control-label">Preço: *</label>  
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
@@ -123,7 +128,7 @@
 
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">QTD Estoque: *</label>  
+                                        <label class="col-md-4 control-label">Estoque: *</label>  
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-sort-by-order"></i></span>
@@ -156,7 +161,7 @@
                                     </p>
 
                                 </form>
-                                <!-- FINAL DO FORMULÃRIO -->
+                                <!-- FINAL DO FORMULÁRIO -->
 
                             </div>
                         </div>
