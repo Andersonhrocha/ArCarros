@@ -41,7 +41,7 @@
                                     <th style="text-align: center"><u>Código Produto</u></th>
                                     <th style="text-align: center"><u>Produto</u></th>
                                     <th style="text-align: center"><u>Quantidade</u></th>
-                                    <th style="text-align: center"><u>Valor Produto</u></th>
+                                    <th style="text-align: center"><u>Valor</u></th>
                                     <th style="text-align: center"><u>Forma Pagamento</u></th>
 
 
