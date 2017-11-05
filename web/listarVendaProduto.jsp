@@ -39,7 +39,7 @@
                                     <th style="text-align: center"><u>Documento Cliente</u></th>
                                     <th style="text-align: center"><u>Código Venda</u></th>
                                     <th style="text-align: center"><u>Código Produto</u></th>
-                                    <th style="text-align: center"><u>Produto</u></th>
+                                    <th style="text-align: center"><u>Descrição</u></th>
                                     <th style="text-align: center"><u>Quantidade</u></th>
                                     <th style="text-align: center"><u>Valor</u></th>
                                     <th style="text-align: center"><u>Forma Pagamento</u></th>
