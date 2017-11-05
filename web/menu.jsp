@@ -1,9 +1,3 @@
-<%-- 
-    Document   : menu
-    Created on : Oct 6, 2017, 12:22:48 PM
-    Author     : Anderson
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -81,14 +75,14 @@
                                 <span class="icon-bar"></span>
                             </button>
 
-                 <!--           <a class="navbar-brand" href="menu.jsp">Home</a> -->
+                            <!--           <a class="navbar-brand" href="menu.jsp">Home</a> -->
                         </div>
 
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
 
                                 <%-- Menu Cliente--%>
-                                <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Clientes <span class="caret"></span></a>
+                                <li class=" down"><a href="ServletProduto?acao=listar" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Clientes <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
                                             <a href="ServletCliente?acao=listar" >Cadastro de Clientes</a>
@@ -102,10 +96,10 @@
                                     <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/pic_3.png" width="40" alt=""/>Produtos <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
-                                            <a href="ServletProduto?acao=listar">Cadastro de Produtos</a>
+                                            <a href="ServletCategoria?acao=listar">Cadastro de Categorias</a>                                            
                                         </li>
                                         <li class=" dropdown">
-                                            <a href="ServletCategoria?acao=listar">Cadastro de Categorias</a>
+                                            <a href="ServletProduto?acao=listar">Cadastro de Produtos</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -113,15 +107,15 @@
 
                                 <%-- Menu Carros--%>
                                 <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Veículos<span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class=" dropdown">
-                                            <a href="ServletCarro?acao=listar" >Cadastro de Veículos</a>
-                                        </li>
+                                    <ul class="dropdown-menu">                                        
                                         <li class=" dropdown">
                                             <a href="ServletMarca?acao=listar">Cadastro de Fabricantes</a>
                                         </li>
                                         <li class=" dropdown">
                                             <a href="ServletModelo?acao=listar">Cadastro de Modelos</a>
+                                        </li>
+                                        <li class=" dropdown">
+                                            <a href="ServletCarro?acao=listar" >Cadastro de Veículos</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -133,12 +127,15 @@
                                             <a href="ServletServico?acao=listar" >Cadastro de Serviços</a>
                                         </li>
                                         <li class=" dropdown">
-                                            <a href="#">Ordens de Serviço</a>
+                                            <a href="ServletOrdemServico?acao=listar">Cadastro Ordens de Serviço</a>
+                                        </li>
+                                        <li class=" dropdown">
+                                            <a href="ServletItemOrdemServico?acao=listar">Gerar OS </a>
                                         </li>
                                     </ul>
                                 </li>
-                                
-                                   <%-- Menu Venda--%>
+
+                                <%-- Menu Venda--%>
                                 <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Venda <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
@@ -149,8 +146,8 @@
                                         </li>                                     
                                     </ul>
                                 </li>
-                                
-                                 <%-- Menu Usuário--%>
+
+                                <%-- Menu Usuário--%>
                                 <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="imagens/Burn 3.png" width="40" alt=""/>Usuários <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class=" dropdown">
@@ -158,10 +155,7 @@
                                         </li>                                     
                                     </ul>
                                 </li>
-                                
-                                
-                                
-                                
+
                             </ul>
 
                             <%-- Menu Sair--%>
