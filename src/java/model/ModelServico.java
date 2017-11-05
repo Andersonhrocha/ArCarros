@@ -13,6 +13,7 @@ public class ModelServico {
 
     //CONSTRUTOR PRINCIPAL 
     public ModelServico() {
+
     }
 
     public int getId_servico() {
@@ -46,14 +47,5 @@ public class ModelServico {
     public void setValor(Double valor) {
         this.valor = valor;
     }
-
-    public ModelServico(int id_servico, String nome_servico, String descricao, Double valor) {
-        this.id_servico = id_servico;
-        this.nome_servico = nome_servico;
-        this.descricao = descricao;
-        this.valor = valor;
-    }
-
-  
 
 }

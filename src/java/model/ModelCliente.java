@@ -12,13 +12,9 @@ public class ModelCliente {
     private String telefone;
     private String email;
 
-    //CONSTRUTOR PRINCIPAL INICIANDO AS VARIÁVEIS COM VALOR VAZIO
+    //CONSTRUTOR PRINCIPAL
     public ModelCliente() {
-        cpf_cliente = "";
-        nome_cliente = "";
-        endereco = "";
-        telefone = "";
-        email = "";
+
     }
 
     public String getCpf_cliente() {
@@ -58,14 +54,6 @@ public class ModelCliente {
     }
 
     public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public ModelCliente(String cpf_cliente, String nome_cliente, String endereco, String telefone, String email) {
-        this.cpf_cliente = cpf_cliente;
-        this.nome_cliente = nome_cliente;
-        this.endereco = endereco;
-        this.telefone = telefone;
         this.email = email;
     }
 

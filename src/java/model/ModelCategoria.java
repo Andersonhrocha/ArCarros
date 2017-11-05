@@ -10,10 +10,9 @@ public class ModelCategoria {
     private String nome_categoria;
     private String descricao;
 
-    //CONSTRUTOR PRINCIPAL INICIANDO AS VARIÁVEIS COM VALOR VAZIO
+    //CONSTRUTOR PRINCIPAL
     public ModelCategoria() {
-        nome_categoria = "";
-        descricao = "";
+
     }
 
     public int getId_categoria() {
@@ -39,13 +38,5 @@ public class ModelCategoria {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
-    public ModelCategoria(int id_categoria, String nome_categoria, String descricao) {
-        this.id_categoria = id_categoria;
-        this.nome_categoria = nome_categoria;
-        this.descricao = descricao;
-    }
-
-   
 
 }

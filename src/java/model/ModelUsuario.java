@@ -5,11 +5,16 @@ package model;
  * @author Anderson
  */
 public class ModelUsuario {
-    
+
     private int id_usuario;
     private String nome;
     private String login;
     private String senha;
+
+    //CONSTRUTOR PRINCIPAL
+    public ModelUsuario() {
+
+    }
 
     public int getId_usuario() {
         return id_usuario;
@@ -43,19 +48,4 @@ public class ModelUsuario {
         this.senha = senha;
     }
 
-    
-    
-    
-    public ModelUsuario() {
-    }
-
-    public ModelUsuario(int id_usuario, String nome, String login, String senha) {
-        this.id_usuario = id_usuario;
-        this.nome = nome;
-        this.login = login;
-        this.senha = senha;
-    }
-    
-    
-    
 }

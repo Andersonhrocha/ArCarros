@@ -12,10 +12,9 @@ public class ModelCarro {
     private ModelCliente relacao_id_cliente; //AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELCLIENTE
     private ModelModelo relacao_id_modelo; //AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELMODELO
 
-    //CONSTRUTOR PRINCIPAL INICIANDO AS VARIÁVEIS E CRIANDO OBJETOS DAS ENTIDADES MODELCLIENTE E MODELMOLETO    
+    //CONSTRUTOR PRINCIPAL CRIANDO OBJETOS DAS ENTIDADES MODELCLIENTE E MODELMOLETO    
     public ModelCarro() {
-        ano = "";
-        cor = "";
+
         relacao_id_cliente = new ModelCliente();
         relacao_id_modelo = new ModelModelo();
     }
@@ -57,14 +56,6 @@ public class ModelCarro {
     }
 
     public void setRelacao_id_modelo(ModelModelo relacao_id_modelo) {
-        this.relacao_id_modelo = relacao_id_modelo;
-    }
-
-    public ModelCarro(String id_carro, String ano, String cor, ModelCliente relacao_id_cliente, ModelModelo relacao_id_modelo) {
-        this.id_carro = id_carro;
-        this.ano = ano;
-        this.cor = cor;
-        this.relacao_id_cliente = relacao_id_cliente;
         this.relacao_id_modelo = relacao_id_modelo;
     }
 
