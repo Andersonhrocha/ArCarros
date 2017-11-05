@@ -48,7 +48,7 @@
                         <td style="text-align: center"> <%=registro.getId_servico()%> </td>
                         <td style="text-align: center"> <%=registro.getNome_servico()%> </td>
                         <td style="text-align: center"> <%=registro.getDescricao()%> </td>
-                        <td style="text-align: center"> <%=registro.getValor()%> </td>
+                        <td style="text-align: center"> <%=registro.getValor_servico()%> </td>
               
 
                         <!-- BOTÃO EDITAR -->

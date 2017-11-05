@@ -29,7 +29,7 @@ public class DaoProduto extends ModuloConexao {
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelProduto pro) { //opcao 1.
 
-        sql = "INSERT INTO produto (id_produto, nome_produto, descricao_produto, validade, id_categoria, valor, qtd_estoque) VALUES (?,?,?,?,?,?,?)";
+        sql = "INSERT INTO produto (id_produto, nome_produto, descricao_produto, validade, id_categoria, valor_produto, qtd_estoque) VALUES (?,?,?,?,?,?,?)";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
@@ -38,7 +38,7 @@ public class DaoProduto extends ModuloConexao {
             pst.setString(3, pro.getDescricao_produto());
             pst.setDate(4, new Date(pro.getValidade().getTime()));
             pst.setInt(5, pro.getRelacao_id_categoria().getId_categoria());
-            pst.setDouble(6, pro.getValor());
+            pst.setDouble(6, pro.getValor_produto());
             pst.setInt(7, pro.getQtd_estoque());
 
             int status = pst.executeUpdate();
@@ -58,7 +58,7 @@ public class DaoProduto extends ModuloConexao {
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelProduto pro) { //opcao 2.
 
-        sql = "UPDATE produto SET nome_produto=?, descricao_produto=?, validade=?, id_categoria=?, valor=?, qtd_estoque=? WHERE id_produto=? ";
+        sql = "UPDATE produto SET nome_produto=?, descricao_produto=?, validade=?, id_categoria=?, valor_produto=?, qtd_estoque=? WHERE id_produto=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
@@ -67,7 +67,7 @@ public class DaoProduto extends ModuloConexao {
             pst.setString(2, pro.getDescricao_produto());
             pst.setDate(3, new Date(pro.getValidade().getTime()));
             pst.setInt(4, pro.getRelacao_id_categoria().getId_categoria());
-            pst.setDouble(5, pro.getValor());
+            pst.setDouble(5, pro.getValor_produto());
             pst.setInt(6, pro.getQtd_estoque());
             pst.setString(7, pro.getId_produto());
 
@@ -131,7 +131,7 @@ public class DaoProduto extends ModuloConexao {
                 retorno.setDescricao_produto(rs.getString("descricao_produto"));
                 retorno.setValidade(rs.getDate("validade"));
                 retorno.getRelacao_id_categoria().setId_categoria(Integer.parseInt(rs.getString("id_categoria")));
-                retorno.setValor(Double.valueOf(rs.getString("valor")));
+                retorno.setValor_produto(Double.valueOf(rs.getString("valor_produto")));
                 retorno.setQtd_estoque(Integer.parseInt(rs.getString("qtd_estoque")));
 
             }
@@ -159,7 +159,7 @@ public class DaoProduto extends ModuloConexao {
                 item.setId_produto(rs.getString("id_produto"));
                 item.setNome_produto(rs.getString("nome_produto"));
                 item.setDescricao_produto(rs.getString("descricao_produto"));
-                item.setValor(Double.valueOf(rs.getString("valor")));
+                item.setValor_produto(Double.valueOf(rs.getString("valor_produto")));
 
                 lista.add(item);
             }

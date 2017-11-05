@@ -13,7 +13,7 @@ public class ModelProduto {
     private String descricao_produto;
     private Date validade;
     private ModelCategoria relacao_id_categoria; //AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELCATEGORIA
-    private Double valor;
+    private Double valor_produto;
     private int qtd_estoque;
 
     //CONSTRUTOR PRINCIPAL CRIANDO OBJETO DA ENTIDADE MODELCATEGORIA  
@@ -63,12 +63,12 @@ public class ModelProduto {
         this.relacao_id_categoria = relacao_id_categoria;
     }
 
-    public Double getValor() {
-        return valor;
+    public Double getValor_produto() {
+        return valor_produto;
     }
 
-    public void setValor(Double valor) {
-        this.valor = valor;
+    public void setValor_produto(Double valor_produto) {
+        this.valor_produto = valor_produto;
     }
 
     public int getQtd_estoque() {

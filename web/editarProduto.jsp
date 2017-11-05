@@ -123,7 +123,7 @@
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
                                                 <input type="text" name="txtValor" placeholder="EX: 10.00" 
-                                                       value="<%=registro.getValor()%>" class="form-control" size="20" required="" />
+                                                       value="<%=registro.getValor_produto()%>" class="form-control" size="20" required="" />
                                             </div>
                                         </div>
                                     </div>

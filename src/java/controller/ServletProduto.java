@@ -48,7 +48,7 @@ public class ServletProduto extends ServletAbstrato {
                 //PARAMETRO QUE OBTÉM DADOS DO FORMULÁRIO PARA ADICIONAR NO BANCO DE DADOS
                 pro.setValidade(Date.valueOf(request.getParameter("txtData")));
                 pro.getRelacao_id_categoria().setId_categoria(Integer.parseInt(request.getParameter("txtCategoria")));
-                pro.setValor(Double.parseDouble(request.getParameter("txtValor")));
+                pro.setValor_produto(Double.parseDouble(request.getParameter("txtValor")));
                 pro.setQtd_estoque(Integer.parseInt(request.getParameter("txtEstoque")));
 
                 //INCLUIR NO BANCO DE DADOS
@@ -66,7 +66,7 @@ public class ServletProduto extends ServletAbstrato {
                 pro.setId_produto(request.getParameter("txtDocumento"));
                 pro.setValidade(Date.valueOf(request.getParameter("txtData")));
                 pro.getRelacao_id_categoria().setId_categoria(Integer.parseInt(request.getParameter("txtCategoria")));
-                pro.setValor(Double.parseDouble(request.getParameter("txtValor")));
+                pro.setValor_produto(Double.parseDouble(request.getParameter("txtValor")));
                 pro.setQtd_estoque(Integer.parseInt(request.getParameter("txtEstoque")));
 
                 //EDITANDO NO BANCO DE DADOS

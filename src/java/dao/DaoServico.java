@@ -28,13 +28,13 @@ public class DaoServico extends ModuloConexao {
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelServico pro) { //opcao 1.
 
-        sql = "INSERT INTO servico (nome_servico, descricao, valor) VALUES (?,?,?)";
+        sql = "INSERT INTO servico (nome_servico, descricao, valor_servico) VALUES (?,?,?)";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setString(1, pro.getNome_servico());
             pst.setString(2, pro.getDescricao());
-            pst.setDouble(3, pro.getValor());
+            pst.setDouble(3, pro.getValor_servico());
 
             int status = pst.executeUpdate();
             if (status > 0) {
@@ -53,13 +53,13 @@ public class DaoServico extends ModuloConexao {
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelServico pro) { //opcao 2.
 
-        sql = "UPDATE servico SET nome_servico=?, descricao=?, valor=? WHERE id_servico=? ";
+        sql = "UPDATE servico SET nome_servico=?, descricao=?, valor_servico=? WHERE id_servico=? ";
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setString(1, pro.getNome_servico());
             pst.setString(2, pro.getDescricao());
-            pst.setDouble(3, pro.getValor());
+            pst.setDouble(3, pro.getValor_servico());
             pst.setInt(4, pro.getId_servico());
 
             int status = pst.executeUpdate();
@@ -120,7 +120,7 @@ public class DaoServico extends ModuloConexao {
                 retorno.setId_servico(Integer.parseInt(rs.getString("id_servico")));
                 retorno.setNome_servico(rs.getString("nome_servico"));
                 retorno.setDescricao(rs.getString("descricao"));
-                retorno.setValor(Double.valueOf(rs.getString("valor")));
+                retorno.setValor_servico(Double.valueOf(rs.getString("valor_servico")));
 
             }
         } catch (SQLException ex) {
@@ -147,7 +147,7 @@ public class DaoServico extends ModuloConexao {
                 item.setId_servico(Integer.parseInt(rs.getString("id_servico")));
                 item.setNome_servico(rs.getString("nome_servico"));
                 item.setDescricao(rs.getString("descricao"));
-                item.setValor(Double.valueOf(rs.getString("valor")));
+                item.setValor_servico(Double.valueOf(rs.getString("valor_servico")));
 
                 lista.add(item);
             }
@@ -186,6 +186,6 @@ public class DaoServico extends ModuloConexao {
         }
         return lista;
 
-    } //FIM DA CLASSE listarFabricantes
+    } //FIM DA CLASSE listarServico
 
 }

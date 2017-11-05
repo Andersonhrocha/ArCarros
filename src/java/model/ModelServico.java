@@ -9,7 +9,7 @@ public class ModelServico {
     private int id_servico;
     private String nome_servico;
     private String descricao;
-    private Double valor;
+    private Double valor_servico;
 
     //CONSTRUTOR PRINCIPAL 
     public ModelServico() {
@@ -40,12 +40,12 @@ public class ModelServico {
         this.descricao = descricao;
     }
 
-    public Double getValor() {
-        return valor;
+    public Double getValor_servico() {
+        return valor_servico;
     }
 
-    public void setValor(Double valor) {
-        this.valor = valor;
+    public void setValor_servico(Double valor_servico) {
+        this.valor_servico = valor_servico;
     }
 
 }

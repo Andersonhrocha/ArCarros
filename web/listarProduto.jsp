@@ -59,7 +59,7 @@
                                     <td style="text-align: center"> <%=registro.getId_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getNome_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getDescricao_produto()%> </td>
-                                    <td style="text-align: center"> <%=registro.getValor()%> </td>
+                                    <td style="text-align: center"> <%=registro.getValor_produto()%> </td>
 
                                     <!-- BOTÃO EDITAR -->
                                     <td style="text-align: center">

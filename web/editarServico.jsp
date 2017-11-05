@@ -58,7 +58,7 @@
                     <label class="col-xs-3 control-label"> Valor: *</label>
                     <div class="col-xs-4">
                         <input type="text" name="txtValor" placeholder="Telefone" class="form-control" 
-                               value="<%=registro.getValor()%>" size="12" required=""/>                        
+                               value="<%=registro.getValor_servico()%>" size="12" required=""/>                        
                     </div>
                 </div>
 
