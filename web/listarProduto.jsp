@@ -7,7 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lista Produtos</title>
+        <title>Consultar Produtos</title>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css"/>
@@ -20,7 +20,7 @@
             <div id="m_body">
                 <div id="container" style="margin:auto; width: 80%">
 
-                    <h1 class="titulo">Lista dos Produtos</h1>
+                    <h1 class="titulo">Consulta dos Produtos</h1>
 
                     <th style="text-align: center"><u>
                             <a class="btn btn-primary" href="menu.jsp" >

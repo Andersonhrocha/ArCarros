@@ -22,7 +22,7 @@
             <div id="m_body">
                 <div id="container" style="margin:auto; width: 80%">
 
-                    <h1 class="titulo">Lista Venda de Produtos</h1>
+                    <h1 class="titulo">Consulta Venda de Produtos</h1>
 
                     <th style="text-align: center"><u>
                             <a class="btn btn-primary" href="menu.jsp" >

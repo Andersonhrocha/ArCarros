@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h2 class="centralizar"> Consulta Categoria de Produto </h2>
+            <h2 class="centralizar"> Consulta das Categorias de Produtos</h2>
             <th style="text-align: center"><u>
                     <a class="btn btn-success" href="menu.jsp" role="button">HOME</a></u></th>
             <hr>

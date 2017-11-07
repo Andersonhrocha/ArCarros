@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h2 class="centralizar"> Consulta de Clientes </h2>
+            <h2 class="centralizar"> Consulta dos Clientes </h2>
             <th style="text-align: center"><u>
                                  <a class="btn btn-success" href="menu.jsp" role="button">HOME</a></u></th>
             <hr>

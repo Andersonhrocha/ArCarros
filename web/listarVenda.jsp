@@ -21,7 +21,7 @@
             <div id="m_body">
                 <div id="container" style="margin:auto; width: 80%">
 
-                    <h1 class="titulo">Lista de Cadastro para Venda</h1>
+                    <h1 class="titulo">Consulta Cadastro Para Venda</h1>
 
                     <th style="text-align: center"><u>
                             <a class="btn btn-primary" href="menu.jsp" >
