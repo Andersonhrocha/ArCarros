@@ -33,10 +33,10 @@ public class ServletVenda extends ServletAbstrato {
 
         try {
 
-            //CRIANDO OBJETO DA CLASSE MODELVENDA
+            //CRIANDO OBJETO DA CLASSE ModelVenda
             ModelVenda pro = new ModelVenda();
 
-            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
@@ -88,12 +88,12 @@ public class ServletVenda extends ServletAbstrato {
                 request.setAttribute("cliente", pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.EDITAR_PRODUTO);
+                this.redirecionarPagina(request, response, EDITAR_PRODUTO);
 
             } else if (acao.equalsIgnoreCase("listar")) {
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.LISTAR_PRODUTO);
+                this.redirecionarPagina(request, response, LISTAR_PRODUTO);
             }
 
         } catch (IOException | ServletException ex) {

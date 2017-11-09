@@ -16,9 +16,9 @@ import model.ModelCarro;
 public class ServletCarro extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_MODELO = "adicionarCarro.jsp";
-    private static final String EDITAR_MODELO = "editarCarro.jsp";
-    private static final String LISTAR_MODELO = "listarCarro.jsp";
+    private static final String ADICIONAR_CARRO = "adicionarCarro.jsp";
+    private static final String EDITAR_CARRO = "editarCarro.jsp";
+    private static final String LISTAR_CARRO = "listarCarro.jsp";
     private final DaoCarro dao;
 
     //CONSTRUTOR PRINCIPAL
@@ -32,54 +32,61 @@ public class ServletCarro extends ServletAbstrato {
 
         try {
 
-            //RECEBENDO OS VALORES DO FORMULÁRIO
+            //CRIANDO OBJETO DA CLASSE ModelCarro
             ModelCarro pro = new ModelCarro();
-            pro.setId_carro(request.getParameter("txtDocumento"));
-            pro.setAno(request.getParameter("txtAno"));
-            pro.setCor(request.getParameter("txtCor"));
-            pro.getRelacao_id_cliente().setCpf_cliente(request.getParameter("txtCliente"));
 
-            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
             if (acao.equalsIgnoreCase("inserir")) {
 
-                //PARAMETRO QUE OBTEM O COMBOXSELECTED DO FORMULÁRIO PARA ADICIONAR NO BANCO DE DADOS
+                //RECEBENDO OS VALORES DO FORMULÁRIO
+                pro.setId_carro(request.getParameter("txtDocumento"));
+                pro.setAno(request.getParameter("txtAno"));
+                pro.setCor(request.getParameter("txtCor"));
+                pro.getRelacao_id_cliente().setCpf_cliente(request.getParameter("txtCliente"));
+                //PARAMETRO QUE OBTÉM O COMBOXSELECTED
                 pro.getRelacao_id_modelo().setId_modelo(Integer.parseInt(request.getParameter("txtModelo")));
 
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
+                //ATRIBUTO COM MENSAGEM DE RETORNO
+                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
+
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_MODELO);
+                redirecionarPagina(request, response, ADICIONAR_CARRO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
-                //PARAMETRO QUE OBTEM O ID PARA EDITAR
+                //PARAMETRO QUE OBTÉM O ID PARA EDITAR
                 pro.setId_carro(request.getParameter("txtDocumento"));
+                pro.setAno(request.getParameter("txtAno"));
+                pro.setCor(request.getParameter("txtCor"));
+                pro.getRelacao_id_cliente().setCpf_cliente(request.getParameter("txtCliente"));
                 pro.getRelacao_id_modelo().setId_modelo(Integer.parseInt(request.getParameter("txtModelo")));
 
                 //EDITANDO NO BANCO DE DADOS
                 dao.editar(pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, LISTAR_MODELO);
+                this.redirecionarPagina(request, response, LISTAR_CARRO);
 
             } else if (acao.equalsIgnoreCase("excluir")) {
 
-                //PARAMETRO QUE OBTEM O ID PARA EXCLUSÃO
+                //PARAMETRO QUE OBTÉM O ID PARA EXCLUSÃO
                 pro.setId_carro(request.getParameter("txtDocumento"));
 
                 //EXCLUIDO DO BANCO DE DADOS
                 dao.excluir(pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, LISTAR_MODELO);
+                this.redirecionarPagina(request, response, LISTAR_CARRO);
 
             } else if (acao.equalsIgnoreCase("buscar")) {
 
-                //PARAMETRO QUE OBTEM O ID PARA EXCLUSÃO
+                //PARAMETRO QUE OBTÉM O ID PARA BUSCAR REGISTRO
                 pro.setId_carro(request.getParameter("txtDocumento"));
 
                 //BUSCA PARA EDITAR
@@ -87,12 +94,12 @@ public class ServletCarro extends ServletAbstrato {
                 request.setAttribute("cliente", pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.EDITAR_MODELO);
+                this.redirecionarPagina(request, response, EDITAR_CARRO);
 
             } else if (acao.equalsIgnoreCase("listar")) {
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.LISTAR_MODELO);
+                this.redirecionarPagina(request, response, LISTAR_CARRO);
             }
 
         } catch (IOException | ServletException ex) {
@@ -101,43 +108,16 @@ public class ServletCarro extends ServletAbstrato {
 
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         executar(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         executar(request, response);
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }

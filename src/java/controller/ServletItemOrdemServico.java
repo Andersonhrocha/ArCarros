@@ -32,16 +32,16 @@ public class ServletItemOrdemServico extends ServletAbstrato {
 
         try {
 
-             //CRIANDO OBJETO DA CLASSE MODELITEMORDEMSERVICO
+             //CRIANDO OBJETO DA CLASSE ModelItemOrdemServico
             ModelItemOrdemServico pro = new ModelItemOrdemServico();
 
-            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
             if (acao.equalsIgnoreCase("inserir")) {
 
-                //ARMAZENANDO PARAMETRO PREDEFINIDO NO BANCO DE DADOS
+                //RECEBENDO OS VALORES DO FORMULÁRIO
                 pro.getRelacao_id_ordem_servico().setId_ordem_Servico(Integer.parseInt(request.getParameter("txtOrdemServico")));
                 pro.getRelacao_id_produto().setId_produto(request.getParameter("txtProduto"));
                 pro.getRelacao_id_servico().setId_servico(Integer.parseInt(request.getParameter("txtServico")));
@@ -91,12 +91,12 @@ public class ServletItemOrdemServico extends ServletAbstrato {
                 request.setAttribute("cliente", pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.ADICIONAR_ITEM_ORDEM_SERVICO);
+                this.redirecionarPagina(request, response, ADICIONAR_ITEM_ORDEM_SERVICO);
 
             } else if (acao.equalsIgnoreCase("listar")) {
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.LISTAR_ITEM_ORDEM_SERVICO);
+                this.redirecionarPagina(request, response, LISTAR_ITEM_ORDEM_SERVICO);
             }
 
         } catch (IOException | ServletException ex) {

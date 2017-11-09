@@ -32,18 +32,18 @@ public class ServletServico extends ServletAbstrato {
 
         try {
 
-            //RECEBENDO OS VALORES DO FORMULÁRIO
+            //CRIANDO OBJETO DA CLASSE ModelServico
             ModelServico pro = new ModelServico();
-            pro.setNome_servico(request.getParameter("txtNome"));
-            pro.setDescricao(request.getParameter("txtDescricao"));
 
-            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
             if (acao.equalsIgnoreCase("inserir")) {
 
-                //PARAMETRO QUE OBTÉM VALOR DO FORMULÁRIO PARA ADICIONAR NO BANCO DE DADOS
+                //RECEBENDO OS VALORES DO FORMULÁRIO
+                pro.setNome_servico(request.getParameter("txtNome"));
+                pro.setDescricao(request.getParameter("txtDescricao"));
                 pro.setValor_servico(Double.parseDouble(request.getParameter("txtValor")));
 
                 //INCLUIR NO BANCO DE DADOS
@@ -59,6 +59,8 @@ public class ServletServico extends ServletAbstrato {
 
                 //PARAMETRO QUE OBTÉM O ID PARA ALTERAÇÃO
                 pro.setId_servico(Integer.parseInt(request.getParameter("txtDocumento")));
+                pro.setNome_servico(request.getParameter("txtNome"));
+                pro.setDescricao(request.getParameter("txtDescricao"));
                 pro.setValor_servico(Double.parseDouble(request.getParameter("txtValor")));
 
                 //EDITANDO NO BANCO DE DADOS
@@ -88,12 +90,12 @@ public class ServletServico extends ServletAbstrato {
                 request.setAttribute("cliente", pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.EDITAR_SERVICO);
+                this.redirecionarPagina(request, response, EDITAR_SERVICO);
 
             } else if (acao.equalsIgnoreCase("listar")) {
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.LISTAR_SERVICO);
+                this.redirecionarPagina(request, response, LISTAR_SERVICO);
             }
 
         } catch (IOException | ServletException ex) {

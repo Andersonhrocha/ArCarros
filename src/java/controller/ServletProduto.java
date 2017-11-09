@@ -33,19 +33,19 @@ public class ServletProduto extends ServletAbstrato {
 
         try {
 
-            //RECEBENDO OS VALORES DO FORMULÁRIO
+            //CRIANDO OBJETO DA CLASSE ModelProduto
             ModelProduto pro = new ModelProduto();
-            pro.setId_produto(request.getParameter("txtDocumento"));
-            pro.setNome_produto(request.getParameter("txtNomeProduto"));
-            pro.setDescricao_produto(request.getParameter("txtDescricaoProduto"));
 
-            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
             if (acao.equalsIgnoreCase("inserir")) {
 
-                //PARAMETRO QUE OBTÉM DADOS DO FORMULÁRIO PARA ADICIONAR NO BANCO DE DADOS
+                //RECEBENDO OS VALORES DO FORMULÁRIO
+                pro.setId_produto(request.getParameter("txtDocumento"));
+                pro.setNome_produto(request.getParameter("txtNomeProduto"));
+                pro.setDescricao_produto(request.getParameter("txtDescricaoProduto"));
                 pro.setValidade(Date.valueOf(request.getParameter("txtData")));
                 pro.getRelacao_id_categoria().setId_categoria(Integer.parseInt(request.getParameter("txtCategoria")));
                 pro.setValor_produto(Double.parseDouble(request.getParameter("txtValor")));
@@ -64,6 +64,8 @@ public class ServletProduto extends ServletAbstrato {
 
                 //PARAMETRO QUE OBTEM O ID PARA EDITAR
                 pro.setId_produto(request.getParameter("txtDocumento"));
+                pro.setNome_produto(request.getParameter("txtNomeProduto"));
+                pro.setDescricao_produto(request.getParameter("txtDescricaoProduto"));
                 pro.setValidade(Date.valueOf(request.getParameter("txtData")));
                 pro.getRelacao_id_categoria().setId_categoria(Integer.parseInt(request.getParameter("txtCategoria")));
                 pro.setValor_produto(Double.parseDouble(request.getParameter("txtValor")));
@@ -96,12 +98,12 @@ public class ServletProduto extends ServletAbstrato {
                 request.setAttribute("cliente", pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.EDITAR_PRODUTO);
+                this.redirecionarPagina(request, response, EDITAR_PRODUTO);
 
             } else if (acao.equalsIgnoreCase("listar")) {
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.LISTAR_PRODUTO);
+                this.redirecionarPagina(request, response, LISTAR_PRODUTO);
             }
 
         } catch (IOException | ServletException ex) {

@@ -33,16 +33,16 @@ public class ServletOrdemServico extends ServletAbstrato {
 
         try {
 
-            //CRIANDO OBJETO DA CLASSE MODELORDEMSERVICO
+            //CRIANDO OBJETO DA CLASSE ModelOrdemServico
             ModelOrdemServico pro = new ModelOrdemServico();
 
-            //RECEBE PARAMETRO VIA POST DO NAVEGADOR
+            //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
             String acao = request.getParameter("acao");
 
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
             if (acao.equalsIgnoreCase("inserir")) {
 
-                //ARMAZENANDO PARAMETRO PREDEFINIDO NO BANCO DE DADOS
+                //RECEBENDO OS VALORES DO FORMULÁRIO
                 pro.getRelacao_id_carro().setId_carro(request.getParameter("txtCarro"));
                 pro.setData(new Date(System.currentTimeMillis()));
                 pro.setSituacao(request.getParameter("txtSituacao"));
@@ -94,12 +94,12 @@ public class ServletOrdemServico extends ServletAbstrato {
                 request.setAttribute("cliente", pro);
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.EDITAR_ORDEM_SERVICO);
+                this.redirecionarPagina(request, response, EDITAR_ORDEM_SERVICO);
 
             } else if (acao.equalsIgnoreCase("listar")) {
 
                 //REDIRECIONAMENTO
-                this.redirecionarPagina(request, response, this.LISTAR_ORDEM_SERVICO);
+                this.redirecionarPagina(request, response, LISTAR_ORDEM_SERVICO);
             }
 
         } catch (IOException | ServletException ex) {

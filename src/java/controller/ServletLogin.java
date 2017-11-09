@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,7 +37,11 @@ public class ServletLogin extends ServletAbstrato {
         try {
 
             if (_Login != null) {
+
+                //CRIANDO OBJETO DA CLASSE ModuloConexao
                 ModuloConexao dao = new ModuloConexao();
+                
+                //RECEBENDO A CONEXÃO
                 this.conexao = dao.abrirConexao();
 
                 sql = "SELECT * FROM usuario WHERE login=? AND senha=?";
@@ -49,7 +54,7 @@ public class ServletLogin extends ServletAbstrato {
                 if (rs.next()) {
 
                     //REDIRECIONAMENTO
-                    redirecionarPagina(request, response, this.MENU_PRINCIPAL);
+                    redirecionarPagina(request, response, MENU_PRINCIPAL);
                     System.out.println("Login efetuado com sucesso.");
 
                 } else {
@@ -59,11 +64,11 @@ public class ServletLogin extends ServletAbstrato {
                     System.out.println("Login não existe no banco de dados.");
 
                     //REDIRECIONAMENTO
-                    this.redirecionarPagina(request, response, this.ERRO_LOGIN);
+                    this.redirecionarPagina(request, response, ERRO_LOGIN);
 
                 }
             }
-        } catch (Exception ex) {
+        } catch (IOException | SQLException | ServletException ex) {
             System.out.println("Erro no login: " + ex.getMessage());
         }
     }
