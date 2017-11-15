@@ -28,7 +28,7 @@
                                 <span class="glyphicon glyphicon-home"></span> HOME</a></u></th>
 
                     <th style="text-align: center"><u>
-                            <a class="btn btn-success" href="RelatorioProdutoServlet?comando=imprimir_ordens_servico" target="_blank" />
+                            <a class="btn btn-success" href="RelatorioImpresso?comando=imprimir_ordens_servico" target="_blank" />
                             <span class="glyphicon glyphicon-print"></span> IMPRIMIR TODOS</a></u></th>
 
                     <br><br> 

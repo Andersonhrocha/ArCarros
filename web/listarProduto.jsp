@@ -23,8 +23,12 @@
                     <h1 class="titulo">Consulta dos Produtos</h1>
 
                     <th style="text-align: center"><u>
-                            <a class="btn btn-primary" href="menu.jsp" >
+                            <a class="btn btn-primary" href="menu.jsp" />
                                 <span class="glyphicon glyphicon-home"></span> HOME</a></u></th>
+
+                    <th style="text-align: center"><u>
+                            <a class="btn btn-success" href="RelatorioImpresso?comando=imprimir_lista_produtos" target="_blank" />
+                                <span class="glyphicon glyphicon-print"></span> IMPRIMIR LISTA DE PRODUTOS</a></u></th>
 
                     <br><br> 
 
@@ -46,8 +50,7 @@
                             </thead>
 
                             <tbody>
-                                <%
-                                    //CRIA INSTÂNCIA DA CLASSE DAO E CRIA A LISTA PARA OBTER TODOS OS REGISTROS
+                                <%                                    //CRIA INSTÂNCIA DA CLASSE DAO E CRIA A LISTA PARA OBTER TODOS OS REGISTROS
                                     DaoProduto dao = new DaoProduto();
                                     List<ModelProduto> listar;
 
@@ -64,7 +67,7 @@
                                     <!-- BOTÃO EDITAR -->
                                     <td style="text-align: center">
                                         <a class="btn btn-info" href="ServletProduto?acao=buscar&txtDocumento=<%=registro.getId_produto()%>" >
-                                            <span class="glyphicon glyphicon-repeat"></span> Alterar</a></td>  
+                                            <span class="glyphicon glyphicon-edit"></span> Alterar</a></td>  
 
                                     <!-- BOTÃO EXLUIR -->
                                     <td style="text-align: center">

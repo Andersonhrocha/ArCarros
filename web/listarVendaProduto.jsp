@@ -4,7 +4,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -22,11 +21,25 @@
             <div id="m_body">
                 <div id="container" style="margin:auto; width: 80%">
 
-                    <h1 class="titulo">Consulta Venda de Produtos</h1>
+                    <h1 class="titulo">Consultar Venda de Produtos</h1>
 
                     <th style="text-align: center"><u>
                             <a class="btn btn-primary" href="menu.jsp" >
                                 <span class="glyphicon glyphicon-home"></span> HOME</a></u></th>
+
+
+                    <!-- INÍCIO DO FORMULÁRIO -->
+                    <form role="form" class="form-horizontal" action="RelatorioImpresso" method="POST" target="_blank">
+                        <input type="hidden" name="comando" value="imprimir_venda_produto" />
+
+                        <label class="col-md-4 control-label"></label>  
+                        <div class="col-md-4 inputGroupContainer">                                               
+                            <input type="text" name="codigoVendaProduto" placeholder="Digite o Código da Venda" class="form-control" 
+                                   size="10" autofocus=""  />
+                            <span class="glyphicon glyphicon-print"></span> <input type="submit" value="IMPRIMIR POR CÓDIGO" class="btn btn-success" />                           
+                        </div>                        
+                    </form>
+                    <!-- FINAL DO FORMULÁRIO -->
 
                     <br><br> 
 

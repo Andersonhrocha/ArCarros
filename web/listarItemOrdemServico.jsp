@@ -30,7 +30,7 @@
 
 
                     <!-- INÍCIO DO FORMULÁRIO -->
-                    <form role="form" class="form-horizontal" action="RelatorioProdutoServlet" method="POST" target="_blank">
+                    <form role="form" class="form-horizontal" action="RelatorioImpresso" method="POST" target="_blank">
                         <input type="hidden" name="comando" value="imprimir_item_ordens_servico" />
 
                         <label class="col-md-4 control-label"></label>  
