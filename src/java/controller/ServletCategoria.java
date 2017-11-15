@@ -85,7 +85,7 @@ public class ServletCategoria extends ServletAbstrato {
 
                 //BUSCA PARA EDITAR
                 pro = dao.buscar(pro);
-                request.setAttribute("cliente", pro);
+                request.setAttribute("categoria", pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, EDITAR_CATEGORIA);

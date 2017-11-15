@@ -87,7 +87,7 @@ public class ServletServico extends ServletAbstrato {
 
                 //BUSCA PARA EDITAR
                 pro = dao.buscar(pro);
-                request.setAttribute("cliente", pro);
+                request.setAttribute("servico", pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, EDITAR_SERVICO);

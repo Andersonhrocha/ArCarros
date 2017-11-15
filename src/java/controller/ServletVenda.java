@@ -85,7 +85,7 @@ public class ServletVenda extends ServletAbstrato {
 
                 //BUSCA PARA EDITAR
                 pro = dao.buscar(pro);
-                request.setAttribute("cliente", pro);
+                request.setAttribute("venda", pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, EDITAR_PRODUTO);

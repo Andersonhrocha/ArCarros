@@ -88,7 +88,7 @@ public class ServletItemOrdemServico extends ServletAbstrato {
 
                 //BUSCA PARA EDITAR
                 pro = dao.buscar(pro);
-                request.setAttribute("cliente", pro);
+                request.setAttribute("itemordemservico", pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, ADICIONAR_ITEM_ORDEM_SERVICO);
