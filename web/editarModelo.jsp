@@ -18,7 +18,7 @@
 
         <%
             //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETMODELO
-            ModelModelo registro = (ModelModelo) request.getAttribute("cliente");
+            ModelModelo registro = (ModelModelo) request.getAttribute("modelo");
         %>
 
 

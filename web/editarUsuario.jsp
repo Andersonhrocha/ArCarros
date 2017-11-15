@@ -16,7 +16,7 @@
 
         <%
             //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETUSUARIO
-            ModelUsuario registro = (ModelUsuario) request.getAttribute("cliente");
+            ModelUsuario registro = (ModelUsuario) request.getAttribute("usuario");
         %>
 
 

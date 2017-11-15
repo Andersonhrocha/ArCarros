@@ -26,7 +26,7 @@
 
                     <%
                         //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETVENDAPRODUTO
-                        ModelVendaProduto registroQTD = (ModelVendaProduto) request.getAttribute("cliente");
+                        ModelVendaProduto registroQTD = (ModelVendaProduto) request.getAttribute("vendaproduto");
                     %>
 
                     <div class="col-md-3"></div>

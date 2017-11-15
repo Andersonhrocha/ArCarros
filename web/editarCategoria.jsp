@@ -16,7 +16,7 @@
 
         <%
             //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETCATEGORIA
-            ModelCategoria registro = (ModelCategoria) request.getAttribute("cliente");
+            ModelCategoria registro = (ModelCategoria) request.getAttribute("categoria");
         %>
 
 

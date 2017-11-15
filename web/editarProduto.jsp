@@ -24,7 +24,7 @@
 
                     <%
                         //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETSERVICO
-                        ModelProduto registro = (ModelProduto) request.getAttribute("cliente");
+                        ModelProduto registro = (ModelProduto) request.getAttribute("produto");
                     %>
 
                     <div class="col-md-3"></div>

@@ -24,7 +24,7 @@
 
                     <%
                         //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETMODELO
-                        ModelOrdemServico registro = (ModelOrdemServico) request.getAttribute("cliente");
+                        ModelOrdemServico registro = (ModelOrdemServico) request.getAttribute("ordemservico");
                     %>
 
                     <div class="col-md-3"></div>

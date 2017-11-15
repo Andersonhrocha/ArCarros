@@ -18,7 +18,7 @@
 
         <%
             //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETCARRO
-            ModelCarro registro = (ModelCarro) request.getAttribute("cliente");
+            ModelCarro registro = (ModelCarro) request.getAttribute("carro");
         %>
 
 

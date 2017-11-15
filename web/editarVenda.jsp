@@ -22,7 +22,7 @@
 
                     <%
                         //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETVENDA
-                        ModelVenda registro = (ModelVenda) request.getAttribute("cliente");
+                        ModelVenda registro = (ModelVenda) request.getAttribute("venda");
                     %>
 
                     <div class="col-md-3"></div>

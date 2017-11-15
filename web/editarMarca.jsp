@@ -16,7 +16,7 @@
 
         <%
             //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETMARCA
-            ModelMarca registro = (ModelMarca) request.getAttribute("cliente");
+            ModelMarca registro = (ModelMarca) request.getAttribute("fabricante");
         %>
 
 
