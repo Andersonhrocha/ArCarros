@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.JasperRunManager;
 import dao.ModuloConexao;
 import java.sql.Connection;
+import java.util.HashMap;
 import net.sf.jasperreports.engine.JRException;
 
 /**
@@ -55,6 +56,66 @@ public class RelatorioImpresso extends HttpServlet {
                 ouputStream.flush();
 
                 System.out.println("Relatório de produtos gerado com Sucesso!");
+            } catch (IOException | JRException ex) {
+                System.out.println("Erro ao gerar relatório=>" + ex.getMessage());
+            }
+            
+        } else if (comando.equalsIgnoreCase("imprimir_ordens_servico")) { //LISTA TODAS OS ORDENS DE SERVIÇO PARA IMPRIMIR
+
+            try {
+                //ABRINDO CONEXÃO
+                conexao = conn.abrirConexao();
+
+                //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
+                File caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/OrdemServico.jasper"));
+
+                //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
+                bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), null, conexao);
+
+                //ESCREVENDO NA SAIDA DO RESPONSE
+                response.setContentType("application/pdf");
+                response.setContentLength(bytes.length);
+                ServletOutputStream ouputStream = response.getOutputStream();
+                ouputStream.write(bytes, 0, bytes.length);
+
+                //EVIANDO CONTEÚDO
+                ouputStream.flush();
+
+                System.out.println("Relatório de ordem de serviço gerado com Sucesso!");
+            } catch (IOException | JRException ex) {
+                System.out.println("Erro ao gerar relatório=>" + ex.getMessage());
+            }
+
+        } else if (comando.equalsIgnoreCase("imprimir_item_ordens_servico")) { //IMPRIME ORDEM DE SERVIÇO UTILIZANDO O CÓDIGO DA 'OS'
+
+            //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
+            String codigoProjeto = request.getParameter("codigoItemOrdemServico");
+
+            //PARAMETRO QUE RECEBE O VALOR codigoItemOS DA SQL DO ARQUIVO COMPILADO .JASPER
+            HashMap valorParametro = new HashMap();
+            valorParametro.put("codigoItemOS", codigoProjeto);
+
+            try {
+
+                //ABRINDO CONEXÃO
+                conexao = conn.abrirConexao();
+
+                //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
+                File ComParametros = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/ItemOrdemServico.jasper"));
+
+                //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
+                bytes = JasperRunManager.runReportToPdf(ComParametros.getPath(), valorParametro, conexao);
+
+                //ESCREVENDO NA SAIDA DO RESPONSE
+                response.setContentType("application/pdf");
+                response.setContentLength(bytes.length);
+                ServletOutputStream ouputStream = response.getOutputStream();
+                ouputStream.write(bytes, 0, bytes.length);
+
+                //EVIANDO CONTEÚDO
+                ouputStream.flush();
+
+                System.out.println("Relatório por item de ordem de serviço gerado com Sucesso!");
             } catch (IOException | JRException ex) {
                 System.out.println("Erro ao gerar relatório=>" + ex.getMessage());
             }
