@@ -10,7 +10,6 @@ public class ModelCategoria {
     private String nome_categoria;
     private String descricao;
 
-    //CONSTRUTOR PRINCIPAL
     public ModelCategoria() {
 
     }

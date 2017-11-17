@@ -154,7 +154,7 @@ public class DaoMarca extends ModuloConexao {
     public List<ModelMarca> listarFabricantes() { //opcao 6.
 
         sql = " SELECT * FROM marca ";
-     
+
         List<ModelMarca> lista = new ArrayList<ModelMarca>();
 
         try {

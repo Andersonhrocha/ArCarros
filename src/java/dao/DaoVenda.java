@@ -33,7 +33,7 @@ public class DaoVenda extends ModuloConexao {
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getRelacao_id_cliente().getCpf_cliente());
+            pst.setString(1, pro.getCliente().getCpf_cliente());
             pst.setDate(2, new Date(pro.getData().getTime()));
 
             int status = pst.executeUpdate();
@@ -116,7 +116,7 @@ public class DaoVenda extends ModuloConexao {
 
                 retorno = new ModelVenda();
                 retorno.setId_venda(Integer.parseInt(rs.getString("id_venda")));
-                retorno.getRelacao_id_cliente().setCpf_cliente(rs.getString("cpf_cliente"));
+                retorno.getCliente().setCpf_cliente(rs.getString("cpf_cliente"));
                 retorno.setData(rs.getDate("data"));
 
             }
@@ -142,7 +142,7 @@ public class DaoVenda extends ModuloConexao {
 
                 ModelVenda item = new ModelVenda();
                 item.setId_venda(Integer.parseInt(rs.getString("id_venda")));
-                item.getRelacao_id_cliente().setCpf_cliente(rs.getString("cpf_cliente"));
+                item.getCliente().setCpf_cliente(rs.getString("cpf_cliente"));
                 item.setData(rs.getDate("data"));
 
                 lista.add(item);

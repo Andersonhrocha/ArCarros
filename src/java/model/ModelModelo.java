@@ -8,14 +8,11 @@ public class ModelModelo {
 
     private int id_modelo;
     private String nome_modelo;
-    private ModelMarca relacao_id_marca; //AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELMARCA
+    private ModelMarca marca;
     private String motorizacao;
 
-    //CONSTRUTOR PRINCIPAL CRIANDO OBJETO DA ENTIDADE MODELMARCA    
     public ModelModelo() {
-
-        relacao_id_marca = new ModelMarca();
-
+        marca = new ModelMarca();
     }
 
     public int getId_modelo() {
@@ -34,12 +31,12 @@ public class ModelModelo {
         this.nome_modelo = nome_modelo;
     }
 
-    public ModelMarca getRelacao_id_marca() {
-        return relacao_id_marca;
+    public ModelMarca getMarca() {
+        return marca;
     }
 
-    public void setRelacao_id_marca(ModelMarca relacao_id_marca) {
-        this.relacao_id_marca = relacao_id_marca;
+    public void setMarca(ModelMarca marca) {
+        this.marca = marca;
     }
 
     public String getMotorizacao() {

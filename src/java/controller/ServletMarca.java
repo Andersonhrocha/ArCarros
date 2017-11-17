@@ -83,7 +83,7 @@ public class ServletMarca extends ServletAbstrato {
 
                 //BUSCA PARA EDITAR
                 pro = dao.buscar(pro);
-                request.setAttribute("facricante", pro);
+                request.setAttribute("fabricante", pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, EDITAR_MARCA);

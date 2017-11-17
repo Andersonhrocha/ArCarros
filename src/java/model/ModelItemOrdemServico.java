@@ -7,16 +7,15 @@ package model;
 public class ModelItemOrdemServico {
 
     private int id_item_ordem_servico;
-    private ModelOrdemServico relacao_id_ordem_servico;//AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELPRDEMSERVICO
-    private ModelProduto relacao_id_produto;//AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELPRODUTO
-    private ModelServico relacao_id_servico;//AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELSERVICO
+    private ModelOrdemServico ordem_servico;
+    private ModelProduto produto;
+    private ModelServico servico;
     private int qtd_prod_utilizado;
 
-    //CONSTRUTOR PRINCIPAL CRIANDO OBJETOS DAS ENTIDADES MODELORDEMSERVICO, MODELPRODUTO E MODELSERVICO  
     public ModelItemOrdemServico() {
-        relacao_id_ordem_servico = new ModelOrdemServico();
-        relacao_id_produto = new ModelProduto();
-        relacao_id_servico = new ModelServico();
+        ordem_servico = new ModelOrdemServico();
+        produto = new ModelProduto();
+        servico = new ModelServico();
     }
 
     public int getId_item_ordem_servico() {
@@ -27,28 +26,28 @@ public class ModelItemOrdemServico {
         this.id_item_ordem_servico = id_item_ordem_servico;
     }
 
-    public ModelOrdemServico getRelacao_id_ordem_servico() {
-        return relacao_id_ordem_servico;
+    public ModelOrdemServico getOrdem_servico() {
+        return ordem_servico;
     }
 
-    public void setRelacao_id_ordem_servico(ModelOrdemServico relacao_id_ordem_servico) {
-        this.relacao_id_ordem_servico = relacao_id_ordem_servico;
+    public void setOrdem_servico(ModelOrdemServico ordem_servico) {
+        this.ordem_servico = ordem_servico;
     }
 
-    public ModelProduto getRelacao_id_produto() {
-        return relacao_id_produto;
+    public ModelProduto getProduto() {
+        return produto;
     }
 
-    public void setRelacao_id_produto(ModelProduto relacao_id_produto) {
-        this.relacao_id_produto = relacao_id_produto;
+    public void setProduto(ModelProduto produto) {
+        this.produto = produto;
     }
 
-    public ModelServico getRelacao_id_servico() {
-        return relacao_id_servico;
+    public ModelServico getServico() {
+        return servico;
     }
 
-    public void setRelacao_id_servico(ModelServico relacao_id_servico) {
-        this.relacao_id_servico = relacao_id_servico;
+    public void setServico(ModelServico servico) {
+        this.servico = servico;
     }
 
     public int getQtd_prod_utilizado() {
@@ -58,4 +57,5 @@ public class ModelItemOrdemServico {
     public void setQtd_prod_utilizado(int qtd_prod_utilizado) {
         this.qtd_prod_utilizado = qtd_prod_utilizado;
     }
+
 }

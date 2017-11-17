@@ -9,7 +9,6 @@ public class ModelMarca {
     private int id_marca;
     private String nome_marca;
 
-    //CONSTRUTOR PRINCIPAL
     public ModelMarca() {
 
     }

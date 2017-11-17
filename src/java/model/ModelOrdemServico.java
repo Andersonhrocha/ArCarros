@@ -9,16 +9,14 @@ import java.sql.Date;
 public class ModelOrdemServico {
 
     private int id_ordem_Servico;
-    private ModelCarro relacao_id_carro; //AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELCARRO
+    private ModelCarro carro;
     private Date data;
     private String situacao;
     private Double valor;
     private Double desconto;
 
-    //CONSTRUTOR PRINCIPAL CRIANDO OBJETO DA ENTIDADE MODELPRODUTO
     public ModelOrdemServico() {
-
-        relacao_id_carro = new ModelCarro();
+        carro = new ModelCarro();
     }
 
     public int getId_ordem_Servico() {
@@ -29,12 +27,12 @@ public class ModelOrdemServico {
         this.id_ordem_Servico = id_ordem_Servico;
     }
 
-    public ModelCarro getRelacao_id_carro() {
-        return relacao_id_carro;
+    public ModelCarro getCarro() {
+        return carro;
     }
 
-    public void setRelacao_id_carro(ModelCarro relacao_id_carro) {
-        this.relacao_id_carro = relacao_id_carro;
+    public void setCarro(ModelCarro carro) {
+        this.carro = carro;
     }
 
     public Date getData() {

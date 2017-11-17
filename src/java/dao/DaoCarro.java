@@ -35,8 +35,8 @@ public class DaoCarro extends ModuloConexao {
             pst.setString(1, pro.getId_carro());
             pst.setString(2, pro.getAno());
             pst.setString(3, pro.getCor());
-            pst.setString(4, pro.getRelacao_id_cliente().getCpf_cliente());
-            pst.setInt(5, pro.getRelacao_id_modelo().getId_modelo());
+            pst.setString(4, pro.getCliente().getCpf_cliente());
+            pst.setInt(5, pro.getModelo().getId_modelo());
 
             int status = pst.executeUpdate();
             if (status > 0) {
@@ -61,7 +61,7 @@ public class DaoCarro extends ModuloConexao {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setString(1, pro.getAno());
             pst.setString(2, pro.getCor());
-            pst.setInt(3, pro.getRelacao_id_modelo().getId_modelo());
+            pst.setInt(3, pro.getModelo().getId_modelo());
             pst.setString(4, pro.getId_carro());
 
             int status = pst.executeUpdate();
@@ -122,8 +122,8 @@ public class DaoCarro extends ModuloConexao {
                 retorno.setId_carro(rs.getString("id_carro"));
                 retorno.setAno(rs.getString("ano"));
                 retorno.setCor(rs.getString("cor"));
-                retorno.getRelacao_id_cliente().setCpf_cliente(rs.getString("cpf_cliente"));
-                retorno.getRelacao_id_modelo().setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
+                retorno.getCliente().setCpf_cliente(rs.getString("cpf_cliente"));
+                retorno.getModelo().setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
 
             }
         } catch (SQLException ex) {
@@ -151,8 +151,8 @@ public class DaoCarro extends ModuloConexao {
                 item.setId_carro(rs.getString("id_carro"));
                 item.setAno(rs.getString("ano"));
                 item.setCor(rs.getString("cor"));
-                item.getRelacao_id_cliente().setCpf_cliente(rs.getString("cpf_cliente"));
-                item.getRelacao_id_modelo().setNome_modelo(rs.getString("nome_modelo"));
+                item.getCliente().setCpf_cliente(rs.getString("cpf_cliente"));
+                item.getModelo().setNome_modelo(rs.getString("nome_modelo"));
 
                 lista.add(item);
             }
@@ -164,12 +164,12 @@ public class DaoCarro extends ModuloConexao {
         return lista;
 
     } //FIM DA CLASSE listarTodos
-    
-        //MÉTODO PARA LISTAGEM DE TODOS OS VEÍCULOS
+
+    //MÉTODO PARA LISTAGEM DE TODOS OS VEÍCULOS
     public List<ModelCarro> listarVeiculos() { //opcao 6.
 
         sql = " SELECT * FROM carro ";
-     
+
         List<ModelCarro> lista = new ArrayList<ModelCarro>();
 
         try {

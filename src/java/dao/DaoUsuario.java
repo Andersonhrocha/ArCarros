@@ -14,8 +14,8 @@ import model.ModelUsuario;
  *
  * @author Anderson
  */
-public class DaoUsuario extends ModuloConexao{
-    
+public class DaoUsuario extends ModuloConexao {
+
     //VARIÁVEIS
     public Connection conexao;
     private String sql = "";
@@ -24,7 +24,7 @@ public class DaoUsuario extends ModuloConexao{
     public DaoUsuario() {
         conexao = this.abrirConexao();
     }
-    
+
     //MÉTODO PARA INCLUSÃO
     public void incluir(ModelUsuario pro) { //opcao 1.
 
@@ -50,7 +50,7 @@ public class DaoUsuario extends ModuloConexao{
             throw new RuntimeException("Falha ao inserir o usuário", ex);
         }
     }//FIM DA CLASSE incluir
-    
+
     //MÉTODO PARA EDIÇÃO
     public void editar(ModelUsuario pro) { //opcao 2.
 
@@ -77,7 +77,7 @@ public class DaoUsuario extends ModuloConexao{
         }
 
     }//FIM DA CLASSE editar
-    
+
     //MÉTODO PARA EXCLUSÃO
     public void excluir(ModelUsuario pro) {// opcao 3.
 
@@ -100,7 +100,7 @@ public class DaoUsuario extends ModuloConexao{
             throw new RuntimeException("Falha ao excluir um usuário.", ex);
         }
     }//FIM DA CLASSE excluir
-    
+
     //MÉTODO PARA BUSCAR POR ID
     public ModelUsuario buscar(ModelUsuario pro) { //opcao 4.
 
@@ -129,8 +129,8 @@ public class DaoUsuario extends ModuloConexao{
         }
         return retorno;
     }//FIM DA CLASSE buscar
-    
-     //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
+
+    //MÉTODO PARA LISTAGEM DE TODOS OS DADOS
     public List<ModelUsuario> listarTodos() { //opcao 5.
 
         sql = "SELECT * FROM usuario";
@@ -148,7 +148,7 @@ public class DaoUsuario extends ModuloConexao{
                 item.setNome(rs.getString("nome"));
                 item.setLogin(rs.getString("login"));
                 item.setSenha(rs.getString("senha"));
-                
+
                 lista.add(item);
             }
 
@@ -159,5 +159,5 @@ public class DaoUsuario extends ModuloConexao{
         return lista;
 
     } //FIM DA CLASSE listarTodos
-    
+
 }

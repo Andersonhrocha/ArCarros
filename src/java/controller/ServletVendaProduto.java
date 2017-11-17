@@ -42,8 +42,8 @@ public class ServletVendaProduto extends ServletAbstrato {
             if (acao.equalsIgnoreCase("inserir")) {
 
                 //RECEBENDO OS VALORES DO FORMULÁRIO
-                pro.getRelacao_id_venda().setId_venda(Integer.parseInt(request.getParameter("txtVenda")));
-                pro.getRelacao_id_produto().setId_produto(request.getParameter("txtProduto"));
+                pro.getVenda().setId_venda(Integer.parseInt(request.getParameter("txtVenda")));
+                pro.getProduto().setId_produto(request.getParameter("txtProduto"));
                 pro.setQuantidade(Integer.parseInt(request.getParameter("txtQuantidade")));
                 pro.setTipoPagamento(request.getParameter("txtPagamento"));
 
@@ -60,7 +60,7 @@ public class ServletVendaProduto extends ServletAbstrato {
 
                 //PARAMETRO QUE OBTEM O ID PARA EDITAR
                 pro.setId_venda_produto(Integer.parseInt(request.getParameter("txtCodigo")));
-                pro.getRelacao_id_produto().setId_produto(request.getParameter("txtProduto"));
+                pro.getProduto().setId_produto(request.getParameter("txtProduto"));
                 pro.setQuantidade(Integer.parseInt(request.getParameter("txtQuantidade")));
                 pro.setTipoPagamento(request.getParameter("txtPagamento"));
 

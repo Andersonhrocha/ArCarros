@@ -11,7 +11,6 @@ public class ModelServico {
     private String descricao;
     private Double valor_servico;
 
-    //CONSTRUTOR PRINCIPAL 
     public ModelServico() {
 
     }

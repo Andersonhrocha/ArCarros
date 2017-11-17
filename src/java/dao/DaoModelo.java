@@ -33,7 +33,7 @@ public class DaoModelo extends ModuloConexao {
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setString(1, pro.getNome_modelo());
-            pst.setInt(2, pro.getRelacao_id_marca().getId_marca());
+            pst.setInt(2, pro.getMarca().getId_marca());
             pst.setString(3, pro.getMotorizacao());
 
             int status = pst.executeUpdate();
@@ -58,7 +58,7 @@ public class DaoModelo extends ModuloConexao {
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setString(1, pro.getNome_modelo());
-            pst.setInt(2, pro.getRelacao_id_marca().getId_marca());
+            pst.setInt(2, pro.getMarca().getId_marca());
             pst.setString(3, pro.getMotorizacao());
             pst.setInt(4, pro.getId_modelo());
 
@@ -119,7 +119,7 @@ public class DaoModelo extends ModuloConexao {
                 retorno = new ModelModelo();
                 retorno.setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
                 retorno.setNome_modelo(rs.getString("nome_modelo"));
-                retorno.getRelacao_id_marca().setId_marca(Integer.parseInt(rs.getString("id_marca")));
+                retorno.getMarca().setId_marca(Integer.parseInt(rs.getString("id_marca")));
                 retorno.setMotorizacao(rs.getString("motorizacao"));
 
             }
@@ -145,7 +145,7 @@ public class DaoModelo extends ModuloConexao {
                 ModelModelo item = new ModelModelo();
                 item.setId_modelo(Integer.parseInt(rs.getString("id_modelo")));
                 item.setNome_modelo(rs.getString("nome_modelo"));
-                item.getRelacao_id_marca().setNome_marca(rs.getString("nome_marca"));
+                item.getMarca().setNome_marca(rs.getString("nome_marca"));
                 item.setMotorizacao(rs.getString("motorizacao"));
 
                 lista.add(item);

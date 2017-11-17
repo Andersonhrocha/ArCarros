@@ -43,7 +43,7 @@ public class ServletVenda extends ServletAbstrato {
             if (acao.equalsIgnoreCase("inserir")) {
 
                 //PARAMETRO QUE OBTÉM DADOS DO FORMULÁRIO PARA ADICIONAR NO BANCO DE DADOS
-                pro.getRelacao_id_cliente().setCpf_cliente(request.getParameter("txtVenda"));
+                pro.getCliente().setCpf_cliente(request.getParameter("txtVenda"));
                 pro.setData(Date.valueOf(request.getParameter("txtData")));
 
                 //INCLUIR NO BANCO DE DADOS

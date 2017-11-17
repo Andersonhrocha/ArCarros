@@ -43,7 +43,7 @@ public class ServletOrdemServico extends ServletAbstrato {
             if (acao.equalsIgnoreCase("inserir")) {
 
                 //RECEBENDO OS VALORES DO FORMULÁRIO
-                pro.getRelacao_id_carro().setId_carro(request.getParameter("txtCarro"));
+                pro.getCarro().setId_carro(request.getParameter("txtCarro"));
                 pro.setData(new Date(System.currentTimeMillis()));
                 pro.setSituacao(request.getParameter("txtSituacao"));
                 pro.setValor(new Double("0.00"));
@@ -62,7 +62,7 @@ public class ServletOrdemServico extends ServletAbstrato {
 
                 //PARAMETRO QUE OBTEM O ID PARA EDITAR
                 pro.setId_ordem_Servico(Integer.parseInt(request.getParameter("txtDocumento")));
-                pro.getRelacao_id_carro().setId_carro(request.getParameter("txtCarro"));
+                pro.getCarro().setId_carro(request.getParameter("txtCarro"));
                 pro.setSituacao(request.getParameter("txtSituacao"));
                 pro.setValor(Double.parseDouble(request.getParameter("txtValor")));
                 pro.setDesconto(Double.parseDouble(request.getParameter("txtDesconto")));

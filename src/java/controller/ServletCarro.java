@@ -45,9 +45,9 @@ public class ServletCarro extends ServletAbstrato {
                 pro.setId_carro(request.getParameter("txtDocumento"));
                 pro.setAno(request.getParameter("txtAno"));
                 pro.setCor(request.getParameter("txtCor"));
-                pro.getRelacao_id_cliente().setCpf_cliente(request.getParameter("txtCliente"));
+                pro.getCliente().setCpf_cliente(request.getParameter("txtCliente"));
                 //PARAMETRO QUE OBTÉM O COMBOXSELECTED
-                pro.getRelacao_id_modelo().setId_modelo(Integer.parseInt(request.getParameter("txtModelo")));
+                pro.getModelo().setId_modelo(Integer.parseInt(request.getParameter("txtModelo")));
 
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
@@ -64,8 +64,8 @@ public class ServletCarro extends ServletAbstrato {
                 pro.setId_carro(request.getParameter("txtDocumento"));
                 pro.setAno(request.getParameter("txtAno"));
                 pro.setCor(request.getParameter("txtCor"));
-                pro.getRelacao_id_cliente().setCpf_cliente(request.getParameter("txtCliente"));
-                pro.getRelacao_id_modelo().setId_modelo(Integer.parseInt(request.getParameter("txtModelo")));
+                pro.getCliente().setCpf_cliente(request.getParameter("txtCliente"));
+                pro.getModelo().setId_modelo(Integer.parseInt(request.getParameter("txtModelo")));
 
                 //EDITANDO NO BANCO DE DADOS
                 dao.editar(pro);

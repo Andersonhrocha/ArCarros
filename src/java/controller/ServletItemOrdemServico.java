@@ -42,9 +42,9 @@ public class ServletItemOrdemServico extends ServletAbstrato {
             if (acao.equalsIgnoreCase("inserir")) {
 
                 //RECEBENDO OS VALORES DO FORMULÁRIO
-                pro.getRelacao_id_ordem_servico().setId_ordem_Servico(Integer.parseInt(request.getParameter("txtOrdemServico")));
-                pro.getRelacao_id_produto().setId_produto(request.getParameter("txtProduto"));
-                pro.getRelacao_id_servico().setId_servico(Integer.parseInt(request.getParameter("txtServico")));
+                pro.getOrdem_servico().setId_ordem_Servico(Integer.parseInt(request.getParameter("txtOrdemServico")));
+                pro.getProduto().setId_produto(request.getParameter("txtProduto"));
+                pro.getServico().setId_servico(Integer.parseInt(request.getParameter("txtServico")));
                 pro.setQtd_prod_utilizado(Integer.parseInt(request.getParameter("txtQtdPro")));
 
                 //INCLUIR NO BANCO DE DADOS
@@ -59,9 +59,9 @@ public class ServletItemOrdemServico extends ServletAbstrato {
             } else if (acao.equalsIgnoreCase("editar")) {
 
                 //PARAMETRO QUE OBTEM O ID PARA EDITAR
-                pro.getRelacao_id_ordem_servico().setId_ordem_Servico(Integer.parseInt(request.getParameter("txtOrdemServico")));
-                pro.getRelacao_id_produto().setId_produto(request.getParameter("txtProduto"));
-                pro.getRelacao_id_servico().setId_servico(Integer.parseInt(request.getParameter("txtServico")));
+                pro.getOrdem_servico().setId_ordem_Servico(Integer.parseInt(request.getParameter("txtOrdemServico")));
+                pro.getProduto().setId_produto(request.getParameter("txtProduto"));
+                pro.getServico().setId_servico(Integer.parseInt(request.getParameter("txtServico")));
                 pro.setQtd_prod_utilizado(Integer.parseInt(request.getParameter("txtQtdPro")));
 
                 //EDITANDO NO BANCO DE DADOS
@@ -84,7 +84,7 @@ public class ServletItemOrdemServico extends ServletAbstrato {
             } else if (acao.equalsIgnoreCase("buscar")) {
 
                 //PARAMETRO QUE OBTÉM O ID PARA BUSCAR REGISTRO
-                pro.getRelacao_id_ordem_servico().setId_ordem_Servico(Integer.parseInt(request.getParameter("txtOrdemServico")));
+                pro.getOrdem_servico().setId_ordem_Servico(Integer.parseInt(request.getParameter("txtOrdemServico")));
 
                 //BUSCA PARA EDITAR
                 pro = dao.buscar(pro);

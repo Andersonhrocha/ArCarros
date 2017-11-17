@@ -11,7 +11,6 @@ public class ModelUsuario {
     private String login;
     private String senha;
 
-    //CONSTRUTOR PRINCIPAL
     public ModelUsuario() {
 
     }

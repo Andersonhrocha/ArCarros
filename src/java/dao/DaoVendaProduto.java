@@ -32,8 +32,8 @@ public class DaoVendaProduto extends ModuloConexao {
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setInt(1, pro.getRelacao_id_venda().getId_venda());
-            pst.setString(2, pro.getRelacao_id_produto().getId_produto());
+            pst.setInt(1, pro.getVenda().getId_venda());
+            pst.setString(2, pro.getProduto().getId_produto());
             pst.setInt(3, pro.getQuantidade());
             pst.setString(4, pro.getTipoPagamento());
 
@@ -58,7 +58,7 @@ public class DaoVendaProduto extends ModuloConexao {
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getRelacao_id_produto().getId_produto());
+            pst.setString(1, pro.getProduto().getId_produto());
             pst.setInt(2, pro.getQuantidade());
             pst.setString(3, pro.getTipoPagamento());
             pst.setInt(4, pro.getId_venda_produto());
@@ -119,8 +119,8 @@ public class DaoVendaProduto extends ModuloConexao {
 
                 retorno = new ModelVendaProduto();
                 retorno.setId_venda_produto(Integer.parseInt(rs.getString("id_venda_produto")));
-                retorno.getRelacao_id_venda().setId_venda(Integer.parseInt(rs.getString("id_venda")));
-                retorno.getRelacao_id_produto().setId_produto(rs.getString("id_produto"));
+                retorno.getVenda().setId_venda(Integer.parseInt(rs.getString("id_venda")));
+                retorno.getProduto().setId_produto(rs.getString("id_produto"));
                 retorno.setQuantidade(Integer.parseInt(rs.getString("quantidade")));
                 retorno.setTipoPagamento(rs.getString("tipo_pagamento"));
 
@@ -147,12 +147,12 @@ public class DaoVendaProduto extends ModuloConexao {
 
                 ModelVendaProduto item = new ModelVendaProduto();
                 item.setId_venda_produto(Integer.parseInt(rs.getString("id_venda_produto")));
-                item.getRelacao_id_venda().getRelacao_id_cliente().setCpf_cliente(rs.getString("cpf_cliente"));
-                item.getRelacao_id_venda().setId_venda(Integer.parseInt(rs.getString("id_venda")));
-                item.getRelacao_id_produto().setId_produto(rs.getString("id_produto"));
-                item.getRelacao_id_produto().setNome_produto(rs.getString("nome_produto"));
+                item.getVenda().getCliente().setCpf_cliente(rs.getString("cpf_cliente"));
+                item.getVenda().setId_venda(Integer.parseInt(rs.getString("id_venda")));
+                item.getProduto().setId_produto(rs.getString("id_produto"));
+                item.getProduto().setNome_produto(rs.getString("nome_produto"));
                 item.setQuantidade(Integer.parseInt(rs.getString("quantidade")));
-                item.getRelacao_id_produto().setValor_produto(rs.getDouble("valor_produto"));
+                item.getProduto().setValor_produto(rs.getDouble("valor_produto"));
                 item.setTipoPagamento(rs.getString("tipo_pagamento"));
 
                 lista.add(item);
@@ -165,27 +165,5 @@ public class DaoVendaProduto extends ModuloConexao {
         return lista;
 
     } //FIM DA CLASSE listarTodos
-
-    //MÉTODO PARA SOMAR PRODUTOS
-    public void SomaProdutos() {
-
-        sql = "SELECT * FROM  venda v INNER JOIN venda_produto vp ON v.id_venda = vp.id_venda \n"
-                + "INNER JOIN produto p ON p.id_produto = vp.id_produto WHERE id_venda_produto = ? ";
-
-        try {
-            PreparedStatement pst = conexao.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
-            double total = 0;
-
-            while (rs.next()) {
-                total = total + rs.getFloat("valor") * rs.getInt(Integer.parseInt("quantidade"));
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(DaoVendaProduto.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Uma falha ocorreu ao tentar somar todos os produtos da venda.", ex);
-        }
-
-    }//FIM DA CLASSE SomaProdutos
 
 }

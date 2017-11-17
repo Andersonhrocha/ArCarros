@@ -37,7 +37,7 @@ public class DaoProduto extends ModuloConexao {
             pst.setString(2, pro.getNome_produto());
             pst.setString(3, pro.getDescricao_produto());
             pst.setDate(4, new Date(pro.getValidade().getTime()));
-            pst.setInt(5, pro.getRelacao_id_categoria().getId_categoria());
+            pst.setInt(5, pro.getCategoria().getId_categoria());
             pst.setDouble(6, pro.getValor_produto());
             pst.setInt(7, pro.getQtd_estoque());
 
@@ -66,7 +66,7 @@ public class DaoProduto extends ModuloConexao {
             pst.setString(1, pro.getNome_produto());
             pst.setString(2, pro.getDescricao_produto());
             pst.setDate(3, new Date(pro.getValidade().getTime()));
-            pst.setInt(4, pro.getRelacao_id_categoria().getId_categoria());
+            pst.setInt(4, pro.getCategoria().getId_categoria());
             pst.setDouble(5, pro.getValor_produto());
             pst.setInt(6, pro.getQtd_estoque());
             pst.setString(7, pro.getId_produto());
@@ -130,7 +130,7 @@ public class DaoProduto extends ModuloConexao {
                 retorno.setNome_produto(rs.getString("nome_produto"));
                 retorno.setDescricao_produto(rs.getString("descricao_produto"));
                 retorno.setValidade(rs.getDate("validade"));
-                retorno.getRelacao_id_categoria().setId_categoria(Integer.parseInt(rs.getString("id_categoria")));
+                retorno.getCategoria().setId_categoria(Integer.parseInt(rs.getString("id_categoria")));
                 retorno.setValor_produto(Double.valueOf(rs.getString("valor_produto")));
                 retorno.setQtd_estoque(Integer.parseInt(rs.getString("qtd_estoque")));
 

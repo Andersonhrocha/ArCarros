@@ -44,7 +44,7 @@ public class ServletModelo extends ServletAbstrato {
                 //RECEBENDO OS VALORES DO FORMULÁRIO
                 pro.setNome_modelo(request.getParameter("txtNome"));
                 //PARAMETRO QUE OBTÉM O COMBOXSELECTED
-                pro.getRelacao_id_marca().setId_marca(Integer.parseInt(request.getParameter("txtFabricante")));
+                pro.getMarca().setId_marca(Integer.parseInt(request.getParameter("txtFabricante")));
                 pro.setMotorizacao(request.getParameter("txtMotorizacao"));
 
                 //INCLUIR NO BANCO DE DADOS
@@ -61,7 +61,7 @@ public class ServletModelo extends ServletAbstrato {
                 //PARAMETRO QUE OBTÉM O ID PARA EDITAR
                 pro.setId_modelo(Integer.parseInt(request.getParameter("txtDocumento")));
                 pro.setNome_modelo(request.getParameter("txtNome"));
-                pro.getRelacao_id_marca().setId_marca(Integer.parseInt(request.getParameter("txtFabricante")));
+                pro.getMarca().setId_marca(Integer.parseInt(request.getParameter("txtFabricante")));
                 pro.setMotorizacao(request.getParameter("txtMotorizacao"));
 
                 //EDITANDO NO BANCO DE DADOS

@@ -12,15 +12,12 @@ public class ModelProduto {
     private String nome_produto;
     private String descricao_produto;
     private Date validade;
-    private ModelCategoria relacao_id_categoria; //AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELCATEGORIA
+    private ModelCategoria categoria;
     private Double valor_produto;
     private int qtd_estoque;
 
-    //CONSTRUTOR PRINCIPAL CRIANDO OBJETO DA ENTIDADE MODELCATEGORIA  
     public ModelProduto() {
-
-        relacao_id_categoria = new ModelCategoria();
-
+        categoria = new ModelCategoria();
     }
 
     public String getId_produto() {
@@ -55,12 +52,12 @@ public class ModelProduto {
         this.validade = validade;
     }
 
-    public ModelCategoria getRelacao_id_categoria() {
-        return relacao_id_categoria;
+    public ModelCategoria getCategoria() {
+        return categoria;
     }
 
-    public void setRelacao_id_categoria(ModelCategoria relacao_id_categoria) {
-        this.relacao_id_categoria = relacao_id_categoria;
+    public void setCategoria(ModelCategoria categoria) {
+        this.categoria = categoria;
     }
 
     public Double getValor_produto() {

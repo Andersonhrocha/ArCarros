@@ -35,7 +35,7 @@ public class DaoOrdemServico extends ModuloConexao {
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setInt(1, pro.getId_ordem_Servico());
-            pst.setString(2, pro.getRelacao_id_carro().getId_carro());
+            pst.setString(2, pro.getCarro().getId_carro());
             pst.setDate(3, new Date(pro.getData().getTime()));
             pst.setString(4, pro.getSituacao());
             pst.setDouble(5, pro.getValor());
@@ -123,7 +123,7 @@ public class DaoOrdemServico extends ModuloConexao {
 
                 retorno = new ModelOrdemServico();
                 retorno.setId_ordem_Servico(Integer.parseInt(rs.getString("id_ordem_servico")));
-                retorno.getRelacao_id_carro().setId_carro(rs.getString("id_carro"));
+                retorno.getCarro().setId_carro(rs.getString("id_carro"));
                 retorno.setData(rs.getDate("data"));
                 retorno.setSituacao(rs.getString("situacao"));
                 retorno.setValor(Double.valueOf(rs.getString("valor")));
@@ -151,7 +151,7 @@ public class DaoOrdemServico extends ModuloConexao {
 
                 ModelOrdemServico item = new ModelOrdemServico();
                 item.setId_ordem_Servico(Integer.parseInt(rs.getString("id_ordem_servico")));
-                item.getRelacao_id_carro().setId_carro(rs.getString("id_carro"));
+                item.getCarro().setId_carro(rs.getString("id_carro"));
                 item.setData(rs.getDate("data"));
                 item.setSituacao(rs.getString("situacao"));
                 item.setValor(Double.valueOf(rs.getString("valor")));

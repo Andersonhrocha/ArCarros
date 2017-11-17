@@ -64,7 +64,7 @@ public class ServletLogin extends ServletAbstrato {
                     System.out.println("Login não existe no banco de dados.");
 
                     //REDIRECIONAMENTO
-                    this.redirecionarPagina(request, response, ERRO_LOGIN);
+                    redirecionarPagina(request, response, ERRO_LOGIN);
 
                 }
             }

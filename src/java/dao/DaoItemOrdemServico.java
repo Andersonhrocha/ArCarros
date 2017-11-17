@@ -32,9 +32,9 @@ public class DaoItemOrdemServico extends ModuloConexao {
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setInt(1, pro.getRelacao_id_ordem_servico().getId_ordem_Servico());
-            pst.setString(2, pro.getRelacao_id_produto().getId_produto());
-            pst.setInt(3, pro.getRelacao_id_servico().getId_servico());
+            pst.setInt(1, pro.getOrdem_servico().getId_ordem_Servico());
+            pst.setString(2, pro.getProduto().getId_produto());
+            pst.setInt(3, pro.getServico().getId_servico());
             pst.setInt(4, pro.getQtd_prod_utilizado());
 
             int status = pst.executeUpdate();
@@ -117,9 +117,9 @@ public class DaoItemOrdemServico extends ModuloConexao {
 
                 retorno = new ModelItemOrdemServico();
                 retorno.setId_item_ordem_servico(Integer.parseInt(rs.getString("id_item_ordem_servico")));
-                retorno.getRelacao_id_ordem_servico().setId_ordem_Servico(Integer.parseInt(rs.getString("id_ordem_servico")));
-                retorno.getRelacao_id_produto().setId_produto(rs.getString("id_produto"));
-                retorno.getRelacao_id_servico().setId_servico(Integer.parseInt(rs.getString("id_servico")));
+                retorno.getOrdem_servico().setId_ordem_Servico(Integer.parseInt(rs.getString("id_ordem_servico")));
+                retorno.getProduto().setId_produto(rs.getString("id_produto"));
+                retorno.getServico().setId_servico(Integer.parseInt(rs.getString("id_servico")));
                 retorno.setQtd_prod_utilizado(Integer.parseInt(rs.getString("qtd_prod_utilizado")));
 
             }
@@ -149,9 +149,9 @@ public class DaoItemOrdemServico extends ModuloConexao {
 
                 ModelItemOrdemServico item = new ModelItemOrdemServico();
                 item.setId_item_ordem_servico(Integer.parseInt(rs.getString("id_item_ordem_servico")));
-                item.getRelacao_id_ordem_servico().setId_ordem_Servico(Integer.parseInt(rs.getString("id_ordem_servico")));
-                item.getRelacao_id_produto().setNome_produto(rs.getString("nome_produto"));
-                item.getRelacao_id_servico().setNome_servico(rs.getString("nome_servico"));
+                item.getOrdem_servico().setId_ordem_Servico(Integer.parseInt(rs.getString("id_ordem_servico")));
+                item.getProduto().setNome_produto(rs.getString("nome_produto"));
+                item.getServico().setNome_servico(rs.getString("nome_servico"));
                 item.setQtd_prod_utilizado(Integer.parseInt(rs.getString("qtd_prod_utilizado")));
 
                 lista.add(item);

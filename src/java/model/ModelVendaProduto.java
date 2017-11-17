@@ -7,17 +7,14 @@ package model;
 public class ModelVendaProduto {
 
     private int id_venda_produto;
-    private ModelVenda relacao_id_venda; //AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELVENDA
-    private ModelProduto relacao_id_produto;//AGREGAÇÃO/RELACIONAMENTO COM A CLASSE MODELPRODUTO
+    private ModelVenda venda;
+    private ModelProduto produto;
     private int quantidade;
     private String tipoPagamento;
 
-    //CONSTRUTOR PRINCIPAL CRIANDO OBJETOS DAS ENTIDADES MODELVENDA E MODELPRODUTO
     public ModelVendaProduto() {
-
-        relacao_id_venda = new ModelVenda();
-        relacao_id_produto = new ModelProduto();
-
+        venda = new ModelVenda();
+        produto = new ModelProduto();
     }
 
     public int getId_venda_produto() {
@@ -28,20 +25,20 @@ public class ModelVendaProduto {
         this.id_venda_produto = id_venda_produto;
     }
 
-    public ModelVenda getRelacao_id_venda() {
-        return relacao_id_venda;
+    public ModelVenda getVenda() {
+        return venda;
     }
 
-    public void setRelacao_id_venda(ModelVenda relacao_id_venda) {
-        this.relacao_id_venda = relacao_id_venda;
+    public void setVenda(ModelVenda venda) {
+        this.venda = venda;
     }
 
-    public ModelProduto getRelacao_id_produto() {
-        return relacao_id_produto;
+    public ModelProduto getProduto() {
+        return produto;
     }
 
-    public void setRelacao_id_produto(ModelProduto relacao_id_produto) {
-        this.relacao_id_produto = relacao_id_produto;
+    public void setProduto(ModelProduto produto) {
+        this.produto = produto;
     }
 
     public int getQuantidade() {

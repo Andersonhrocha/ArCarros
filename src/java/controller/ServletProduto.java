@@ -47,7 +47,7 @@ public class ServletProduto extends ServletAbstrato {
                 pro.setNome_produto(request.getParameter("txtNomeProduto"));
                 pro.setDescricao_produto(request.getParameter("txtDescricaoProduto"));
                 pro.setValidade(Date.valueOf(request.getParameter("txtData")));
-                pro.getRelacao_id_categoria().setId_categoria(Integer.parseInt(request.getParameter("txtCategoria")));
+                pro.getCategoria().setId_categoria(Integer.parseInt(request.getParameter("txtCategoria")));
                 pro.setValor_produto(Double.parseDouble(request.getParameter("txtValor")));
                 pro.setQtd_estoque(Integer.parseInt(request.getParameter("txtEstoque")));
 
@@ -67,7 +67,7 @@ public class ServletProduto extends ServletAbstrato {
                 pro.setNome_produto(request.getParameter("txtNomeProduto"));
                 pro.setDescricao_produto(request.getParameter("txtDescricaoProduto"));
                 pro.setValidade(Date.valueOf(request.getParameter("txtData")));
-                pro.getRelacao_id_categoria().setId_categoria(Integer.parseInt(request.getParameter("txtCategoria")));
+                pro.getCategoria().setId_categoria(Integer.parseInt(request.getParameter("txtCategoria")));
                 pro.setValor_produto(Double.parseDouble(request.getParameter("txtValor")));
                 pro.setQtd_estoque(Integer.parseInt(request.getParameter("txtEstoque")));
 
