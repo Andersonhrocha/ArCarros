@@ -50,7 +50,8 @@
                             </thead>
 
                             <tbody>
-                                <%                                    //CRIA INSTÂNCIA DA CLASSE DAO E CRIA A LISTA PARA OBTER TODOS OS REGISTROS
+                                <%                                    
+                                    //CRIA INSTÂNCIA DA CLASSE DAO E CRIA A LISTA PARA OBTER TODOS OS REGISTROS
                                     DaoProduto dao = new DaoProduto();
                                     List<ModelProduto> listar;
 

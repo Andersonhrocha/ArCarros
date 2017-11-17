@@ -3,7 +3,6 @@
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -21,7 +20,7 @@
             <div id="m_body">
                 <div id="container" style="margin:auto; width: 80%">
 
-                    <h1 class="titulo">Consulta Cadastro Para Venda</h1>
+                    <h1 class="titulo">Consultar Cadastro Para Venda</h1>
 
                     <th style="text-align: center"><u>
                             <a class="btn btn-primary" href="menu.jsp" >
@@ -57,18 +56,21 @@
                                 %>
                                 <tr>                                    
                                     <td style="text-align: center"> <%=registro.getId_venda()%> </td>
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_cliente().getCpf_cliente()%> </td>
+                                    <td style="text-align: center"> <%=registro.getCliente().getCpf_cliente()%> </td>
                                     <td style="text-align: center"> <%=registro.getData()%> </td>
 
-                                    <!-- BOTÃO EDITAR -->
+
+                                    <!-- BOTÃO ADICIONAR PRODUTOS -->
+                                    <td style="text-align: center">
+                                        <a class="btn btn-success" href="adicionarVendaProduto.jsp" >
+                                            <span class="glyphicon glyphicon-plus"></span> Comprar</a></td> 
+
+
+                                    <!-- BOTÃO INFORMAÇÕES -->
                                     <td style="text-align: center">
                                         <a class="btn btn-info" href="ServletVenda?acao=buscar&txtDocumento=<%=registro.getId_venda()%>" >
                                             <span class="glyphicon glyphicon-edit"></span> Informações</a></td>  
 
-                                    <!-- BOTÃO IMPRESSÃO -->
-                                    <td style="text-align: center">
-                                        <a class="btn btn-success" href="#" >
-                                            <span class="glyphicon glyphicon-print"></span> Imprimir</a></td> 
 
                                 </tr>
                                 <%

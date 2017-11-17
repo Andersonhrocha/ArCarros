@@ -12,7 +12,6 @@ public class ModelCliente {
     private String telefone;
     private String email;
 
-    //CONSTRUTOR PRINCIPAL
     public ModelCliente() {
 
     }

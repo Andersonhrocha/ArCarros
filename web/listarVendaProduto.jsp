@@ -77,12 +77,12 @@
 
                                 %>
                                 <tr> 
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_venda().getRelacao_id_cliente().getCpf_cliente()%> </td>
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_venda().getId_venda()%> </td>
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_produto().getId_produto()%> </td>
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_produto().getNome_produto()%> </td>
+                                    <td style="text-align: center"> <%=registro.getVenda().getCliente().getCpf_cliente()%> </td>
+                                    <td style="text-align: center"> <%=registro.getVenda().getId_venda()%> </td>
+                                    <td style="text-align: center"> <%=registro.getProduto().getId_produto()%> </td>
+                                    <td style="text-align: center"> <%=registro.getProduto().getNome_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getQuantidade()%> </td>
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_produto().getValor_produto()%> </td>
+                                    <td style="text-align: center"> <%=registro.getProduto().getValor_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getTipoPagamento()%> </td>
 
 

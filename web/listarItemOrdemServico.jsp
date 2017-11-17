@@ -76,9 +76,9 @@
                                 %>
                                 <tr> 
                                     <td style="text-align: center"> <%=registro.getId_item_ordem_servico()%> </td>
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_ordem_servico().getId_ordem_Servico()%> </td>
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_produto().getNome_produto()%> </td>
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_servico().getNome_servico()%> </td>
+                                    <td style="text-align: center"> <%=registro.getOrdem_servico().getId_ordem_Servico()%> </td>
+                                    <td style="text-align: center"> <%=registro.getProduto().getNome_produto()%> </td>
+                                    <td style="text-align: center"> <%=registro.getServico().getNome_servico()%> </td>
                                     <td style="text-align: center"> <%=registro.getQtd_prod_utilizado()%> </td>
 
 

@@ -63,7 +63,7 @@
                                 %>
                                 <tr>                                    
                                     <td style="text-align: center"> <%=registro.getId_ordem_Servico()%> </td>
-                                    <td style="text-align: center"> <%=registro.getRelacao_id_carro().getId_carro()%> </td>
+                                    <td style="text-align: center"> <%=registro.getCarro().getId_carro()%> </td>
                                     <td style="text-align: center"> <%=registro.getData()%> </td>
                                     <td style="text-align: center"> <%=registro.getSituacao()%> </td>
                                     <td style="text-align: center"> <%=registro.getValor()%> </td>
