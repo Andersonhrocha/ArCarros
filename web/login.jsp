@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login do Sistema</title>
         <link href="bootstrap-login/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="bootstrap-login/css/devmedia_estilo.css" rel="stylesheet" />
+        <link href="bootstrap-login/css/meu_estilo.css" rel="stylesheet" />
 
         <script src="bootstrap-login/js/jquery-1.12.4.min.js"></script>
         <script src="bootstrap-login/js/bootstrap.min.js"></script>
