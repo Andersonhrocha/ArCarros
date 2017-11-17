@@ -63,7 +63,7 @@
                                                     <!-- <option>Selecione</option> -->
 
                                                     <%
-                                                        //MÉTODO EXISTETE NA CLASSE DAOORDEMSERVICO
+                                                        //MÉTODO EXISTETE NA CLASSE DAOCARRO
                                                         DaoCarro dao = new DaoCarro();
                                                         List<ModelCarro> listar;
 
@@ -123,7 +123,6 @@
                                     </div>  
 
 
-
                                     <hr/>
 
 
@@ -138,7 +137,7 @@
                                     </div>
 
 
-                                    <%-- Mensagem de retorno vindo do ServletCliente  --%>
+                                    <%-- Mensagem de retorno vindo do ServletOrdemServico  --%>
                                     <p style="text-align: center; font-size: 16px;">                                        
                                         <% if (request.getAttribute("mensagem") != null) {%>
                                         ${mensagem}

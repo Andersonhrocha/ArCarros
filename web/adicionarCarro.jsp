@@ -94,7 +94,7 @@
                                                 <!-- <option>Selecione</option> -->
 
                                                 <%
-                                                    //MÉTODO EXISTETE NA CLASSE DAOMARCA
+                                                    //MÉTODO EXISTETE NA CLASSE DAOMODELO
                                                     DaoModelo dao = new DaoModelo();
                                                     List<ModelModelo> listar;
 
@@ -132,7 +132,7 @@
                                     </div>
 
 
-                                    <%-- Mensagem de retorno vindo do ServletCliente  --%>
+                                    <%-- Mensagem de retorno vindo do ServletCarro --%>
                                     <p style="text-align: center; font-size: 16px;">                                        
                                         <% if (request.getAttribute("mensagem") != null) {%>
                                         ${mensagem}

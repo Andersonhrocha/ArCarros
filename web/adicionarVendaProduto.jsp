@@ -46,7 +46,8 @@
                                                 <select name="txtVenda" class="form-control" required=""> 
                                                     <!--   <option>Selecione</option> -->
 
-                                                    <%                                                        //MÉTODO EXISTETE NA CLASSE DAOCATEGORIA
+                                                    <%                                                        
+                                                        //MÉTODO EXISTETE NA CLASSE DAOVENDA
                                                         DaoVenda dao = new DaoVenda();
                                                         List<ModelVenda> listar;
                                                         listar = dao.listarTodos();
@@ -72,7 +73,8 @@
                                                 <select name="txtProduto" class="form-control" required=""> 
                                                     <!--   <option>Selecione</option> -->
 
-                                                    <%                                                        //MÉTODO EXISTETE NA CLASSE DAOCATEGORIA
+                                                    <%                                                        
+                                                        //MÉTODO EXISTETE NA CLASSE DAOPRODUTO
                                                         DaoProduto daoPro = new DaoProduto();
                                                         List<ModelProduto> produtoLista;
                                                         produtoLista = daoPro.listarTodos();
@@ -132,7 +134,7 @@
                                     </div>
 
 
-                                    <%-- Mensagem de retorno vindo do ServletCliente  --%>
+                                    <%-- Mensagem de retorno vindo do ServletVendaProduto  --%>
                                     <p style="text-align: center; font-size: 16px;">                                        
                                         <% if (request.getAttribute("mensagem") != null) {%>
                                         ${mensagem}

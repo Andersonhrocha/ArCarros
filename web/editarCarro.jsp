@@ -101,7 +101,7 @@
                                                     <!-- <option>Selecione</option> -->
 
                                                     <%
-                                                        //MÉTODO EXISTETE NA CLASSE DAOMARCA
+                                                        //MÉTODO EXISTETE NA CLASSE DAOMODELO
                                                         DaoModelo dao = new DaoModelo();
                                                         List<ModelModelo> listar;
 

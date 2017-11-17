@@ -83,7 +83,7 @@
                                     </div>
                                     
                                     
-                                    <%-- Mensagem de retorno vindo do ServletCliente  --%>
+                                    <%-- Mensagem de retorno vindo do ServletServico --%>
                                     <p style="text-align: center; font-size: 16px;">                                        
                                         <% if (request.getAttribute("mensagem") != null) {%>
                                         ${mensagem}

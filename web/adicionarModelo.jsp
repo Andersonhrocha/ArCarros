@@ -105,7 +105,7 @@
                                     </div>
 
 
-                                    <%-- Mensagem de retorno vindo do ServletCliente  --%>
+                                    <%-- Mensagem de retorno vindo do ServletModelo  --%>
                                     <p style="text-align: center; font-size: 16px;">                                        
                                         <% if (request.getAttribute("mensagem") != null) {%>
                                         ${mensagem}

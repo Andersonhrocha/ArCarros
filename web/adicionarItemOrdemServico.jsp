@@ -48,7 +48,8 @@
                                                 <select name="txtOrdemServico" class="form-control" required=""> 
                                                     <!--   <option>Selecione</option> -->
 
-                                                    <%                                                        //MÉTODO EXISTETE NA CLASSE DAOCATEGORIA
+                                                    <%                                                        
+                                                        //MÉTODO EXISTETE NA CLASSE DAOORDEMSERVICO
                                                         DaoOrdemServico dao = new DaoOrdemServico();
                                                         List<ModelOrdemServico> listar;
                                                         listar = dao.listarTodos();
@@ -74,7 +75,8 @@
                                                 <select name="txtProduto" class="form-control" required=""> 
                                                     <!--   <option>Selecione</option> -->
 
-                                                    <%                                                        //MÉTODO EXISTETE NA CLASSE DAOCATEGORIA
+                                                    <%                                                        
+                                                        //MÉTODO EXISTETE NA CLASSE DAOPRODUTO
                                                         DaoProduto daoPro = new DaoProduto();
                                                         List<ModelProduto> produtoLista;
                                                         produtoLista = daoPro.listarTodos();
@@ -100,7 +102,8 @@
                                                 <select name="txtServico" class="form-control" required=""> 
                                                     <!--   <option>Selecione</option> -->
 
-                                                    <%                                                        //MÉTODO EXISTETE NA CLASSE DAOCATEGORIA
+                                                    <%                                                        
+                                                        //MÉTODO EXISTETE NA CLASSE DAOSERVICO
                                                         DaoServico daoServ = new DaoServico();
                                                         List<ModelServico> servicoLista;
                                                         servicoLista = daoServ.listarTodos();
@@ -144,7 +147,7 @@
                                     </div>
 
 
-                                    <%-- Mensagem de retorno vindo do ServletCliente  --%>
+                                    <%-- Mensagem de retorno vindo do ServletItemOrdemServico  --%>
                                     <p style="text-align: center; font-size: 16px;">                                        
                                         <% if (request.getAttribute("mensagem") != null) {%>
                                         ${mensagem}
