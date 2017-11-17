@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login do Sistema</title>
         <link href="bootstrap-login/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="bootstrap-login/css/meu_estilo.css" rel="stylesheet" />
+        <link href="bootstrap-login/css/devmedia_estilo.css" rel="stylesheet" />
 
         <script src="bootstrap-login/js/jquery-1.12.4.min.js"></script>
         <script src="bootstrap-login/js/bootstrap.min.js"></script>
@@ -26,27 +26,22 @@
                             <div style="display:none" id="result" class="alert alert-danger col-sm-12">
 
                             </div>
-                            
 
                             <div class="form-group">                                         
                                 <input type="text" name="txtLogin" placeholder="Digite o seu login" class="form-control" 
                                        size="50" required="" autofocus=""/>                    
-                            </div>  
-                            
-                            
+                            </div>   
                             <div class="form-group">                                            
                                 <input type="password" name="txtSenha" placeholder="Digite sua senha" class="form-control" 
                                        size="50" required=""/>                    
                             </div>
 
-                            
                             <%-- Mensagem de retorno vindo do ServletCliente  --%>
                             <p style="text-align: center; font-size: 16px;">                                        
                                 <% if (request.getAttribute("mensagem") != null) {%>
                                 ${mensagem}
                                 <%}%>
                             </p>
-                            
                             
                             <div style="margin-top:10px" class="form-group">                          
                                 <div class="col-sm-12 controls">
