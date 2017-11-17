@@ -2,7 +2,7 @@
 <%@page import="model.ModelCategoria"%>
 <%@page import="dao.DaoCategoria"%>
 <%@page import="java.util.List"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +23,7 @@
                 <div class="container">
 
                     <%
-                        //RECEBE O ATRIBUTO DA OPÃ‡ÃƒO BUSCAR DO SERVLETSERVICO
+                        //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETPRODUTO
                         ModelProduto registro = (ModelProduto) request.getAttribute("produto");
                     %>
 
@@ -35,19 +35,19 @@
                                     <h3>Atualizar Produto</h3>
                                 </div>
 
-                                <div style="text-align:right; font-size: 11px;" > * Campo ObrigatÃ³rio </div>
+                                <div style="text-align:right; font-size: 11px;" > * Campo Obrigatório </div>
 
-                                <!-- INÃCIO DO FORMULÃRIO -->
+                                <!-- INÍCIO DO FORMULÁRIO -->
                                 <form role="form" class="form-horizontal" action="ServletProduto" method="POST">
                                     <input type="hidden" name="acao" value="editar" />
 
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">CÃ³digo: *</label>  
+                                        <label class="col-md-4 control-label">Código: *</label>  
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
-                                                <input type="text" name="txtDocumento" placeholder="Digite um cÃ³digo" 
+                                                <input type="text" name="txtDocumento" placeholder="Digite um código" 
                                                        value="<%=registro.getId_produto()%>" class="form-control" required="" readonly="readonly"  />
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@
 
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">DescriÃ§Ã£o: *</label>
+                                        <label class="col-md-4 control-label">Descrição: *</label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -98,7 +98,7 @@
                                                     <!--   <option>Selecione</option> -->
 
                                                     <%
-                                                        //MÃ‰TODO EXISTETE NA CLASSE DAOCATEGORIA
+                                                        //MÉTODO EXISTETE NA CLASSE DAOCATEGORIA
                                                         DaoCategoria dao = new DaoCategoria();
                                                         List<ModelCategoria> listar;
 
@@ -118,7 +118,7 @@
 
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">PreÃ§o: *</label>  
+                                        <label class="col-md-4 control-label">Preço: *</label>  
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
@@ -156,7 +156,7 @@
 
 
                                 </form>
-                                <!-- FINAL DO FORMULÃRIO -->
+                                <!-- FINAL DO FORMULÁRIO -->
 
                             </div>
                         </div>
