@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Cadastro Ordens de Serviço</title>
+        <title>Cadastro Ordem de Serviço</title>
 
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>

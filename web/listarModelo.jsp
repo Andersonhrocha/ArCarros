@@ -8,26 +8,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Consultar Modelos</title>
+
+        <!-- BOOTSTRAP -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+
+        <!-- MENU -->
+        <link href="bootstrap-Menu/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap-Menu/css/estilo.css" rel="stylesheet">
+        <script src="bootstrap-Menu/js/jquery-1.11.1.min.js"></script>
+        <script src="bootstrap-Menu/js/bootstrap.min.js"></script>
     </head>
     <body> 
-
-        <div id="m_main">           
-
+        
+        <div id="m_main">
+            
             <div id="m_body">
                 <div id="container" style="margin:auto; width: 80%">
 
-                    <h1 class="titulo">Consulta dos Modelos de Veículos</h1>
+                    <!-- MENU INCLUDE -->
+                    <jsp:include page="menu.jsp"/>
 
+                    <br><br><br>
 
-                    <th style="text-align: center"><u>
-                            <a class="btn btn-primary" href="menu.jsp" >
-                                <span class="glyphicon glyphicon-home"></span> HOME</a></u></th>
-
-                    <br><br> 
+                    <h1 class="titulo">Consultar Modelos dos Veículos</h1>
 
                     <div id="demo_jui">
 

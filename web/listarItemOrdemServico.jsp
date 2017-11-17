@@ -1,47 +1,56 @@
 <%@page import="model.ModelItemOrdemServico"%>
 <%@page import="dao.DaoItemOrdemServico"%>
 <%@page import="java.util.List"%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Consulta Item Ordem de Serviço</title>
+        <title>Consulta Itens de OS</title>
+
+        <!-- BOOTSTRAP -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+
+        <!-- MENU -->
+        <link href="bootstrap-Menu/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap-Menu/css/estilo.css" rel="stylesheet">
+        <script src="bootstrap-Menu/js/jquery-1.11.1.min.js"></script>
+        <script src="bootstrap-Menu/js/bootstrap.min.js"></script>
     </head>
     <body> 
 
-        <div id="m_main">           
+        <div id="m_main">
 
             <div id="m_body">
                 <div id="container" style="margin:auto; width: 80%">
 
-                    <h1 class="titulo">Consulta dos Itens</h1>
+                    <!-- MENU INCLUDE -->
+                    <jsp:include page="menu.jsp"/>
 
-                    <th style="text-align: center"><u>
-                            <a class="btn btn-primary" href="menu.jsp" >
-                                <span class="glyphicon glyphicon-home"></span> HOME</a></u></th>
+                    <br><br><br>
 
+                    <h1 class="titulo">Consulta Itens de OS</h1>
 
                     <!-- INÍCIO DO FORMULÁRIO -->
                     <form role="form" class="form-horizontal" action="RelatorioImpresso" method="POST" target="_blank">
                         <input type="hidden" name="comando" value="imprimir_item_ordens_servico" />
 
-                        <label class="col-md-4 control-label"></label>  
-                        <div class="col-md-4 inputGroupContainer">                                               
-                            <input type="text" name="codigoItemOrdemServico" placeholder="Digite o Código da Ordem de Serviço" class="form-control" 
+                        <div style="float: right; size: 20px;">                                              
+                            <input type="text" name="codigoItemOrdemServico" placeholder="Código Ordem de Serviço" class="form-control" 
                                    size="10" autofocus=""  />
-                            <span class="glyphicon glyphicon-print"></span> <input type="submit" value="IMPRIMIR POR CÓDIGO" class="btn btn-success" />                           
-                        </div>                        
+                            <p></p>
+                            <span class="glyphicon glyphicon-print"></span> 
+                            <input type="submit" value="IMPRIMIR POR CÓDIGO" class="btn btn-primary" />                           
+                            <p></p>
+                        </div>   
+
                     </form>
                     <!-- FINAL DO FORMULÁRIO -->
-                    
+
 
                     <br><br> 
 
@@ -127,7 +136,7 @@
                                 '<option value="100">100</option>' +
                                 '<option value="-1">Todo</option>' +
                                 '</select>',
-                        "search": "Buscar:",
+                        "search": "Pesquisar:",
                         "info": "Mostrando Página _PAGE_ de _PAGES_ ",
                         "paginate": {
                             "previous": "Anterior",

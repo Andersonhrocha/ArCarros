@@ -74,8 +74,7 @@
 
                                                 <!-- BOTÃO PARA ADICIONAR NOVO FABRICANTE -->                                   
                                                 <a class="btn btn-primary" href="adicionarMarca.jsp" >
-                                                    <span class="glyphicon glyphicon-plus"></span> </a>  
-
+                                                    <span class="glyphicon glyphicon-plus"></span> </a>                                                            
                                             </div> 
                                         </div>
                                     </div>

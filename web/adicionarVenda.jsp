@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Cadastro de Venda para Cliente</title>
+        <title>Venda para Cliente</title>
 
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
@@ -24,7 +24,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="page-header"  style="text-align: center; margin-top: 5px">
-                                    <h3>Cadastro de Venda para Cliente</h3>
+                                    <h3>Venda para Cliente</h3>
                                 </div>
 
                                 <div style="text-align:right; font-size: 11px;" > * Campo Obrigatório </div>

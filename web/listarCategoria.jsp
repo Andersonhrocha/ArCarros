@@ -7,11 +7,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Consulta Categoria Produto</title>
+        <title>Consultar Categoria Produto</title>
+        
+         <!-- BOOTSTRAP -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+
+        <!-- MENU -->
+        <link href="bootstrap-Menu/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap-Menu/css/estilo.css" rel="stylesheet">
+        <script src="bootstrap-Menu/js/jquery-1.11.1.min.js"></script>
+        <script src="bootstrap-Menu/js/bootstrap.min.js"></script>
     </head>
     <body> 
 
@@ -19,14 +27,13 @@
 
             <div id="m_body">
                 <div id="container" style="margin:auto; width: 80%">
+                    
+                    <!-- MENU INCLUDE -->
+                    <jsp:include page="menu.jsp"/>
 
-                    <h1 class="titulo">Consulta das Categorias de Produtos</h1>
+                    <br><br><br>
 
-                    <th style="text-align: center"><u>
-                            <a class="btn btn-primary" href="menu.jsp" >
-                                <span class="glyphicon glyphicon-home"></span> HOME</a></u></th>
-
-                    <br><br> 
+                    <h1 class="titulo">Consultar Categoria de Produtos</h1>
 
                     <div id="demo_jui">
 

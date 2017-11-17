@@ -3,36 +3,44 @@
 <%@page import="dao.DaoOrdemServico"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Consulta Ordens de Serviço</title>
+        <title>Consultar Ordens de Serviço</title>
+
+        <!-- BOOTSTRAP -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <link href="datatable/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+
+        <!-- MENU -->
+        <link href="bootstrap-Menu/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap-Menu/css/estilo.css" rel="stylesheet">
+        <script src="bootstrap-Menu/js/jquery-1.11.1.min.js"></script>
+        <script src="bootstrap-Menu/js/bootstrap.min.js"></script>
     </head>
     <body> 
 
-        <div id="m_main">           
+        <div id="m_main">
 
             <div id="m_body">
                 <div id="container" style="margin:auto; width: 80%">
 
-                    <h1 class="titulo">Consulta das Ordens de Serviço</h1>
+                    <!-- MENU INCLUDE -->
+                    <jsp:include page="menu.jsp"/>
+
+                    <br><br><br>
+
+                    <h1 class="titulo">Consultar Ordens de Serviço</h1>
 
                     <th style="text-align: center"><u>
-                            <a class="btn btn-primary" href="menu.jsp" >
-                                <span class="glyphicon glyphicon-home"></span> HOME</a></u></th>
-
-                    <th style="text-align: center"><u>
-                            <a class="btn btn-success" href="RelatorioImpresso?comando=imprimir_ordens_servico" target="_blank" />
+                            <a class="btn btn-primary" href="RelatorioImpresso?comando=imprimir_ordens_servico" target="_blank" />
                             <span class="glyphicon glyphicon-print"></span> IMPRIMIR TODOS</a></u></th>
 
-                    <br><br> 
-
+                    <br><br>
+                    
                     <div id="demo_jui">
 
                         <!-- INICIO DA TABELA -->
