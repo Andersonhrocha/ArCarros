@@ -17,7 +17,6 @@ import model.ModelVenda;
 public class ServletVenda extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_PRODUTO = "adicionarVenda.jsp";
     private static final String EDITAR_PRODUTO = "editarVenda.jsp";
     private static final String LISTAR_PRODUTO = "listarVenda.jsp";
     private final DaoVenda dao;
@@ -49,11 +48,8 @@ public class ServletVenda extends ServletAbstrato {
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
-
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_PRODUTO);
+                redirecionarPagina(request, response, LISTAR_PRODUTO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 

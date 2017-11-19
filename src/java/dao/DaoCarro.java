@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.ModelCarro;
 
 /**
@@ -22,7 +20,7 @@ public class DaoCarro extends ModuloConexao {
 
     //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoCarro() {
-        conexao = this.abrirConexao();
+        conexao = abrirConexao();
     }
 
     //MÉTODO PARA INCLUSÃO
@@ -47,7 +45,6 @@ public class DaoCarro extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCarro.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir um carro", ex);
         }
     }//FIM DA CLASSE incluir
@@ -73,7 +70,6 @@ public class DaoCarro extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCarro.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro de um carro", ex);
         }
 
@@ -97,7 +93,6 @@ public class DaoCarro extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCarro.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um carro.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -127,7 +122,6 @@ public class DaoCarro extends ModuloConexao {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCarro.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um carro.", ex);
         }
         return retorno;
@@ -158,7 +152,6 @@ public class DaoCarro extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCarro.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todas os carros.", ex);
         }
         return lista;
@@ -185,8 +178,7 @@ public class DaoCarro extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Uma falha ocorreu ao tentar listar todas as marcas.", ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos os carros.", ex);
         }
         return lista;
 

@@ -16,7 +16,6 @@ import model.ModelCarro;
 public class ServletCarro extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_CARRO = "adicionarCarro.jsp";
     private static final String EDITAR_CARRO = "editarCarro.jsp";
     private static final String LISTAR_CARRO = "listarCarro.jsp";
     private final DaoCarro dao;
@@ -52,11 +51,8 @@ public class ServletCarro extends ServletAbstrato {
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
-
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_CARRO);
+                redirecionarPagina(request, response, LISTAR_CARRO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 

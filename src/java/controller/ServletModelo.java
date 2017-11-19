@@ -16,7 +16,6 @@ import model.ModelModelo;
 public class ServletModelo extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_MODELO = "adicionarModelo.jsp";
     private static final String EDITAR_MODELO = "editarModelo.jsp";
     private static final String LISTAR_MODELO = "listarModelo.jsp";
     private final DaoModelo dao;
@@ -50,11 +49,8 @@ public class ServletModelo extends ServletAbstrato {
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
-
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_MODELO);
+                redirecionarPagina(request, response, LISTAR_MODELO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 

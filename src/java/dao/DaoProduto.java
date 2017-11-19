@@ -1,9 +1,5 @@
 package dao;
 
-/**
- *
- * @author Anderson
- */
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -11,10 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.ModelProduto;
 
+/**
+ *
+ * @author Anderson
+ */
 public class DaoProduto extends ModuloConexao {
 
     //VARIÁVEIS
@@ -23,7 +21,7 @@ public class DaoProduto extends ModuloConexao {
 
     //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoProduto() {
-        conexao = this.abrirConexao();
+        conexao = abrirConexao();
     }
 
     //MÉTODO PARA INCLUSÃO
@@ -50,7 +48,6 @@ public class DaoProduto extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoProduto.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir o produto", ex);
         }
     }//FIM DA CLASSE incluir
@@ -80,7 +77,6 @@ public class DaoProduto extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoProduto.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro do produto", ex);
         }
 
@@ -104,7 +100,6 @@ public class DaoProduto extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoProduto.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um produto.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -136,7 +131,6 @@ public class DaoProduto extends ModuloConexao {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoProduto.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um produto.", ex);
         }
         return retorno;
@@ -165,7 +159,6 @@ public class DaoProduto extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoProduto.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todos produto.", ex);
         }
         return lista;
@@ -193,7 +186,6 @@ public class DaoProduto extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todas as marcas.", ex);
         }
         return lista;

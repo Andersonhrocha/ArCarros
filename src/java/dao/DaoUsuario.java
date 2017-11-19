@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.ModelUsuario;
 
 /**
@@ -22,7 +20,7 @@ public class DaoUsuario extends ModuloConexao {
 
     //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoUsuario() {
-        conexao = this.abrirConexao();
+        conexao = abrirConexao();
     }
 
     //MÉTODO PARA INCLUSÃO
@@ -46,7 +44,6 @@ public class DaoUsuario extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoUsuario.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir o usuário", ex);
         }
     }//FIM DA CLASSE incluir
@@ -72,7 +69,6 @@ public class DaoUsuario extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoUsuario.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro do usuário", ex);
         }
 
@@ -96,7 +92,6 @@ public class DaoUsuario extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoUsuario.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um usuário.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -124,7 +119,6 @@ public class DaoUsuario extends ModuloConexao {
                 retorno.setSenha(rs.getString("senha"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoUsuario.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um usuário.", ex);
         }
         return retorno;
@@ -153,7 +147,6 @@ public class DaoUsuario extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoUsuario.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todos usuário.", ex);
         }
         return lista;

@@ -16,7 +16,6 @@ import model.ModelUsuario;
 public class ServletUsuario extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_USUARIO = "adicionarUsuario.jsp";
     private static final String EDITAR_USUARIO = "editarUsuario.jsp";
     private static final String LISTAR_USUARIO = "listarUsuario.jsp";
     private final DaoUsuario dao;
@@ -49,11 +48,8 @@ public class ServletUsuario extends ServletAbstrato {
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
-
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_USUARIO);
+                redirecionarPagina(request, response, LISTAR_USUARIO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 

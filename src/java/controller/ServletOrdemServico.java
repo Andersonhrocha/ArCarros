@@ -17,7 +17,6 @@ import model.ModelOrdemServico;
 public class ServletOrdemServico extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_ORDEM_SERVICO = "adicionarOrdemServico.jsp";
     private static final String EDITAR_ORDEM_SERVICO = "editarOrdemServico.jsp";
     private static final String LISTAR_ORDEM_SERVICO = "listarOrdemServico.jsp";
     private final DaoOrdemServico dao;
@@ -52,11 +51,8 @@ public class ServletOrdemServico extends ServletAbstrato {
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
-
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_ORDEM_SERVICO);
+                redirecionarPagina(request, response, LISTAR_ORDEM_SERVICO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 

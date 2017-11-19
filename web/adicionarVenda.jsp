@@ -68,9 +68,9 @@
                                             <a href="ServletVenda?acao=listar" class="btn btn-primary">  <span class="glyphicon glyphicon-list-alt"></span> Consultar</a>     
 
                                         </div>
-                                    </div>
-                                    
+                                     </div>
 
+                                    
                                     <%-- Mensagem de retorno vindo do ServletVenda  --%>
                                     <p style="text-align: center; font-size: 16px;">                                        
                                         <% if (request.getAttribute("mensagem") != null) {%>

@@ -20,8 +20,7 @@ public abstract class ServletAbstrato extends HttpServlet {
     //MÉTODO PARA REDIRECIONAR AS PÁGINAS NAS REQUISIÇÕES
     public void redirecionarPagina(HttpServletRequest request, HttpServletResponse response, String paginas)
             throws ServletException, IOException {
-        
-        //REDIRECIONAMENTO DAS PÁGINAS
+
         RequestDispatcher mostrar = request.getRequestDispatcher(paginas);
         mostrar.forward(request, response);
         

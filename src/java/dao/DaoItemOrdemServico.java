@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.ModelItemOrdemServico;
 
 /**
@@ -22,7 +20,7 @@ public class DaoItemOrdemServico extends ModuloConexao {
 
     //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoItemOrdemServico() {
-        conexao = this.abrirConexao();
+        conexao = abrirConexao();
     }
 
     //MÉTODO PARA INCLUSÃO
@@ -46,7 +44,6 @@ public class DaoItemOrdemServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoItemOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir item de ordem de serviço", ex);
         }
     }//FIM DA CLASSE incluir
@@ -70,7 +67,6 @@ public class DaoItemOrdemServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoItemOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro o item de ordem de serviço.", ex);
         }
 
@@ -94,7 +90,6 @@ public class DaoItemOrdemServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoItemOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um item de ordem de serviço.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -124,7 +119,6 @@ public class DaoItemOrdemServico extends ModuloConexao {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoItemOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um item de ordem de serviço.", ex);
         }
         return retorno;
@@ -158,8 +152,7 @@ public class DaoItemOrdemServico extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoItemOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos itens de venda.", ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos item de ordem de serviço.", ex);
         }
         return lista;
 

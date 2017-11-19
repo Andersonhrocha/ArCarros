@@ -1,9 +1,5 @@
 package dao;
 
-/**
- *
- * @author Anderson
- */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,10 +7,12 @@ import java.sql.SQLException;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.ModelOrdemServico;
 
+/**
+ *
+ * @author Anderson
+ */
 public class DaoOrdemServico extends ModuloConexao {
 
     //VARIÁVEIS
@@ -24,7 +22,7 @@ public class DaoOrdemServico extends ModuloConexao {
     //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoOrdemServico() {
 
-        conexao = this.abrirConexao();
+        conexao = abrirConexao();
     }
 
     //MÉTODO PARA INCLUSÃO
@@ -50,7 +48,6 @@ public class DaoOrdemServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir ordem de serviço", ex);
         }
     }//FIM DA CLASSE incluir
@@ -76,7 +73,6 @@ public class DaoOrdemServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro da ordem de serviço", ex);
         }
 
@@ -100,7 +96,6 @@ public class DaoOrdemServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um ordem de serviço.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -130,7 +125,6 @@ public class DaoOrdemServico extends ModuloConexao {
                 retorno.setDesconto(Double.valueOf(rs.getString("desconto")));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um ordem de serviço.", ex);
         }
         return retorno;
@@ -161,7 +155,6 @@ public class DaoOrdemServico extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoOrdemServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todas ordem de serviço.", ex);
         }
         return lista;

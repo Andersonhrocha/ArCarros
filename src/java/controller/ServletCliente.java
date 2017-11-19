@@ -16,7 +16,6 @@ import model.ModelCliente;
 public class ServletCliente extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_CLIENTE = "adicionarCliente.jsp";
     private static final String EDITAR_CLIENTE = "editarCliente.jsp";
     private static final String LISTAR_CLIENTE = "listarCliente.jsp";
     private final DaoCliente dao;
@@ -51,11 +50,8 @@ public class ServletCliente extends ServletAbstrato {
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
-
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_CLIENTE);
+                redirecionarPagina(request, response, LISTAR_CLIENTE);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 

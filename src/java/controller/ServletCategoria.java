@@ -16,7 +16,6 @@ import model.ModelCategoria;
 public class ServletCategoria extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_CATEGORIA = "adicionarCategoria.jsp";
     private static final String EDITAR_CATEGORIA = "editarCategoria.jsp";
     private static final String LISTAR_CATEGORIA = "listarCategoria.jsp";
     private final DaoCategoria dao;
@@ -48,11 +47,8 @@ public class ServletCategoria extends ServletAbstrato {
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
-
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_CATEGORIA);
+                redirecionarPagina(request, response, LISTAR_CATEGORIA);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 

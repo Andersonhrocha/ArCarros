@@ -112,7 +112,7 @@
                                                 <select name="txtPagamento" class="form-control" required="">
                                                     <option value="CC">CARTÃO CRÉDITO</option>
                                                     <option value="CD">CARTÃO DÉDITO</option>
-                                                    <option value="RS">DINHEIRO</option>
+                                                    <option value="RS" selected="">DINHEIRO</option>
                                                     <option value="CQ">CHEQUE</option>
                                                 </select> 
                                             </div>

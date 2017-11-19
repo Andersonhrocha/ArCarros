@@ -16,7 +16,6 @@ import model.ModelServico;
 public class ServletServico extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_SERVICO = "adicionarServico.jsp";
     private static final String EDITAR_SERVICO = "editarServico.jsp";
     private static final String LISTAR_SERVICO = "listarServico.jsp";
     private final DaoServico dao;
@@ -49,11 +48,8 @@ public class ServletServico extends ServletAbstrato {
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
-
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_SERVICO);
+                redirecionarPagina(request, response, LISTAR_SERVICO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 

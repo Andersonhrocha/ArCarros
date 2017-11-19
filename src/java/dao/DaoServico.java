@@ -1,19 +1,17 @@
 package dao;
 
-/**
- *
- * @author Anderson
- */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.ModelServico;
 
+/**
+ *
+ * @author Anderson
+ */
 public class DaoServico extends ModuloConexao {
 
     //VARIÁVEIS
@@ -22,7 +20,7 @@ public class DaoServico extends ModuloConexao {
 
     //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoServico() {
-        conexao = this.abrirConexao();
+        conexao = abrirConexao();
     }
 
     //MÉTODO PARA INCLUSÃO
@@ -45,7 +43,6 @@ public class DaoServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir o serviço", ex);
         }
     }//FIM DA CLASSE incluir
@@ -71,7 +68,6 @@ public class DaoServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro do serviço", ex);
         }
 
@@ -95,7 +91,6 @@ public class DaoServico extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um serviço.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -124,7 +119,6 @@ public class DaoServico extends ModuloConexao {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um serviço.", ex);
         }
         return retorno;
@@ -153,8 +147,7 @@ public class DaoServico extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoServico.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos venda.", ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos os serviços.", ex);
         }
         return lista;
 
@@ -181,8 +174,7 @@ public class DaoServico extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Uma falha ocorreu ao tentar listar todas as marcas.", ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos os serviços.", ex);
         }
         return lista;
 

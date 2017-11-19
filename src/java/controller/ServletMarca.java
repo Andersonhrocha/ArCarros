@@ -16,7 +16,6 @@ import model.ModelMarca;
 public class ServletMarca extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_MARCA = "adicionarMarca.jsp";
     private static final String EDITAR_MARCA = "editarMarca.jsp";
     private static final String LISTAR_MARCA = "listarMarca.jsp";
     private final DaoMarca dao;
@@ -47,11 +46,8 @@ public class ServletMarca extends ServletAbstrato {
                 //INCLUIR NO BANCO DE DADOS
                 dao.incluir(pro);
 
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
-
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_MARCA);
+                redirecionarPagina(request, response, LISTAR_MARCA);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 

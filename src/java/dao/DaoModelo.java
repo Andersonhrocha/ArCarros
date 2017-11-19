@@ -10,8 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.ModelModelo;
 
 public class DaoModelo extends ModuloConexao {
@@ -22,7 +20,7 @@ public class DaoModelo extends ModuloConexao {
 
     //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoModelo() {
-        conexao = this.abrirConexao();
+        conexao = abrirConexao();
     }
 
     //MÉTODO PARA INCLUSÃO
@@ -45,7 +43,6 @@ public class DaoModelo extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir o modelo", ex);
         }
     }//FIM DA CLASSE incluir
@@ -71,7 +68,6 @@ public class DaoModelo extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro do modelo.", ex);
         }
 
@@ -95,7 +91,6 @@ public class DaoModelo extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um modelo.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -124,7 +119,6 @@ public class DaoModelo extends ModuloConexao {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um modelo.", ex);
         }
         return retorno;
@@ -152,7 +146,6 @@ public class DaoModelo extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todos modelos.", ex);
         }
         return lista;
@@ -180,7 +173,6 @@ public class DaoModelo extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoModelo.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todos modelos.", ex);
         }
         return lista;
