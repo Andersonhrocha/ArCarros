@@ -1,19 +1,17 @@
 package dao;
 
-/**
- *
- * @author Anderson
- */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.ModelCliente;
 
+/**
+ *
+ * @author Anderson
+ */
 public class DaoCliente extends ModuloConexao {
 
     //VARIÁVEIS
@@ -22,7 +20,7 @@ public class DaoCliente extends ModuloConexao {
 
     //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoCliente() {
-        conexao = this.abrirConexao();
+        conexao = abrirConexao();
     }
 
     //MÉTODO PARA INCLUSÃO
@@ -47,7 +45,6 @@ public class DaoCliente extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao inserir o cliente", ex);
         }
     }//FIM DA CLASSE incluir
@@ -74,7 +71,6 @@ public class DaoCliente extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao atualizar o registro do cliente", ex);
         }
 
@@ -98,7 +94,6 @@ public class DaoCliente extends ModuloConexao {
             pst.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Falha ao excluir um cliente.", ex);
         }
     }//FIM DA CLASSE excluir
@@ -127,7 +122,6 @@ public class DaoCliente extends ModuloConexao {
                 retorno.setEmail(rs.getString("email"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao buscar um cliente.", ex);
         }
         return retorno;
@@ -157,7 +151,6 @@ public class DaoCliente extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Uma falha ocorreu ao tentar listar todos clientes.", ex);
         }
         return lista;
