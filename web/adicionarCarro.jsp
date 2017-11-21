@@ -36,7 +36,6 @@
                                     <input type="hidden" name="acao" value="inserir" />
 
 
-
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Placa do Veículo: *</label>  
                                         <div class="col-md-8 inputGroupContainer">

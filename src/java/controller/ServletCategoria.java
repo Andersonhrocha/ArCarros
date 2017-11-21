@@ -20,7 +20,6 @@ public class ServletCategoria extends ServletAbstrato {
     private static final String LISTAR_CATEGORIA = "listarCategoria.jsp";
     private final DaoCategoria dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletCategoria() {
         dao = new DaoCategoria();
     }
@@ -45,10 +44,10 @@ public class ServletCategoria extends ServletAbstrato {
                 pro.setDescricao(request.getParameter("txtDescricao"));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_CATEGORIA);
+                this.redirecionarPagina(request, response, LISTAR_CATEGORIA);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -58,7 +57,7 @@ public class ServletCategoria extends ServletAbstrato {
                 pro.setDescricao(request.getParameter("txtDescricao"));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_CATEGORIA);
@@ -69,7 +68,7 @@ public class ServletCategoria extends ServletAbstrato {
                 pro.setId_categoria(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_CATEGORIA);

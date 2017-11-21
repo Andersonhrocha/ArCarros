@@ -19,9 +19,7 @@ public class DaoOrdemServico extends ModuloConexao {
     public Connection conexao;
     private String sql = "";
 
-    //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoOrdemServico() {
-
         conexao = abrirConexao();
     }
 

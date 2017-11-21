@@ -20,7 +20,6 @@ public class ServletMarca extends ServletAbstrato {
     private static final String LISTAR_MARCA = "listarMarca.jsp";
     private final DaoMarca dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletMarca() {
         dao = new DaoMarca();
     }
@@ -44,10 +43,10 @@ public class ServletMarca extends ServletAbstrato {
                 pro.setNome_marca(request.getParameter("txtNome"));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_MARCA);
+                this.redirecionarPagina(request, response, LISTAR_MARCA);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -56,7 +55,7 @@ public class ServletMarca extends ServletAbstrato {
                 pro.setNome_marca(request.getParameter("txtNome"));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_MARCA);
@@ -67,7 +66,7 @@ public class ServletMarca extends ServletAbstrato {
                 pro.setId_marca(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_MARCA);

@@ -18,7 +18,6 @@ public class DaoVendaProduto extends ModuloConexao {
     public Connection conexao;
     private String sql = "";
 
-    //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoVendaProduto() {
         conexao = abrirConexao();
     }

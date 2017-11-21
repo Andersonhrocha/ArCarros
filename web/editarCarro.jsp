@@ -90,8 +90,6 @@
                                     </div>
 
 
-
-
                                     <div class="form-group"> 
                                         <label class="col-md-4 control-label">Modelo do Veículo: *</label>
                                         <div class="col-md-8 selectContainer">

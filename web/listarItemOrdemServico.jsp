@@ -62,8 +62,8 @@
                                 <tr> 
                                     <th style="text-align: center"><u>ID</u></th>
                                     <th style="text-align: center"><u>Código Ordem Serviço</u></th>
-                                    <th style="text-align: center"><u>Produto</u></th>
                                     <th style="text-align: center"><u>Serviço</u></th>
+                                    <th style="text-align: center"><u>Produto</u></th>
                                     <th style="text-align: center"><u>Qtd Produto Utilizado</u></th>
 
                                     <th style="text-align: center"><u>
@@ -86,8 +86,8 @@
                                 <tr> 
                                     <td style="text-align: center"> <%=registro.getId_item_ordem_servico()%> </td>
                                     <td style="text-align: center"> <%=registro.getOrdem_servico().getId_ordem_Servico()%> </td>
-                                    <td style="text-align: center"> <%=registro.getProduto().getNome_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getServico().getNome_servico()%> </td>
+                                    <td style="text-align: center"> <%=registro.getProduto().getNome_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getQtd_prod_utilizado()%> </td>
 
 

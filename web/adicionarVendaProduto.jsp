@@ -50,6 +50,7 @@
                                                         //MÉTODO EXISTETE NA CLASSE DAOVENDA
                                                         DaoVenda dao = new DaoVenda();
                                                         List<ModelVenda> listar;
+                                                        
                                                         listar = dao.listarTodos();
                                                         for (ModelVenda registro : listar) {
                                                     %>
@@ -77,6 +78,7 @@
                                                         //MÉTODO EXISTETE NA CLASSE DAOPRODUTO
                                                         DaoProduto daoPro = new DaoProduto();
                                                         List<ModelProduto> produtoLista;
+                                                        
                                                         produtoLista = daoPro.listarTodos();
                                                         for (ModelProduto registro : produtoLista) {
                                                     %>

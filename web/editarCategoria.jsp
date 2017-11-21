@@ -24,8 +24,6 @@
                         ModelCategoria registro = (ModelCategoria) request.getAttribute("categoria");
                     %>
 
-
-
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <div class="panel panel-default">
@@ -76,8 +74,10 @@
                                         </div>
                                     </div>
 
+                                            
                                     <hr/>
 
+                                    
                                     <div class="form-group">
                                         <label class="col-md-4 control-label"></label>
                                         <div class="col-md-10 col-sm-offset-2" style="text-align: center">

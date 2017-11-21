@@ -20,7 +20,6 @@ public class ServletServico extends ServletAbstrato {
     private static final String LISTAR_SERVICO = "listarServico.jsp";
     private final DaoServico dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletServico() {
         dao = new DaoServico();
     }
@@ -46,10 +45,10 @@ public class ServletServico extends ServletAbstrato {
                 pro.setValor_servico(Double.parseDouble(request.getParameter("txtValor")));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_SERVICO);
+                this.redirecionarPagina(request, response, LISTAR_SERVICO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -60,7 +59,7 @@ public class ServletServico extends ServletAbstrato {
                 pro.setValor_servico(Double.parseDouble(request.getParameter("txtValor")));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_SERVICO);
@@ -71,7 +70,7 @@ public class ServletServico extends ServletAbstrato {
                 pro.setId_servico(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_SERVICO);

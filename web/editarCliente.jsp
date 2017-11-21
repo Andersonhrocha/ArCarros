@@ -19,7 +19,6 @@
             <div id="m_body" >
                 <div class="container">
 
-
                     <%
                         //RECEBE O ATRIBUTO DA OPÇÃO BUSCAR DO SERVLETCLIENTE
                         ModelCliente registro = (ModelCliente) request.getAttribute("cliente");
@@ -76,7 +75,7 @@
                                     </div> 
 
 
-                           <div class="form-group">
+                                    <div class="form-group">
                                         <label class="col-md-4 control-label">Telefone: *</label>  
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
@@ -88,7 +87,7 @@
                                     </div>  
 
 
-                           <div class="form-group">
+                                    <div class="form-group">
                                         <label class="col-md-4 control-label">E-mail: </label>  
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
@@ -98,11 +97,11 @@
                                             </div>
                                         </div>
                                     </div> 
-                                            
-            
+
+
                                     <hr/>
-                                    
-                                    
+
+
                                     <div class="form-group">
                                         <label class="col-md-4 control-label"></label>
                                         <div class="col-md-10 col-sm-offset-2" style="text-align: center">
@@ -112,8 +111,8 @@
 
                                         </div>
                                     </div>
-                                    
-                                    
+
+
                                 </form>
                                 <!-- FINAL DO FORMULÁRIO -->
 

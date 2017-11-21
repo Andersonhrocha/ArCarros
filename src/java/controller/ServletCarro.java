@@ -20,7 +20,6 @@ public class ServletCarro extends ServletAbstrato {
     private static final String LISTAR_CARRO = "listarCarro.jsp";
     private final DaoCarro dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletCarro() {
         dao = new DaoCarro();
     }
@@ -45,14 +44,13 @@ public class ServletCarro extends ServletAbstrato {
                 pro.setAno(request.getParameter("txtAno"));
                 pro.setCor(request.getParameter("txtCor"));
                 pro.getCliente().setCpf_cliente(request.getParameter("txtCliente"));
-                //PARAMETRO QUE OBTÉM O COMBOXSELECTED
                 pro.getModelo().setId_modelo(Integer.parseInt(request.getParameter("txtModelo")));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_CARRO);
+                this.redirecionarPagina(request, response, LISTAR_CARRO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -64,7 +62,7 @@ public class ServletCarro extends ServletAbstrato {
                 pro.getModelo().setId_modelo(Integer.parseInt(request.getParameter("txtModelo")));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_CARRO);
@@ -75,7 +73,7 @@ public class ServletCarro extends ServletAbstrato {
                 pro.setId_carro(request.getParameter("txtDocumento"));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_CARRO);

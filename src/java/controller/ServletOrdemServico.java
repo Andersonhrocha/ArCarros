@@ -21,7 +21,6 @@ public class ServletOrdemServico extends ServletAbstrato {
     private static final String LISTAR_ORDEM_SERVICO = "listarOrdemServico.jsp";
     private final DaoOrdemServico dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletOrdemServico() {
         dao = new DaoOrdemServico();
     }
@@ -49,10 +48,10 @@ public class ServletOrdemServico extends ServletAbstrato {
                 pro.setDesconto(new Double("0.00"));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_ORDEM_SERVICO);
+                this.redirecionarPagina(request, response, LISTAR_ORDEM_SERVICO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -64,7 +63,7 @@ public class ServletOrdemServico extends ServletAbstrato {
                 pro.setDesconto(Double.parseDouble(request.getParameter("txtDesconto")));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_ORDEM_SERVICO);
@@ -75,7 +74,7 @@ public class ServletOrdemServico extends ServletAbstrato {
                 pro.setId_ordem_Servico(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_ORDEM_SERVICO);

@@ -19,6 +19,8 @@ public class RelatorioImpresso extends HttpServlet {
 
     //VARIÁVEIS
     public Connection conexao;
+    File caminhoRelatorio;
+    ServletOutputStream ouputStream;
     byte[] bytes;
 
     //CRIANDO OBJETO DE CONEXÃO
@@ -33,22 +35,20 @@ public class RelatorioImpresso extends HttpServlet {
         if (comando.equalsIgnoreCase("imprimir_lista_produtos")) { //LISTA TODOS OS PRODUTOS PARA IMPRIMIR
 
             try {
-                //ABRINDO CONEXÃO
-                conexao = conn.abrirConexao();
+                //RECEBENDO CONEXÃO
+                this.conexao = conn.abrirConexao();
 
                 //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
-                File caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/Produtos.jasper"));
+                this.caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/Produtos.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
-                bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), null, conexao);
+                this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), null, conexao);
 
                 //ESCREVENDO NA SAIDA DO RESPONSE
                 response.setContentType("application/pdf");
                 response.setContentLength(bytes.length);
-                ServletOutputStream ouputStream = response.getOutputStream();
+                ouputStream = response.getOutputStream();
                 ouputStream.write(bytes, 0, bytes.length);
-
-                //EVIANDO CONTEÚDO
                 ouputStream.flush();
 
                 System.out.println("Relatório de produtos gerado com Sucesso!");
@@ -59,22 +59,20 @@ public class RelatorioImpresso extends HttpServlet {
         } else if (comando.equalsIgnoreCase("imprimir_ordens_servico")) { //LISTA TODAS OS ORDENS DE SERVIÇO PARA IMPRIMIR
 
             try {
-                //ABRINDO CONEXÃO
-                conexao = conn.abrirConexao();
+                //RECEBENDO CONEXÃO
+                this.conexao = conn.abrirConexao();
 
                 //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
-                File caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/OrdemServico.jasper"));
+                this.caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/OrdemServico.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
-                bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), null, conexao);
+                this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), null, conexao);
 
                 //ESCREVENDO NA SAIDA DO RESPONSE
                 response.setContentType("application/pdf");
                 response.setContentLength(bytes.length);
-                ServletOutputStream ouputStream = response.getOutputStream();
+                ouputStream = response.getOutputStream();
                 ouputStream.write(bytes, 0, bytes.length);
-
-                //EVIANDO CONTEÚDO
                 ouputStream.flush();
 
                 System.out.println("Relatório de ordem de serviço gerado com Sucesso!");
@@ -93,22 +91,20 @@ public class RelatorioImpresso extends HttpServlet {
 
             try {
 
-                //ABRINDO CONEXÃO
-                conexao = conn.abrirConexao();
+                //RECEBENDO CONEXÃO
+                this.conexao = conn.abrirConexao();
 
                 //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
-                File caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/ItemOrdemServico.jasper"));
+               this.caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/ItemOrdemServico.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
-                bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), valorParametro, conexao);
+                this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), valorParametro, conexao);
 
                 //ESCREVENDO NA SAIDA DO RESPONSE
                 response.setContentType("application/pdf");
                 response.setContentLength(bytes.length);
-                ServletOutputStream ouputStream = response.getOutputStream();
+                ouputStream = response.getOutputStream();
                 ouputStream.write(bytes, 0, bytes.length);
-
-                //EVIANDO CONTEÚDO
                 ouputStream.flush();
 
                 System.out.println("Relatório por item de ordem de serviço gerado com Sucesso!");
@@ -119,30 +115,28 @@ public class RelatorioImpresso extends HttpServlet {
         } else if (comando.equalsIgnoreCase("imprimir_venda_produto")) {  //IMPRIME VENDA DE PRODUTOS UTILIZANDO O CÓDIGO DA 'VENDA'
 
             //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
-            String codigoProjeto = request.getParameter("codigoVendaProduto");
+            String codigoVendaProduto = request.getParameter("codigoVendaProduto");
 
             //PARAMETRO QUE RECEBE O VALOR codVenPro DA SQL DO ARQUIVO COMPILADO .JASPER
             HashMap valorParametro = new HashMap();
-            valorParametro.put("codVenPro", codigoProjeto);
+            valorParametro.put("codVenPro", codigoVendaProduto);
 
             try {
 
-                //ABRINDO CONEXÃO
-                conexao = conn.abrirConexao();
+                //RECEBENDO CONEXÃO
+                this.conexao = conn.abrirConexao();
 
                 //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
-                File caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/VendaProduto.jasper"));
+                this.caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/VendaProduto.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
-                bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), valorParametro, conexao);
+                this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), valorParametro, conexao);
 
                 //ESCREVENDO NA SAIDA DO RESPONSE
                 response.setContentType("application/pdf");
                 response.setContentLength(bytes.length);
-                ServletOutputStream ouputStream = response.getOutputStream();
+                ouputStream = response.getOutputStream();
                 ouputStream.write(bytes, 0, bytes.length);
-
-                //EVIANDO CONTEÚDO
                 ouputStream.flush();
 
                 System.out.println("Relatório de venda de produto gerado com Sucesso!");

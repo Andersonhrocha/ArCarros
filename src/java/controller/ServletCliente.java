@@ -20,7 +20,6 @@ public class ServletCliente extends ServletAbstrato {
     private static final String LISTAR_CLIENTE = "listarCliente.jsp";
     private final DaoCliente dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletCliente() {
         dao = new DaoCliente();
     }
@@ -48,10 +47,10 @@ public class ServletCliente extends ServletAbstrato {
                 pro.setEmail(request.getParameter("txtEmail"));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_CLIENTE);
+                this.redirecionarPagina(request, response, LISTAR_CLIENTE);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -63,7 +62,7 @@ public class ServletCliente extends ServletAbstrato {
                 pro.setEmail(request.getParameter("txtEmail"));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_CLIENTE);
@@ -74,7 +73,7 @@ public class ServletCliente extends ServletAbstrato {
                 pro.setCpf_cliente(request.getParameter("txtDocumento"));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_CLIENTE);

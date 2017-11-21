@@ -20,7 +20,6 @@ public class ServletItemOrdemServico extends ServletAbstrato {
     private static final String LISTAR_ITEM_ORDEM_SERVICO = "listarItemOrdemServico.jsp";
     private final DaoItemOrdemServico dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletItemOrdemServico() {
         dao = new DaoItemOrdemServico();
     }
@@ -47,10 +46,10 @@ public class ServletItemOrdemServico extends ServletAbstrato {
                 pro.setQtd_prod_utilizado(Integer.parseInt(request.getParameter("txtQtdPro")));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_ITEM_ORDEM_SERVICO);
+                this.redirecionarPagina(request, response, LISTAR_ITEM_ORDEM_SERVICO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -61,7 +60,7 @@ public class ServletItemOrdemServico extends ServletAbstrato {
                 pro.setQtd_prod_utilizado(Integer.parseInt(request.getParameter("txtQtdPro")));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_ITEM_ORDEM_SERVICO);
@@ -72,7 +71,7 @@ public class ServletItemOrdemServico extends ServletAbstrato {
                  pro.setId_item_ordem_servico(Integer.parseInt(request.getParameter("txtItemOrdemServico")));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_ITEM_ORDEM_SERVICO);

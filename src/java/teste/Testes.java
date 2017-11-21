@@ -79,10 +79,10 @@ public class Testes {
 //            System.out.println("PLACA: " + registro.getId_carro());
 //            System.out.println("ANO: " + registro.getAno());
 //            System.out.println("COR: " + registro.getCor());
-//            System.out.println("CLIENTE: " + registro.getRelacao_id_cliente().getCpf_cliente());
-//            System.out.println("MODELO: " + registro.getRelacao_id_modelo().getId_modelo());
-//            System.out.println("NOME: " + registro.getRelacao_id_modelo().getNome());
-//            System.out.println("MOTORIZAÇÃO: " + registro.getRelacao_id_modelo().getMotorizacao());
+//            System.out.println("CLIENTE: " + registro.getCliente().getCpf_cliente());
+//            System.out.println("MODELO: " + registro.getModelo().getId_modelo());
+//            System.out.println("NOME: " + registro.getModelo().getNome_modelo());
+//            System.out.println("MOTORIZAÇÃO: " + registro.getModelo().getMotorizacao());
 //            System.out.println("=============================================");
 //        }
 //        
@@ -111,8 +111,8 @@ public class Testes {
 //        pro.setId_carro("SKD5078");
 //        pro.setAno("2006");
 //        pro.setCor("Azul");
-//        pro.getRelacao_id_cliente().setCpf_cliente("3423");
-//        pro.getRelacao_id_modelo().setId_modelo(Integer.parseInt("4"));
+//        pro.getCliente().setCpf_cliente("3423");
+//        pro.getModelo().setId_modelo(Integer.parseInt("4"));
 //
 //        DaoCarro dao = new DaoCarro();
 //        dao.incluir(pro);
@@ -121,7 +121,7 @@ public class Testes {
 //        ModelCarro pro = new ModelCarro();
 //        pro.setAno("2012");
 //        pro.setCor("Preto");
-//        pro.getRelacao_id_modelo().setId_modelo(Integer.parseInt("3"));
+//        pro.getModelo().setId_modelo(Integer.parseInt("3"));
 //        pro.setId_carro("SKD5078");
 //        DaoCarro dao = new DaoCarro();
 //        dao.editar(pro);
@@ -145,8 +145,8 @@ public class Testes {
 //        System.out.println("PLACA: " + pro.getId_carro());
 //        System.out.println("ANO: " + pro.getAno());
 //        System.out.println("COR: " + pro.getCor());
-//        System.out.println("CLIENTE: " + pro.getRelacao_id_cliente().getCpf_cliente());
-//        System.out.println("MODELO: " + pro.getRelacao_id_modelo().getId_modelo());
+//        System.out.println("CLIENTE: " + pro.getCliente().getCpf_cliente());
+//        System.out.println("MODELO: " + pro.getModelo().getId_modelo());
 //        System.out.println("=============================================");
 //        
 //
@@ -160,17 +160,17 @@ public class Testes {
 //            System.out.println("PLACA: " + registro.getId_carro());
 //            System.out.println("ANO: " + registro.getAno());
 //            System.out.println("COR: " + registro.getCor());
-//            System.out.println("CLIENTE: " + registro.getRelacao_id_cliente().getCpf_cliente());
-//            System.out.println("MODELO: " + registro.getRelacao_id_modelo().getId_modelo());
-//            System.out.println("NOME: " + registro.getRelacao_id_modelo().getNome());
-//            System.out.println("MOTORIZAÇÃO: " + registro.getRelacao_id_modelo().getMotorizacao());
+//            System.out.println("CLIENTE: " + registro.getCliente().getCpf_cliente());
+//            System.out.println("MODELO: " + registro.getModelo().getId_modelo());
+//            System.out.println("NOME: " + registro.getModelo().getNome_modelo());
+//            System.out.println("MOTORIZAÇÃO: " + registro.getModelo().getMotorizacao());
 //            System.out.println("=============================================");
 //        }
         //  ##########################################################################################################
 //    
 //TESTE DE INSERÇÃO
 //        ModelOrdemServico pro = new ModelOrdemServico();
-//        pro.getRelacao_id_carro().setId_carro("3423");
+//        pro.getCarro().setId_carro("3423");
 //        pro.setData(Date.valueOf("19/10/2017"));
 //        pro.setOrcamento("S");
 //        pro.setValor(Double.valueOf(238.20));
@@ -190,7 +190,7 @@ public class Testes {
 //            System.out.println("ID: " + registro.getId_modelo());
 //            System.out.println("NOME: " + registro.getNome_modelo());
 //            System.out.println("MOTORIZAÇÃO: " + registro.getMotorizacao());
-//            System.out.println("FABRICANTE: " + registro.getRelacao_id_marca().getNome_marca());
+//            System.out.println("FABRICANTE: " + registro.getMarca().getNome_marca());
 //            
 //            System.out.println("=============================================");
 //        }
@@ -204,7 +204,7 @@ public class Testes {
 //        System.out.println("=============================================");
 //        System.out.println("PLACA: " + pro.getId_modelo());
 //        System.out.println("ANO: " + pro.getNome_modelo());
-//        System.out.println("FABRICANTE: " + pro.getRelacao_id_marca().getNome_marca());
+//        System.out.println("FABRICANTE: " + pro.getMarca().getNome_marca());
 //         System.out.println("MOTORIZAÇÃO: " + pro.getMotorizacao());
 //        System.out.println("=============================================");
 //
@@ -215,8 +215,8 @@ public class Testes {
 //        pro.setId_carro("MMO9890");
 //        pro.setAno("2017");
 //        pro.setCor("Vermelho");
-//        pro.getRelacao_id_cliente().setCpf_cliente("078");
-//        pro.getRelacao_id_modelo().setId_modelo(2);
+//        pro.getCliente().setCpf_cliente("078");
+//        pro.getModelo().setId_modelo(2);
 //        
 //        DaoCarro dao = new DaoCarro();
 //        dao.incluir(pro);
@@ -224,7 +224,7 @@ public class Testes {
 //TESTE DE ALTERAÇÃO
 //        ModelModelo pro = new ModelModelo();
 //        pro.setNome_modelo("NEW FIESTA");
-//        pro.getRelacao_id_marca().setId_marca(5);
+//        pro.getMarca().setId_marca(5);
 //        pro.setMotorizacao("1.8");
 //        pro.setId_modelo(3);
 //        
@@ -237,8 +237,8 @@ public class Testes {
 //        pro.setNome_produto("30W50");
 //        pro.setDescricao_produto("LUBRAX 20W50");
 //        pro.setValidade(new Date(2017-10-24));
-//        pro.getRelacao_id_categoria().setId_categoria(2);
-//        pro.setValor(Double.valueOf("78"));
+//        pro.getCategoria().setId_categoria(2);
+//        pro.setValor_produto(Double.valueOf("78"));
 //        pro.setQtd_estoque(2);
 //
 //        DaoProduto dao = new DaoProduto();
@@ -246,7 +246,7 @@ public class Testes {
 ////        //TESTE DE INSERÇÃO ORDEM DE SERVIÇO
 //        ModelOrdemServico pro = new ModelOrdemServico();
 //        pro.setId_ordem_Servico(2017);
-//        pro.getRelacao_id_carro().setId_carro("HKK");
+//        pro.getCarro().setId_carro("HKK");
 //        pro.setData(new Date(System.currentTimeMillis()));
 //        pro.setOrcamento(("S"));
 //        pro.setValor(new Double("0.00"));
@@ -254,7 +254,7 @@ public class Testes {
 //
 //        DaoOrdemServico dao = new DaoOrdemServico();
 //        dao.incluir(pro);
-////////        //TESTE DE INSERÇÃO VENDA
+//     //TESTE DE INSERÇÃO VENDA
 //        ModelVenda pro = new ModelVenda();
 //        pro.setValor(Double.valueOf("289.00"));
 //        pro.setTipoPagamento(("CQ"));
@@ -264,17 +264,17 @@ public class Testes {
 //        dao.editar(pro);
 ////        //TESTE DE INSERÇÃO PRODUTOVENDA
 //        ModelVendaProduto pro = new ModelVendaProduto();
-//        pro.getRelacao_id_venda().setId_venda(1);
-//        pro.getRelacao_id_produto().setId_produto("12345");
+//        pro.getVenda().setId_venda(1);
+//        pro.getProduto().setId_produto("12345");
 //        pro.setQuantidade(3);
 //
 //        DaoVendaProduto dao = new DaoVendaProduto();
 //        dao.incluir(pro);
 //        TESTE DE ALTERAÇÃO PRODUTOVENDA
-//        ModelProdutoVenda pro = new ModelProdutoVenda();
+//        ModelVendaProduto pro = new ModelVendaProduto();
 //        pro.setQuantidade(5);
-//        pro.getRelacao_id_venda().setId_venda(9);
-//        pro.getRelacao_id_produto().setId_produto("928");        
+//        pro.getVenda().setId_venda(9);
+//        pro.getProduto().setId_produto("928");        
 //
 //        DaoProdutoVenda dao = new DaoProdutoVenda();
 //        dao.editar(pro);
@@ -285,31 +285,31 @@ public class Testes {
 //        for (ModelVendaProduto registro : pro) {
 //
 //            System.out.println("=============================================");
-//            System.out.println("CLIENTE: " + registro.getRelacao_id_venda().getRelacao_id_cliente().getCpf_cliente());
-//            System.out.println("ID VENDA: " + registro.getRelacao_id_venda().getId_venda());
-//            System.out.println("ID PRODUTO: " + registro.getRelacao_id_produto().getId_produto());
-//            System.out.println("NOME PRODUTO: " + registro.getRelacao_id_produto().getNome_produto());
+//            System.out.println("CLIENTE: " + registro.getVenda().getCliente().getCpf_cliente());
+//            System.out.println("ID VENDA: " + registro.getVenda().getId_venda());
+//            System.out.println("ID PRODUTO: " + registro.getProduto().getId_produto());
+//            System.out.println("NOME PRODUTO: " + registro.getProduto().getNome_produto());
 //            System.out.println("QUANTIDADE: " + registro.getQuantidade());
 //             System.out.println("TIPO: " + registro.getTipoPagamento());
 //
 //            System.out.println("=============================================");
 //        }
-//////   //TESTE DE BUSCAR VENDAPRODUTO
+//        //TESTE DE BUSCAR VENDAPRODUTO
 //        DaoVendaProduto dao = new DaoVendaProduto();
 //        ModelVendaProduto pro = new ModelVendaProduto();
-//        pro.getRelacao_id_venda().setId_venda(1);
-//        pro.getRelacao_id_produto().setId_produto("123456789");
+//        pro.getVenda().setId_venda(1);
+//        pro.getProduto().setId_produto("123456789");
 //
 //        pro = dao.buscar(pro);
 //
 //        System.out.println("=============================================");
-//        System.out.println("ID VENDA: " + pro.getRelacao_id_venda().getId_venda());
-//        System.out.println("ID PRODUTO: " + pro.getRelacao_id_produto().getId_produto());
+//        System.out.println("ID VENDA: " + pro.getVenda().getId_venda());
+//        System.out.println("ID PRODUTO: " + pro.getProduto().getId_produto());
 //        System.out.println("QUANTIDADE: " + pro.getQuantidade());
 //        System.out.println("TIPO PAG: " + pro.getTipoPagamento());
 //        System.out.println("=============================================");
-//
-////        //TESTE DE EXCLUSÃO VENDAPRODUTO
+
+//        //TESTE DE EXCLUSÃO VENDAPRODUTO
 //        ModelVendaProduto pro = new ModelVendaProduto();
 //
 //        pro.setId_venda_produto(4);
@@ -317,25 +317,25 @@ public class Testes {
 //        DaoVendaProduto dao = new DaoVendaProduto();
 //        dao.excluir(pro);
 //        dao.incluir(pro);
-////////        //TESTE DE EDIÇÂO VENDAPRODUTO
+//        //TESTE DE EDIÇÂO VENDAPRODUTO
 //        ModelVendaProduto pro = new ModelVendaProduto();
-//        pro.getRelacao_id_produto().setId_produto("12345");
+//        pro.getProduto().setId_produto("12345");
 //        pro.setQuantidade(10);
 //        pro.setTipoPagamento("CD");       
 //        pro.setId_venda_produto(5);
 //        
 //        DaoVendaProduto dao = new DaoVendaProduto();
 //        dao.editar(pro);
-        //TESTE DE LISTAGEM ITEMORDEMSERVICO
+//        //TESTE DE LISTAGEM ITEMORDEMSERVICO
 //        DaoItemOrdemServico dao = new DaoItemOrdemServico();
 //        List<ModelItemOrdemServico> pro = dao.listarTodos();
 //
 //        for (ModelItemOrdemServico registro : pro) {
 //
 //            System.out.println("=============================================");
-//            System.out.println("OS: " + registro.getRelacao_id_ordem_servico().getId_ordem_Servico());
-//            System.out.println("PRODUTO: " + registro.getRelacao_id_produto().getId_produto());
-//            System.out.println("ID PRODUTO: " + registro.getRelacao_id_servico().getId_servico());
+//            System.out.println("OS: " + registro.getOrdem_servico().getId_ordem_Servico());
+//            System.out.println("PRODUTO: " + registro.getProduto().getId_produto());
+//            System.out.println("ID PRODUTO: " + registro.getServico().getId_servico());
 //            System.out.println("QTD UTILIZADA: " + registro.getQtd_prod_utilizado());
 //            System.out.println("=============================================");
 //        }

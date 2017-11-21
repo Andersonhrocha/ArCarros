@@ -59,8 +59,7 @@
                                     DaoCliente dao = new DaoCliente();
                                     List<ModelCliente> listar;
 
-                                    listar = dao.listarTodos();
-                                    //FOR -> APRIMORADO
+                                    listar = dao.listarTodos();                          
                                     for (ModelCliente registro : listar) {
                                 %>
                                 <tr>                                    

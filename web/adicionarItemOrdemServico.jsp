@@ -48,10 +48,11 @@
                                                 <select name="txtOrdemServico" class="form-control" required=""> 
                                                     <!--   <option>Selecione</option> -->
 
-                                                    <%                                                        
+                                                    <%
                                                         //MÉTODO EXISTETE NA CLASSE DAOORDEMSERVICO
                                                         DaoOrdemServico dao = new DaoOrdemServico();
                                                         List<ModelOrdemServico> listar;
+                                                        
                                                         listar = dao.listarTodos();
                                                         for (ModelOrdemServico registro : listar) {
                                                     %>
@@ -68,22 +69,23 @@
 
 
                                     <div class="form-group"> 
-                                        <label class="col-md-4 control-label">Produto: *</label>
+                                        <label class="col-md-4 control-label">Serviço: *</label>
                                         <div class="col-md-8 selectContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                                <select name="txtProduto" class="form-control" required=""> 
+                                                <select name="txtServico" class="form-control" required=""> 
                                                     <!--   <option>Selecione</option> -->
 
-                                                    <%                                                        
-                                                        //MÉTODO EXISTETE NA CLASSE DAOPRODUTO
-                                                        DaoProduto daoPro = new DaoProduto();
-                                                        List<ModelProduto> produtoLista;
-                                                        produtoLista = daoPro.listarTodos();
-                                                        for (ModelProduto registro : produtoLista) {
+                                                    <%
+                                                        //MÉTODO EXISTETE NA CLASSE DAOSERVICO
+                                                        DaoServico daoServ = new DaoServico();
+                                                        List<ModelServico> servicoLista;
+                                                        
+                                                        servicoLista = daoServ.listarTodos();
+                                                        for (ModelServico registro : servicoLista) {
                                                     %>
 
-                                                    <option value="<%=registro.getId_produto()%>"><%=registro.getNome_produto()%> </option>
+                                                    <option value="<%=registro.getId_servico()%>"><%=registro.getNome_servico()%> </option>
 
                                                     <%
                                                         }
@@ -95,22 +97,23 @@
 
 
                                     <div class="form-group"> 
-                                        <label class="col-md-4 control-label">Serviço: *</label>
+                                        <label class="col-md-4 control-label">Produto: *</label>
                                         <div class="col-md-8 selectContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                                <select name="txtServico" class="form-control" required=""> 
+                                                <select name="txtProduto" class="form-control" required=""> 
                                                     <!--   <option>Selecione</option> -->
 
-                                                    <%                                                        
-                                                        //MÉTODO EXISTETE NA CLASSE DAOSERVICO
-                                                        DaoServico daoServ = new DaoServico();
-                                                        List<ModelServico> servicoLista;
-                                                        servicoLista = daoServ.listarTodos();
-                                                        for (ModelServico registro : servicoLista) {
+                                                    <%
+                                                        //MÉTODO EXISTETE NA CLASSE DAOPRODUTO
+                                                        DaoProduto daoPro = new DaoProduto();
+                                                        List<ModelProduto> produtoLista;
+                                                        
+                                                        produtoLista = daoPro.listarTodos();
+                                                        for (ModelProduto registro : produtoLista) {
                                                     %>
 
-                                                    <option value="<%=registro.getId_servico()%>"><%=registro.getNome_servico()%> </option>
+                                                    <option value="<%=registro.getId_produto()%>"><%=registro.getNome_produto()%> </option>
 
                                                     <%
                                                         }
@@ -132,7 +135,7 @@
                                         </div>
                                     </div>
 
-                                                
+
                                     <hr/>
 
 

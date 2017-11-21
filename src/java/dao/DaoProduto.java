@@ -19,7 +19,6 @@ public class DaoProduto extends ModuloConexao {
     public Connection conexao;
     private String sql = "";
 
-    //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoProduto() {
         conexao = abrirConexao();
     }
@@ -186,7 +185,7 @@ public class DaoProduto extends ModuloConexao {
             }
 
         } catch (SQLException ex) {
-            throw new RuntimeException("Uma falha ocorreu ao tentar listar todas as marcas.", ex);
+            throw new RuntimeException("Uma falha ocorreu ao tentar listar todos os produtos.", ex);
         }
         return lista;
 

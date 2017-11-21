@@ -31,40 +31,40 @@ public class ServletLogin extends ServletAbstrato {
             throws ServletException, IOException {
 
         //RECEBENDO OS VALORES DO FORMULÁRIO
-        String _Login = request.getParameter("txtLogin");
-        String _Senha = request.getParameter("txtSenha");
+        String loginUsuario = request.getParameter("txtLogin");
+        String senhaUsuario = request.getParameter("txtSenha");
 
         try {
 
-            if (_Login != null) {
+            if (loginUsuario != null) {
 
                 //CRIANDO OBJETO DA CLASSE ModuloConexao
                 ModuloConexao dao = new ModuloConexao();
-                
+
                 //RECEBENDO A CONEXÃO
                 this.conexao = dao.abrirConexao();
 
                 sql = "SELECT * FROM usuario WHERE login=? AND senha=?";
 
                 PreparedStatement pst = conexao.prepareStatement(sql);
-                pst.setString(1, _Login);
-                pst.setString(2, _Senha);
+                pst.setString(1, loginUsuario);
+                pst.setString(2, senhaUsuario);
                 ResultSet rs = pst.executeQuery();
 
                 if (rs.next()) {
 
                     //REDIRECIONAMENTO
-                    redirecionarPagina(request, response, MENU_PRINCIPAL);
+                    this.redirecionarPagina(request, response, MENU_PRINCIPAL);
                     System.out.println("Login efetuado com sucesso.");
 
                 } else {
 
                     //ATRIBUTO COM MENSAGEM DE RETORNO
                     request.setAttribute("mensagem", "Usuário e/ou senha incorreto(s).");
-                    System.out.println("Login não existe no banco de dados.");
+                    System.out.println("Usuário e/ou senha não existe no banco de dados.");
 
                     //REDIRECIONAMENTO
-                    redirecionarPagina(request, response, ERRO_LOGIN);
+                    this.redirecionarPagina(request, response, ERRO_LOGIN);
 
                 }
             }

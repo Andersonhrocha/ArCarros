@@ -18,7 +18,6 @@ public class DaoModelo extends ModuloConexao {
     public Connection conexao;
     private String sql = "";
 
-    //CONSTRUTOR PRINCIPAL DA CLASSE
     public DaoModelo() {
         conexao = abrirConexao();
     }

@@ -17,12 +17,10 @@ import model.ModelProduto;
 public class ServletProduto extends ServletAbstrato {
 
     //CONSTANTES DAS PÁGINAS .JSP
-    private static final String ADICIONAR_PRODUTO = "adicionarProduto.jsp";
     private static final String EDITAR_PRODUTO = "editarProduto.jsp";
     private static final String LISTAR_PRODUTO = "listarProduto.jsp";
     private final DaoProduto dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletProduto() {
         dao = new DaoProduto();
     }
@@ -52,13 +50,10 @@ public class ServletProduto extends ServletAbstrato {
                 pro.setQtd_estoque(Integer.parseInt(request.getParameter("txtEstoque")));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
-
-                //ATRIBUTO COM MENSAGEM DE RETORNO
-                request.setAttribute("mensagem", "Registro efetuado com sucesso.");
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, ADICIONAR_PRODUTO);
+                this.redirecionarPagina(request, response, LISTAR_PRODUTO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -72,7 +67,7 @@ public class ServletProduto extends ServletAbstrato {
                 pro.setQtd_estoque(Integer.parseInt(request.getParameter("txtEstoque")));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_PRODUTO);
@@ -83,7 +78,7 @@ public class ServletProduto extends ServletAbstrato {
                 pro.setId_produto(request.getParameter("txtDocumento"));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_PRODUTO);

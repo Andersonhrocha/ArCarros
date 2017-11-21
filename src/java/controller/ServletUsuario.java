@@ -20,7 +20,6 @@ public class ServletUsuario extends ServletAbstrato {
     private static final String LISTAR_USUARIO = "listarUsuario.jsp";
     private final DaoUsuario dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletUsuario() {
         dao = new DaoUsuario();
     }
@@ -46,10 +45,10 @@ public class ServletUsuario extends ServletAbstrato {
                 pro.setSenha(request.getParameter("txtSenha"));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_USUARIO);
+                this.redirecionarPagina(request, response, LISTAR_USUARIO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -60,7 +59,7 @@ public class ServletUsuario extends ServletAbstrato {
                 pro.setSenha(request.getParameter("txtSenha"));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_USUARIO);
@@ -71,7 +70,7 @@ public class ServletUsuario extends ServletAbstrato {
                 pro.setId_usuario(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_USUARIO);

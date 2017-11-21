@@ -20,7 +20,6 @@ public class ServletVendaProduto extends ServletAbstrato {
     private static final String LISTAR_PRODUTO = "listarVendaProduto.jsp";
     private final DaoVendaProduto dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletVendaProduto() {
         dao = new DaoVendaProduto();
     }
@@ -47,10 +46,10 @@ public class ServletVendaProduto extends ServletAbstrato {
                 pro.setTipoPagamento(request.getParameter("txtPagamento"));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_PRODUTO);
+                this.redirecionarPagina(request, response, LISTAR_PRODUTO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -61,7 +60,7 @@ public class ServletVendaProduto extends ServletAbstrato {
                 pro.setTipoPagamento(request.getParameter("txtPagamento"));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_PRODUTO);
@@ -72,7 +71,7 @@ public class ServletVendaProduto extends ServletAbstrato {
                 pro.setId_venda_produto(Integer.parseInt(request.getParameter("txtCodigo")));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_PRODUTO);

@@ -21,7 +21,6 @@ public class ServletVenda extends ServletAbstrato {
     private static final String LISTAR_PRODUTO = "listarVenda.jsp";
     private final DaoVenda dao;
 
-    //CONSTRUTOR PRINCIPAL
     public ServletVenda() {
         dao = new DaoVenda();
     }
@@ -41,15 +40,15 @@ public class ServletVenda extends ServletAbstrato {
             //INICIO DOS MÉTODOS DO BANCO DE DADOS
             if (acao.equalsIgnoreCase("inserir")) {
 
-                //PARAMETRO QUE OBTÉM DADOS DO FORMULÁRIO PARA ADICIONAR NO BANCO DE DADOS
+                //RECEBENDO OS VALORES DO FORMULÁRIO
                 pro.getCliente().setCpf_cliente(request.getParameter("txtVenda"));
                 pro.setData(Date.valueOf(request.getParameter("txtData")));
 
                 //INCLUIR NO BANCO DE DADOS
-                dao.incluir(pro);
+                this.dao.incluir(pro);
 
                 //REDIRECIONAMENTO
-                redirecionarPagina(request, response, LISTAR_PRODUTO);
+                this.redirecionarPagina(request, response, LISTAR_PRODUTO);
 
             } else if (acao.equalsIgnoreCase("editar")) {
 
@@ -58,7 +57,7 @@ public class ServletVenda extends ServletAbstrato {
                 pro.setData(Date.valueOf(request.getParameter("txtData")));
 
                 //EDITANDO NO BANCO DE DADOS
-                dao.editar(pro);
+                this.dao.editar(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_PRODUTO);
@@ -69,7 +68,7 @@ public class ServletVenda extends ServletAbstrato {
                 pro.setId_venda(Integer.parseInt(request.getParameter("txtDocumento")));
 
                 //EXCLUIDO DO BANCO DE DADOS
-                dao.excluir(pro);
+                this.dao.excluir(pro);
 
                 //REDIRECIONAMENTO
                 this.redirecionarPagina(request, response, LISTAR_PRODUTO);
