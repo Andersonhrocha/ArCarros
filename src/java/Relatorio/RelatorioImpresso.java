@@ -39,7 +39,7 @@ public class RelatorioImpresso extends HttpServlet {
                 this.conexao = conn.abrirConexao();
 
                 //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
-                this.caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/Produtos.jasper"));
+                this.caminhoRelatorio = new File(getServletContext().getRealPath("/WEB-INF/Relatorio/Produtos.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
                 this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), null, conexao);
@@ -63,7 +63,7 @@ public class RelatorioImpresso extends HttpServlet {
                 this.conexao = conn.abrirConexao();
 
                 //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
-                this.caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/OrdemServico.jasper"));
+                this.caminhoRelatorio = new File(getServletContext().getRealPath("/WEB-INF/Relatorio/OrdemServico.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
                 this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), null, conexao);
@@ -95,7 +95,7 @@ public class RelatorioImpresso extends HttpServlet {
                 this.conexao = conn.abrirConexao();
 
                 //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
-               this.caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/ItemOrdemServico.jasper"));
+               this.caminhoRelatorio = new File(getServletContext().getRealPath("/WEB-INF/Relatorio/ItemOrdemServico.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
                 this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), valorParametro, conexao);
@@ -127,7 +127,7 @@ public class RelatorioImpresso extends HttpServlet {
                 this.conexao = conn.abrirConexao();
 
                 //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
-                this.caminhoRelatorio = new File(getServletConfig().getServletContext().getRealPath("/WEB-INF/Relatorio/VendaProduto.jasper"));
+                this.caminhoRelatorio = new File(getServletContext().getRealPath("/WEB-INF/Relatorio/VendaProduto.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
                 this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), valorParametro, conexao);
