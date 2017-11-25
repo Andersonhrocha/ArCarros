@@ -1,3 +1,4 @@
+<%@page import="dao.DaoVendaProduto"%>
 <%@page import="model.ModelVendaProduto"%>
 <%@page import="model.ModelProduto"%>
 <%@page import="dao.DaoProduto"%>
@@ -62,7 +63,7 @@
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-link"></i></span>
-                                                <select name="txtVenda" class="form-control" required="" disabled /> 
+                                                <select name="txtVenda" class="form-control" required="" /> 
                                                     <!--   <option>Selecione</option> -->
 
                                                     <%                                                        

@@ -55,6 +55,7 @@ public class ServletVendaProduto extends ServletAbstrato {
 
                 //PARAMETRO QUE OBTEM O ID PARA EDITAR
                 pro.setId_venda_produto(Integer.parseInt(request.getParameter("txtCodigo")));
+                pro.getVenda().setId_venda(Integer.parseInt(request.getParameter("txtVenda")));
                 pro.getProduto().setId_produto(request.getParameter("txtProduto"));
                 pro.setQuantidade(Integer.parseInt(request.getParameter("txtQuantidade")));
                 pro.setTipoPagamento(request.getParameter("txtPagamento"));

@@ -40,11 +40,11 @@
                         <input type="hidden" name="comando" value="imprimir_venda_produto" />
 
                         <div style="float: right; size: 20px;">                                               
-                            <input type="text" name="codigoVendaProduto" placeholder="Digite o Código da Venda" class="form-control" 
+                            <input type="text" name="codigoVendaProduto" placeholder="Digite o Doc. do Cliente" class="form-control" 
                                    size="10" autofocus=""  />
                             <p></p>
                             <span class="glyphicon glyphicon-print"></span> 
-                            <input type="submit" value="IMPRIMIR POR CÓDIGO" class="btn btn-primary" />                           
+                            <input type="submit" value="IMPRIMIR POR DOC" class="btn btn-primary" />                           
                             <p></p>
                         </div> 
 
@@ -59,8 +59,7 @@
                         <table id="example" class="display table-responsive" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th style="text-align: center"><u>Documento Cliente</u></th>
-                                    <th style="text-align: center"><u>Código Venda</u></th>
+                                    <th style="text-align: center"><u>Documento Cliente</u></th>                               
                                     <th style="text-align: center"><u>Código Produto</u></th>
                                     <th style="text-align: center"><u>Descrição</u></th>
                                     <th style="text-align: center"><u>Quantidade</u></th>
@@ -87,8 +86,7 @@
 
                                 %>
                                 <tr> 
-                                    <td style="text-align: center"> <%=registro.getVenda().getCliente().getCpf_cliente()%> </td>
-                                    <td style="text-align: center"> <%=registro.getVenda().getId_venda()%> </td>
+                                    <td style="text-align: center"> <%=registro.getVenda().getCliente().getCpf_cliente()%> </td>                          
                                     <td style="text-align: center"> <%=registro.getProduto().getId_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getProduto().getNome_produto()%> </td>
                                     <td style="text-align: center"> <%=registro.getQuantidade()%> </td>

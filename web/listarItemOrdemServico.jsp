@@ -40,11 +40,11 @@
                         <input type="hidden" name="comando" value="imprimir_item_ordens_servico" />
 
                         <div style="float: right; size: 20px;">                                              
-                            <input type="text" name="codigoItemOrdemServico" placeholder="Código Ordem de Serviço" class="form-control" 
+                            <input type="text" name="codigoItemOrdemServico" placeholder="Digite o ID da OS" class="form-control" 
                                    size="10" autofocus=""  />
                             <p></p>
                             <span class="glyphicon glyphicon-print"></span> 
-                            <input type="submit" value="IMPRIMIR POR CÓDIGO" class="btn btn-primary" />                           
+                            <input type="submit" value="IMPRIMIR POR ID" class="btn btn-primary" />                           
                             <p></p>
                         </div>   
 
