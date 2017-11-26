@@ -56,8 +56,15 @@ public class RelatorioImpresso extends HttpServlet {
                 System.out.println("Erro ao gerar relatório=>" + ex.getMessage());
             }
 
-        } else if (comando.equalsIgnoreCase("imprimir_ordens_servico")) { //LISTA TODAS OS ORDENS DE SERVIÇO PARA IMPRIMIR
+        } else if (comando.equalsIgnoreCase("imprimir_ordens_servico")) { //IMPRIMIR ORDEM DE SERVIÇO OU ORÇAMENTO UTILIZANDO O CÓDIGO
 
+            //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
+            String codigoProjeto = request.getParameter("codigoOrcamento");
+
+            //PARAMETRO QUE RECEBE O VALOR codigoItemOS DA SQL DO ARQUIVO COMPILADO .JASPER
+            HashMap valorParametro = new HashMap();
+            valorParametro.put("codigoOS", codigoProjeto);
+            
             try {
                 //RECEBENDO CONEXÃO
                 this.conexao = conn.abrirConexao();
@@ -66,7 +73,7 @@ public class RelatorioImpresso extends HttpServlet {
                 this.caminhoRelatorio = new File(getServletContext().getRealPath("/WEB-INF/Relatorio/OrdemServico.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
-                this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), null, conexao);
+                this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), valorParametro, conexao);
 
                 //ESCREVENDO NA SAIDA DO RESPONSE
                 response.setContentType("application/pdf");
@@ -80,7 +87,7 @@ public class RelatorioImpresso extends HttpServlet {
                 System.out.println("Erro ao gerar relatório=>" + ex.getMessage());
             }
 
-        } else if (comando.equalsIgnoreCase("imprimir_item_ordens_servico")) { //IMPRIME ORDEM DE SERVIÇO UTILIZANDO O CÓDIGO DA 'OS'
+        } else if (comando.equalsIgnoreCase("imprimir_item_ordens_servico")) { //IMPRIME ORDEM DE SERVIÇO UTILIZANDO O CÓDIGO 'ID'
 
             //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
             String codigoProjeto = request.getParameter("codigoItemOrdemServico");
@@ -112,7 +119,7 @@ public class RelatorioImpresso extends HttpServlet {
                 System.out.println("Erro ao gerar relatório=>" + ex.getMessage());
             }
 
-        } else if (comando.equalsIgnoreCase("imprimir_venda_produto")) {  //IMPRIME VENDA DE PRODUTOS UTILIZANDO O CÓDIGO DA 'VENDA'
+        } else if (comando.equalsIgnoreCase("imprimir_venda_produto")) {  //IMPRIME VENDA DE PRODUTOS UTILIZANDO O CÓDIGO DO 'CLIENTE'
 
             //RECEBE PARAMETRO VIA POST DO FORMULÁRIO UTILIZANDO CAMPO hidden
             String codigoVendaProduto = request.getParameter("codigoVendaProduto");

@@ -33,11 +33,23 @@
 
                     <br><br><br>
 
-                    <h1 class="titulo">Consultar Ordens de Serviço</h1>
+                    <h1 class="titulo">Consultar OS e Orçamento</h1>
 
-                    <th style="text-align: center"><u>
-                            <a class="btn btn-primary" href="RelatorioImpresso?comando=imprimir_ordens_servico" target="_blank" />
-                            <span class="glyphicon glyphicon-print"></span> IMPRIMIR TODOS</a></u></th>
+                    <!-- INÍCIO DO FORMULÁRIO -->
+                    <form role="form" class="form-horizontal" action="RelatorioImpresso" method="POST" target="_blank">
+                        <input type="hidden" name="comando" value="imprimir_ordens_servico" />
+
+                        <div style="float: right; size: 20px;">                                              
+                            <input type="text" name="codigoOrcamento" placeholder="Digite o cod. do orçamento" class="form-control" 
+                                   size="10" autofocus=""  />
+                            <p></p>
+                            <span class="glyphicon glyphicon-print"></span> 
+                            <input type="submit" value="IMPRIMIR POR CÓDIGO" class="btn btn-primary" />                           
+                            <p></p>
+                        </div>   
+
+                    </form>
+                    <!-- FINAL DO FORMULÁRIO -->
 
                     <br><br>
                     

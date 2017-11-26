@@ -2,12 +2,12 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ItemOrdemServico" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="952e14f9-b3c9-413e-88c1-0b2b96cf19d1">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="61"/>
-	<property name="ireport.y" value="269"/>
+	<property name="ireport.y" value="77"/>
 	<parameter name="codigoItemOS" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[SELECT os.id_ordem_servico, os.id_carro,
+		<![CDATA[SELECT ios.id_item_ordem_servico, os.id_ordem_servico, os.id_carro,
 s.nome_servico, s.valor_servico as ValorServico, p.id_produto, p.nome_produto,
 p.valor_produto, ios.qtd_prod_utilizado,
 SUM(p.valor_produto * ios.qtd_prod_utilizado) as ValorProduto,
@@ -17,9 +17,12 @@ INNER JOIN item_ordem_servico ios
 ON os.id_ordem_servico = ios.id_ordem_servico
 INNER JOIN produto p ON p.id_produto = ios.id_produto
 INNER JOIN servico s ON s.id_servico = ios.id_servico
-WHERE os.id_ordem_servico = $P{codigoItemOS}
-GROUP BY os.id_ordem_servico, os.id_carro, s.nome_servico, s.valor_servico, p.id_produto, p.nome_produto, p.valor_produto, ios.qtd_prod_utilizado]]>
+WHERE ios.id_item_ordem_servico = $P{codigoItemOS}
+GROUP BY ios.id_item_ordem_servico, os.id_ordem_servico, os.id_carro, s.nome_servico, s.valor_servico, p.id_produto, p.nome_produto, p.valor_produto, ios.qtd_prod_utilizado]]>
 	</queryString>
+	<field name="id_item_ordem_servico" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="id_ordem_servico" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>

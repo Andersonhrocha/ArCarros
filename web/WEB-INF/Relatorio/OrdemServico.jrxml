@@ -7,7 +7,7 @@
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[SELECT * FROM ordem_servico]]>
+		<![CDATA[SELECT * FROM ordem_servico WHERE id_ordem_servico = $P{codigoOS}]]>
 	</queryString>
 	<field name="id_ordem_servico" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -46,7 +46,7 @@
 					<textElement textAlignment="Right">
 						<font size="14" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Ordens de Serviço]]></text>
+					<text><![CDATA[Orçamento]]></text>
 				</staticText>
 			</frame>
 		</band>
