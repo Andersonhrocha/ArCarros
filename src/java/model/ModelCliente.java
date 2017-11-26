@@ -4,10 +4,9 @@ package model;
  *
  * @author Anderson
  */
-public class ModelCliente {
+public class ModelCliente extends ModelPessoa {
 
     private String cpf_cliente;
-    private String nome_cliente;
     private String endereco;
     private String telefone;
     private String email;
@@ -22,14 +21,6 @@ public class ModelCliente {
 
     public void setCpf_cliente(String cpf_cliente) {
         this.cpf_cliente = cpf_cliente;
-    }
-
-    public String getNome_cliente() {
-        return nome_cliente;
-    }
-
-    public void setNome_cliente(String nome_cliente) {
-        this.nome_cliente = nome_cliente;
     }
 
     public String getEndereco() {

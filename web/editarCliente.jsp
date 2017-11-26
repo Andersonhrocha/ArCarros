@@ -57,7 +57,7 @@
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input type="text" name="txtNome" class="form-control" 
-                                                       value="<%=registro.getNome_cliente()%>" size="100" required="" autofocus="" />
+                                                       value="<%=registro.getNome()%>" size="100" required="" autofocus="" />
                                             </div>
                                         </div>
                                     </div>

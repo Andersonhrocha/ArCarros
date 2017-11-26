@@ -41,7 +41,7 @@ public class ServletCliente extends ServletAbstrato {
 
                 //RECEBENDO OS VALORES DO FORMULÁRIO
                 pro.setCpf_cliente(request.getParameter("txtDocumento"));
-                pro.setNome_cliente(request.getParameter("txtNome"));
+                pro.setNome(request.getParameter("txtNome"));
                 pro.setEndereco(request.getParameter("txtEndereco"));
                 pro.setTelefone(request.getParameter("txtTelefone"));
                 pro.setEmail(request.getParameter("txtEmail"));
@@ -56,7 +56,7 @@ public class ServletCliente extends ServletAbstrato {
 
                 //RECEBENDO OS VALORES DO FORMULÁRIO
                 pro.setCpf_cliente(request.getParameter("txtDocumento"));
-                pro.setNome_cliente(request.getParameter("txtNome"));
+                pro.setNome(request.getParameter("txtNome"));
                 pro.setEndereco(request.getParameter("txtEndereco"));
                 pro.setTelefone(request.getParameter("txtTelefone"));
                 pro.setEmail(request.getParameter("txtEmail"));

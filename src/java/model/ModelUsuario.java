@@ -4,10 +4,9 @@ package model;
  *
  * @author Anderson
  */
-public class ModelUsuario {
+public class ModelUsuario extends ModelPessoa {
 
     private int id_usuario;
-    private String nome;
     private String login;
     private String senha;
 
@@ -21,14 +20,6 @@ public class ModelUsuario {
 
     public void setId_usuario(int id_usuario) {
         this.id_usuario = id_usuario;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getLogin() {

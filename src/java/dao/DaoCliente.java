@@ -30,7 +30,7 @@ public class DaoCliente extends ModuloConexao {
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
             pst.setString(1, pro.getCpf_cliente());
-            pst.setString(2, pro.getNome_cliente());
+            pst.setString(2, pro.getNome());
             pst.setString(3, pro.getEndereco());
             pst.setString(4, pro.getTelefone());
             pst.setString(5, pro.getEmail());
@@ -55,7 +55,7 @@ public class DaoCliente extends ModuloConexao {
 
         try {
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setString(1, pro.getNome_cliente());
+            pst.setString(1, pro.getNome());
             pst.setString(2, pro.getEndereco());
             pst.setString(3, pro.getTelefone());
             pst.setString(4, pro.getEmail());
@@ -115,7 +115,7 @@ public class DaoCliente extends ModuloConexao {
 
                 retorno = new ModelCliente();
                 retorno.setCpf_cliente(rs.getString("cpf_cliente"));
-                retorno.setNome_cliente(rs.getString("nome_cliente"));
+                retorno.setNome(rs.getString("nome_cliente"));
                 retorno.setEndereco(rs.getString("endereco"));
                 retorno.setTelefone(rs.getString("telefone"));
                 retorno.setEmail(rs.getString("email"));
@@ -141,7 +141,7 @@ public class DaoCliente extends ModuloConexao {
 
                 ModelCliente item = new ModelCliente();
                 item.setCpf_cliente(rs.getString("cpf_cliente"));
-                item.setNome_cliente(rs.getString("nome_cliente"));
+                item.setNome(rs.getString("nome_cliente"));
                 item.setEndereco(rs.getString("endereco"));
                 item.setTelefone(rs.getString("telefone"));
                 item.setEmail(rs.getString("email"));
