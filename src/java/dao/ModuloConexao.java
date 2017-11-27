@@ -8,7 +8,7 @@ import java.sql.SQLException;
  *
  * @author Anderson
  */
-public class ModuloConexao {
+public abstract class ModuloConexao {
 
     // Armazenando informações Referente ao banco de dados
     private final String base = "db_arcarros";
@@ -17,11 +17,11 @@ public class ModuloConexao {
     private final String url = "jdbc:mysql://localhost:3306/" + base;
     private Connection conexao = null;
 
-    //Método que requer um retorno, e estabelece conexão com o banco de dados
+    //Método que estabelece conexão com o banco de dados
     public Connection abrirConexao() {
 
         try {
-            //Responsável por as configurações do BD MySql.
+            
             Class.forName("com.mysql.jdbc.Driver");
             conexao = DriverManager.getConnection(this.url, this.usuarios, this.password);
             // System.out.println("Conexão de banco de dados: Status Ok!");

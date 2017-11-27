@@ -1,5 +1,6 @@
 package Relatorio;
 
+import dao.DaoOrdemServico;
 import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.JasperRunManager;
-import dao.ModuloConexao;
 import java.sql.Connection;
 import java.util.HashMap;
 import net.sf.jasperreports.engine.JRException;
@@ -22,9 +22,11 @@ public class RelatorioImpresso extends HttpServlet {
     File caminhoRelatorio;
     ServletOutputStream ouputStream;
     byte[] bytes;
+    private final DaoOrdemServico conn;
 
-    //CRIANDO OBJETO DE CONEXÃO
-    ModuloConexao conn = new ModuloConexao();
+    public RelatorioImpresso() {
+        conn = new DaoOrdemServico();
+    }
 
     protected void gerandoRelatorios(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -64,7 +66,7 @@ public class RelatorioImpresso extends HttpServlet {
             //PARAMETRO QUE RECEBE O VALOR codigoItemOS DA SQL DO ARQUIVO COMPILADO .JASPER
             HashMap valorParametro = new HashMap();
             valorParametro.put("codigoOS", codigoProjeto);
-            
+
             try {
                 //RECEBENDO CONEXÃO
                 this.conexao = conn.abrirConexao();
@@ -102,7 +104,7 @@ public class RelatorioImpresso extends HttpServlet {
                 this.conexao = conn.abrirConexao();
 
                 //VAVIÁVEL QUE RECEBE O CAMINHO DO ARQUIVO .JASPER
-               this.caminhoRelatorio = new File(getServletContext().getRealPath("/WEB-INF/Relatorio/ItemOrdemServico.jasper"));
+                this.caminhoRelatorio = new File(getServletContext().getRealPath("/WEB-INF/Relatorio/ItemOrdemServico.jasper"));
 
                 //GERENCIADOR DO JASPER PARA CRIA O RELATÓRIO EM PDF
                 this.bytes = JasperRunManager.runReportToPdf(caminhoRelatorio.getPath(), valorParametro, conexao);

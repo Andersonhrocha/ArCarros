@@ -107,7 +107,7 @@
                                                 </select>  
                                                 
                                                 <!-- BOTÃO PARA ADICIONAR NOVA CATEGORIA -->                                   
-                                                <a class="btn btn-primary" href="adicionarCategoria.jsp" >
+                                                <a class="btn btn-primary" href="adicionarCategoria.jsp" target="_blank">
                                                     <span class="glyphicon glyphicon-plus"></span> </a>  
                                                     
                                             </div>

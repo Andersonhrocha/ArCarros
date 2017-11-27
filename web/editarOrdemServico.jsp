@@ -87,12 +87,12 @@
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="txtSituacao" value="Orcamento" /> Orçamento
+                                                    <input type="radio" name="txtSituacao" value="Orcamento" checked="" /> Orçamento
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="txtSituacao" value="Ordem de Servico" checked="" /> Ordem de Serviço
+                                                    <input type="radio" name="txtSituacao" value="Ordem de Servico" /> Ordem de Serviço
                                                 </label>
                                             </div>
                                         </div>

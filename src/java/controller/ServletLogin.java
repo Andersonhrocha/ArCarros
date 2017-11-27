@@ -1,6 +1,6 @@
 package controller;
 
-import dao.ModuloConexao;
+import dao.DaoUsuario;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,7 +21,12 @@ public class ServletLogin extends ServletAbstrato {
     //CONSTANTES DAS PÁGINAS .JSP
     private static final String MENU_PRINCIPAL = "menu.jsp";
     private static final String ERRO_LOGIN = "login.jsp";
+    private final DaoUsuario dao;
 
+    public ServletLogin() {
+        dao = new DaoUsuario();
+    }
+    
     //VARIÁVEIS
     public Connection conexao;
     public String sql = "";
@@ -37,9 +42,6 @@ public class ServletLogin extends ServletAbstrato {
         try {
 
             if (loginUsuario != null) {
-
-                //CRIANDO OBJETO DA CLASSE ModuloConexao
-                ModuloConexao dao = new ModuloConexao();
 
                 //RECEBENDO A CONEXÃO
                 this.conexao = dao.abrirConexao();

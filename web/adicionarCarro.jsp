@@ -109,7 +109,7 @@
                                                 </select>
 
                                                 <!-- BOTÃO PARA ADICIONAR NOVO MODELO -->                                   
-                                                <a class="btn btn-primary" href="adicionarModelo.jsp" >
+                                                <a class="btn btn-primary" href="adicionarModelo.jsp" target="_blank">
                                                     <span class="glyphicon glyphicon-plus"></span> </a>  
                                                     
                                             </div>

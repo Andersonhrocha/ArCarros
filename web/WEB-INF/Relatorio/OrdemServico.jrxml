@@ -7,7 +7,10 @@
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[SELECT * FROM ordem_servico WHERE id_ordem_servico = $P{codigoOS}]]>
+		<![CDATA[SELECT id_ordem_servico, id_carro, data, situacao, valor, desconto,
+SUM( valor - desconto) as SUBTOTAL
+FROM ordem_servico
+WHERE id_ordem_servico = $P{codigoOS}]]>
 	</queryString>
 	<field name="id_ordem_servico" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -27,6 +30,7 @@
 	<field name="desconto" class="java.lang.Double">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="SUBTOTAL" class="java.lang.Double"/>
 	<background>
 		<band/>
 	</background>
@@ -35,16 +39,9 @@
 			<frame>
 				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="fbd02f5b-2327-492c-b17c-307f752399e1"/>
 				<staticText>
-					<reportElement x="20" y="20" width="158" height="43" forecolor="#FFFFFF" uuid="51cc8c53-3807-4378-925e-0a00f52bbde3"/>
+					<reportElement x="204" y="20" width="198" height="43" forecolor="#FFFFFF" uuid="51cc8c53-3807-4378-925e-0a00f52bbde3"/>
 					<textElement textAlignment="Center">
 						<font size="34" isBold="true"/>
-					</textElement>
-					<text><![CDATA[Relatório]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="455" y="63" width="120" height="29" forecolor="#FFFFFF" uuid="8daf00ab-e4e1-4441-a413-e1b05c6906fc"/>
-					<textElement textAlignment="Right">
-						<font size="14" isBold="false"/>
 					</textElement>
 					<text><![CDATA[Orçamento]]></text>
 				</staticText>
@@ -104,10 +101,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="20">
-			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="429a2c0a-c576-4917-9b4b-f9348653830b"/>
-			</line>
+		<band height="125">
 			<textField isStretchWithOverflow="true">
 				<reportElement x="0" y="0" width="92" height="20" uuid="9e437cf7-b5a3-4e25-a9d6-14ad039f7ee7"/>
 				<textElement textAlignment="Center">
@@ -150,6 +144,23 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{desconto}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="466" y="44" width="89" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="247702e4-a5be-43fb-9aa2-012931da5f90"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SubTotal]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="466" y="64" width="89" height="20" uuid="b24111f7-aad5-4a8e-a60b-cb5f56684689"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUBTOTAL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="467" y="64" width="88" height="1" forecolor="#666666" uuid="d95a2bfe-9679-4d1a-b651-1cd01599b656"/>
+			</line>
 		</band>
 	</detail>
 	<columnFooter>
